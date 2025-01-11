@@ -1,0 +1,149 @@
+test the transformer model we found on huggingface to see if it can work
+if not, run through the google colab
+instead of letting it generate stuff try to steal images from bluesky?
+
+
+maybe i should fine tune the ai model myself
+no, I don't want to fine tune something myself I want to take advantage of some existing libraries
+
+
+use firesky.tv hose of data to look for posts with [images]
+
+need to get set of followed accounts
+need to get database set of checked accounts
+
+
+?? maybe ?? keep a set of accounts that have been screened - store these in a table that gets booted up every time 
+maybe like a three strike policy? what's the odds that I check the same account more than once? guess it depends on how long it's been running
+
+check if the account that posted the image is already being followed
+
+now that we know it's a valid new account to check
+run the image through an ai computer vision image classifier - determine whether or not the image is a cat.
+
+?? maybe ?? if it is a cat check if there's text in the image
+
+
+if the newly posted image is a cat then let's just assume they're a cat poster, like the image, follow the account, put in the database that we added this account for this post id and tested positive for cat = true
+
+
+maybe we could have an account status monitoring - 
+change in followers and follow count since last time ran,
+check and see if any of the new followers were followed by the auto process so we can count gains from the bot
+
+
+
+also need to hook it up to my google photos bucket of ricky pics and post a new one every day
+what should the caption be?
+:3, double heart, 
+
+
+https://bsky.app/profile/did:plc:jfhpnnst6flqway4eaeqzj2a/feed/cats
+cats feed to use
+
+did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot
+this can replace the did -> cats part but you have to replace the app.feed.generator to just feed to use it in a url to see the page.
+
+so if we use 
+https://bsky.app/profile/did:plc:jfhpnnst6flqway4eaeqzj2a/app.bsky.feed.generator/cats
+we should have a feed generator for our cats to be sourced from.
+
+
+
+db schema
+table - followship
+account | follow date | follow post | followed back | removed from friends
+account id should be a primary key and indexed as a hash key 
+
+table - cat checks
+account | post # checked | was cat | was not text | followed?
+account id should be a primary key and indexed as a hash key 
+
+table - friend count and date
+date (pk) | followers | following | engagement count on most recent 5 posts
+
+because as of postgres 8.something it finally is WAL approved and works better than b-tree for its intended use case. When to consider using a hash index:
+Primary key index: If you need extremely fast lookups on a unique primary key column. 
+High cardinality, unique data: When most values in a column are distinct and you primarily perform equality comparisons. 
+this is an exact description of what we need it for lol
+
+Workflow 0 - initialize followership db:
+for everyone in the friends list, add username, today's date, no post, and mark whether they are also following you, 
+add all followed users to both tables
+
+Workflow 1 - follow new catposters:
+1. pull current posts from feed
+2. check for posts with images
+for each post {
+3. see if the poster is already being followed/already was in db, if yes bail on this poster
+4. run image through cat checker ai, if no bail on this poster
+5. run image through text checker ai, if yes text bail on this poster
+6. hooray! this is a real cat pic and not just a meme someone posted or something (hopefully). Follow the poster. Add username to the database of people, the date added, and the post, mark as false for followed by.
+}
+
+Workflow 2 - reducing follower/followed by ratio:
+while followed by ratio is less than 35% (followed by / followed by + followers) {
+1. scan through friends list, update relationships between followed by so that we don't delete anyone that has followed us back.
+2. query the database for the last 10 people, are not following, and have not been removed from friends
+3. mark them as removed from friends and unfollow them
+}
+
+Workflow 3 - posting:
+# bluesky actually doesn't have native post scheduling which is very annoying because how am I supposed to post in bulk with a program you only run once without just clicking to run it every time you want to?
+anyway...
+# also need to figure out how to connect to the shared ricky album with the google photos api maybe? 
+https://developers.google.com/photos/picker/guides/get-started-picker
+otherwise we don't have any content to automatically post and this is a bust.
+0. link ricky pics google drive folder
+1. create set of pics and used pic ids
+2. randomly select a pic, select one that hasn't been used already
+3. post it.
+4. mark as used
+5. set up cron job for next time sometime random between 12 and 24 hours
+
+
+step 5 - https://github.com/Zeeshanahmad4/Bluesky-Post-Bot 
+details how to set up a cron schedule for GitHub posting. would need to make it private so people don't have access to my bluesky and google photos account, and it's kind of a security risk but whatever.
+
+
+because of the google photos api complication that I don't want to deal with yet, let's get an mvp off the ground that only focuses on growth through followership, and I'll do the posting myself.
+then once that's firmly working we can look into the other part. that'll give more time to think of hashtags and 
+
+
+prioritized backlog - 
+
+phase 1 - set up main ai photo recognition base and test bluesky functionality
+1. set up colab
+2. set up the bluesky code to get into the #list
+2. figure out how to run that ai model
+3. run both ai models on a sample of like 100 pics to get started
+ - - have it pull 100 pics from today's view of the #list
+4. see how the reverse image search works
+5. set up liking pictures and following accounts on bluesky account
+6. give it a spin
+
+phase 2 - set up sql database
+1. set up tables
+2. initialize bsky friend analysis
+3. add database updating to base bluesky functionality from phase 1
+4. test 
+
+phase 3 - friend pruning
+1. create panda - sql queries to get updates to list - does it need to do this every time? oh yeah it's gotta check for follow backs.
+-- with hash index lookup this is an o1 operation, and even if we have oN where n is our friend list size, going through even a billion friends wouldn't be that bad I think. So we can just do this every time.
+2. calculate acceptable followership condition by given variable of x where is the % of followers to followers+following
+3. [for if unacceptable ratio] write sql queries to get most recent x friends where x is the difference that will get us back up to a [acceptable]% follower ratio
+4. use that query of people necessary to delete to get to correct ratio, and delete all the people from bluesky as necessary, when successful update table with new status, return all rows updated
+5. test
+
+phase 4 - logging and testing framework
+1. write function to check current stats followers and following, need to check the most recent 5 posts and count up engagement. count a like as one engagement point and a repost as 50 engagement points.
+2. update the other functions to run this stats updating in the relevant sql table when we run all the code
+3. set up a bit of unit testing for each phase to show that it's all working correctly.
+
+phase 5 - cron job automation
+1. time to figure out how to get this process to automate so you can just have it run every night or something.
+2. need to set up secret keys in GitHub and run it and see if everything is still working as intended.
+3. get it to do everything fast one day to see it all in action, then set it to run.
+
+
