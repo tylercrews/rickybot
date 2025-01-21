@@ -41,23 +41,37 @@ what should the caption be?
 https://bsky.app/profile/did:plc:jfhpnnst6flqway4eaeqzj2a/feed/cats
 cats feed to use
 
-did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot
+at://did:plc:z72i7hdynmk6r22z27h6tvur/app.bsky.feed.generator/whats-hot
 this can replace the did -> cats part but you have to replace the app.feed.generator to just feed to use it in a url to see the page.
 
 so if we use 
 https://bsky.app/profile/did:plc:jfhpnnst6flqway4eaeqzj2a/app.bsky.feed.generator/cats
 we should have a feed generator for our cats to be sourced from.
 
+other cat feeds
+caturday - https://bsky.app/profile/numb.comfortab.ly/feed/aaad4sb7tyvjw
+handle - @numb.comfortab.ly
+
+Siamese cats - https://bsky.app/profile/mrfenman.bsky.social/feed/aaac6wmikqyhq
+handle - ‪@mrfenman.bsky.social‬
+
+cat pics - https://bsky.app/profile/jaz.bsky.social/feed/cv:cat
+handle - ‪@jaz.bsky.social‬
 
 
 db schema
 table - followship
 account | follow date | follow post | followed back | removed from friends
 account id should be a primary key and indexed as a hash key 
+| user_id | handle | follow_uri | follow_date | follows_you
+
+max handle length is 300 chars so we're going to use that as max length for our varchars
 
 table - cat checks
 account | post # checked | was cat | was not text | followed?
 account id should be a primary key and indexed as a hash key 
+#nvm all that
+| post id | seen_date | 
 
 table - friend count and date
 date (pk) | followers | following | engagement count on most recent 5 posts
@@ -66,6 +80,7 @@ because as of postgres 8.something it finally is WAL approved and works better t
 Primary key index: If you need extremely fast lookups on a unique primary key column. 
 High cardinality, unique data: When most values in a column are distinct and you primarily perform equality comparisons. 
 this is an exact description of what we need it for lol
+however, we're going to be using Pandas to parse our data not the database itself, so we don't need all of that. 
 
 Workflow 0 - initialize followership db:
 for everyone in the friends list, add username, today's date, no post, and mark whether they are also following you, 
@@ -146,4 +161,74 @@ phase 5 - cron job automation
 2. need to set up secret keys in GitHub and run it and see if everything is still working as intended.
 3. get it to do everything fast one day to see it all in action, then set it to run.
 
+phase 6 - dockerization???
 
+phase 7 - LOGGING - 
+1. automatic loggers that get posted to gethub project every time something gets run
+1b. needs to show friends before action, friends after action, follows added/deleted
+
+need to come up with way to go to second page - limit is 100 on feed requests.
+
+
+post id, date checked
+need to begin initialization with deletion of any posts older than three days old so we don't hold that
+
+
+
+i'm trying hard to think about this workflow again
+0. the database exists
+update friends db?
+1. pandas pulls our two tables of posts and ids, creating a set of s
+
+
+I think we only care about our follows, not our followers - I don't really care how many bots have followed us in the previous week. 
+
+follower ratio = len(client.get_follows('me').follows) / len(client.get_followers('me').followers)
+following from get follows = client.get_follows('me').follows[x].following
+see if they followback = client.get_follows('me').follows[x].followed_by
+
+
+Pull up pandas, create map of user : follows_back
+use client.get_follows('me') to pull up all users I am following
+for each user in the get_follows results
+	see if they are in the pandas set
+	if they are not, add them to an add list with the information you need for the table
+	if they are make sure that they still have the same follows_back status
+		if they have changed add them to an update query list
+after running through each user in the set 
+run update query
+run add query
+run update query - any friends added that don't have an add date should be set to today
+
+
+ok i can't figure out how to get the pyscopg2 connected because i can't figure out how to get the database set up to accept anything
+eventually I'll have to ssh in
+need to watch video on ssh even though you used to do it all the time you just did it for work without understanding a lot.
+ 
+
+now that sql queries are getting generated successfully
+need to {
+  0. write queries to update friends list
+  1. do deletion code
+  2. do post database, and pull it into memory
+  3. figure out what's causing the two-posts-same-did issue, maybe it takes a second for follower to go through?
+	-- create a session set to check for
+}
+
+WE'VE OFFICIALLY DOUBLED!! - 2:21 pm 01/20/2025
+
+really need to do figure out duplicate protection - here are some things I'm noticing. It's always just duplicates from the same query, it's never failing because the id already exists in the db, but because there are 2 duplicate ids in the query. So it simply must be because we can follow twice before the api 'realizes' we've already followed that user. Just need a temporary store of users for one query at a time, the issue is never that there is one user from a query we just did. although that would probably be better implementation just in case. How would we purge the set? well maybe just timeout is enough because we don't mind having that set open for infinity, we want all of our followslist in a set anyway.
+
+the CATPICS feed is really not pulling it's weight lol could investigate some new feeds. Siamese is doing much better than I thought it would
+
+deletion code without being able to pass the sql directly into python and parse with pandas is proving to be a tiny bit more of a chore than I'd hoped.
+Luckily pruning doesn't occur very frequently, but for this immediate manual implementation I basically have to just have the query that gets all the follow IDs I want to remove, ctrl+H (replace) the at:// with , at://, and turn each line into an array to iterate through. 
+Then you have to run another query to do the deletions.
+
+Still need to write some code that will add users in that I have been adding through regular app usage. Similar to the initialization of the db code, but instead I need to write some to compare the db to the current friends list and make updates.
+I think that part can wait until direct db connectivity is established to the code. Otherwise there's going to be a LOT of querying.
+
+So for the deletion step
+1. get list of friends in db with current friend status
+2. search through follows and see if they follow you to update status
+3. output update query with all users that need to be updated.
