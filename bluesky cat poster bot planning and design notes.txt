@@ -2,6 +2,9 @@ test the transformer model we found on huggingface to see if it can work
 if not, run through the google colab
 instead of letting it generate stuff try to steal images from bluesky?
 
+https://huggingface.co/google/vit-base-patch16-224
+google vision transformer come back and refresh on this once in a while so you can talk about it
+
 
 maybe i should fine tune the ai model myself
 no, I don't want to fine tune something myself I want to take advantage of some existing libraries
@@ -157,6 +160,7 @@ phase 4 - logging and testing framework
 3. set up a bit of unit testing for each phase to show that it's all working correctly.
 
 phase 5 - cron job automation
+https://github.com/Zeeshanahmad4/Bluesky-Post-Bot
 1. time to figure out how to get this process to automate so you can just have it run every night or something.
 2. need to set up secret keys in GitHub and run it and see if everything is still working as intended.
 3. get it to do everything fast one day to see it all in action, then set it to run.
@@ -216,6 +220,20 @@ need to {
 }
 
 WE'VE OFFICIALLY DOUBLED!! - 2:21 pm 01/20/2025
+jan 17 - jan 20 72 hrs
+9am to 5:01pm 8 hrs
+
+61 days = 1464 hours
+
+487/1464 = 
+0.3326502732240437 fol/hr
+
+487/80 = 
+6.0875
+
+6.0875 - 0.3326502732240437
+/ 0.3326502732240437
+ = increased rate 17.3 * 100 = 1730%
 
 really need to do figure out duplicate protection - here are some things I'm noticing. It's always just duplicates from the same query, it's never failing because the id already exists in the db, but because there are 2 duplicate ids in the query. So it simply must be because we can follow twice before the api 'realizes' we've already followed that user. Just need a temporary store of users for one query at a time, the issue is never that there is one user from a query we just did. although that would probably be better implementation just in case. How would we purge the set? well maybe just timeout is enough because we don't mind having that set open for infinity, we want all of our followslist in a set anyway.
 
@@ -232,3 +250,16 @@ So for the deletion step
 1. get list of friends in db with current friend status
 2. search through follows and see if they follow you to update status
 3. output update query with all users that need to be updated.
+
+DELETE FROM "bsky"."follows"
+WHERE user_handle = 'e1341.bsky.social'
+RETURNING *;
+
+DELETE FROM follows
+WHERE follow_id IN (
+    SELECT follow_id
+    FROM follows
+    WHERE follows_you = FALSE
+    ORDER BY date_added ASC
+    LIMIT 100
+);
