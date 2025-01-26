@@ -236,6 +236,7 @@ jan 17 - jan 20 72 hrs
  = increased rate 17.3 * 100 = 1730%
 
 really need to do figure out duplicate protection - here are some things I'm noticing. It's always just duplicates from the same query, it's never failing because the id already exists in the db, but because there are 2 duplicate ids in the query. So it simply must be because we can follow twice before the api 'realizes' we've already followed that user. Just need a temporary store of users for one query at a time, the issue is never that there is one user from a query we just did. although that would probably be better implementation just in case. How would we purge the set? well maybe just timeout is enough because we don't mind having that set open for infinity, we want all of our followslist in a set anyway.
+OH I GET IT. the reason was because you make the query of all these feed posts at once, and while that is made it says that all of the users that aren't following you aren't following you. So when you follow one of the users, the feed pages that you've already loaded aren't updated. So the set fix is perfect.
 
 the CATPICS feed is really not pulling it's weight lol could investigate some new feeds. Siamese is doing much better than I thought it would
 
@@ -263,3 +264,13 @@ WHERE follow_id IN (
     ORDER BY date_added ASC
     LIMIT 100
 );
+
+
+1/23/2025 - encountered my first error. Looks like someone deleted their picture or their whole post after I had generated the feed, and so when I tried to use the link to the image the source wasn't found and it caused a bad html request. So I added some very basic error handling.
+But now that means I have ~50 new friends that aren't registered in the database.
+It's time to create a function to update the friends list and see which followers have been missed.
+This will probably be an update to the update friends function but definitely a little different. 
+Need to pull the database somehow and register it as a... map? Maybe I need to actually use some pandas but building a dataframe out of text input seems like overkill.
+
+
+need to rewrite the delete query to auto-parse the follow links instead of using notepad++ to add quotes. 
