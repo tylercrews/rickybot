@@ -273,4 +273,22 @@ This will probably be an update to the update friends function but definitely a 
 Need to pull the database somehow and register it as a... map? Maybe I need to actually use some pandas but building a dataframe out of text input seems like overkill.
 
 
-need to rewrite the delete query to auto-parse the follow links instead of using notepad++ to add quotes. 
+need to rewrite the delete query to auto-parse the follow links instead of using notepad++ to add quotes.
+
+part 4 needs to be implementing the post-cacheing feature, there's a lot of duplicate work being done checking posts from 1. earlier in the day and 2. posts that make it into multiple feeds.
+The most important question is how big should our cache be? I guess I don't mind it growing to be about 5000, it would be the same as copying and pasting the friends list. Maybe before updating the cache you delete all but the last 3 days of posts? maybe even only 2 days?
+for logging we could even set it up so that we input the post cid and the date we checked it, so when we log that we've already checked that post we can say if it was one that we saw this batch, or saw on x date. Normally that would be kind of overkill but here I think it's important to let us know how far back we need to save posts. Ultimately we might not even need to save more than like the past 12 hours. But without the timelogging there's no way to be sure.
+That should be another statistic that we keep track of in the logging.
+
+In fact, I need to start thinking about what kind of logging we want because that's the next thing to work on.
+Stats we should log - Date of run, follow+follower count before. which feeds were checked, how many posts were checked. # posts with vids, # posts without pics, # errors, # pics processed, # cat pics observed, # people followed, # mutual posts seen, # already followed seen
+total from all feeds run
+For logging if the file gets above a certain size how do we initialize a new file?
+
+then follow+followers after, ratio, and if we're still in acceptable territory
+then if we're not it'll go through the deletion routine when we're fully automated, and it'll log that. 
+
+should I actually log all of the handles and uris added? is that too much? or do we just want stats?
+
+just had a weird error where I pulled up my own picture and tried to follow myself maybe? that's weird. Need to add some handling for that lol. To clarify it didn't error the program, but caused a sql error because I'm already in the database. But we're not pulling the db until friend pruning, only checking the follow and followback, so I guess we need a check to make sure that the user is not you in case you 
+post a pic, and then start following people
