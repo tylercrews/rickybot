@@ -9,6 +9,7 @@ FINDING NEW FOLLOWERS
 
 prior follower count: 2279
 previously following: 5428
+
 Feed 'Siamese Cats':
   297 posts in total were viewed in this run.
   Skipped Posts: 0 posts were previously seen, 14 were from users already followed, 0 were your posts.
