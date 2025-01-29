@@ -11,6 +11,7 @@ prior follower count: 2279
 previously following: 5428
 
 Feed 'Siamese Cats':
+  Followed 97 new users!
   297 posts in total were viewed in this run.
   Skipped Posts: 0 posts were previously seen, 14 were from users already followed, 0 were your posts.
   Mutuals: 24 posts were from users that follow you, and these posts were liked.
@@ -19,6 +20,7 @@ Feed 'Siamese Cats':
   no errors were encountered while processing pics. 
 
 Feed 'Cats!':
+  Followed 4 new users!
   297 posts in total were viewed in this run.
   Skipped Posts: 0 posts were previously seen, 107 were from users already followed, 0 were your posts.
   Mutuals: 25 posts were from users that follow you, and these posts were liked.
@@ -27,6 +29,7 @@ Feed 'Cats!':
   no errors were encountered while processing pics. 
 
 Feed 'Tuxedo Cats':
+  Followed 0 new users.
   297 posts in total were viewed in this run.
   Skipped Posts: 0 posts were previously seen, 110 were from users already followed, 0 were your posts.
   Mutuals: 26 posts were from users that follow you, and these posts were liked.
