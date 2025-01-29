@@ -13,21 +13,24 @@ previously following: 5428
 Feed 'Siamese Cats':
   297 posts in total were viewed in this run.
   Skipped Posts: 0 posts were previously seen, 14 were from users already followed, 0 were your posts.
-  Mutuals: 24 posts were from users that follow you, and these posts were liked.  Unprocessed: 5 posts had no media attached, and 21 posts had videos attached.
+  Mutuals: 24 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 5 posts had no media attached, and 21 posts had videos attached.
   Processed: 233 posts had pics attached: 97 were identified as cat pics and 136 were not cats
   no errors were encountered while processing pics. 
 
 Feed 'Cats!':
   297 posts in total were viewed in this run.
   Skipped Posts: 0 posts were previously seen, 107 were from users already followed, 0 were your posts.
-  Mutuals: 25 posts were from users that follow you, and these posts were liked.  Unprocessed: 5 posts had no media attached, and 20 posts had videos attached.
+  Mutuals: 25 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 5 posts had no media attached, and 20 posts had videos attached.
   Processed: 140 posts had pics attached: 4 were identified as cat pics and 136 were not cats
   no errors were encountered while processing pics. 
 
 Feed 'Tuxedo Cats':
   297 posts in total were viewed in this run.
   Skipped Posts: 0 posts were previously seen, 110 were from users already followed, 0 were your posts.
-  Mutuals: 26 posts were from users that follow you, and these posts were liked.  Unprocessed: 5 posts had no media attached, and 20 posts had videos attached.
+  Mutuals: 26 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 5 posts had no media attached, and 20 posts had videos attached.
   Processed: 136 posts had pics attached: 0 were identified as cat pics and 136 were not cats
   no errors were encountered while processing pics. 
 
