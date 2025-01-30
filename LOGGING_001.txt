@@ -150,3 +150,52 @@ cur followers: 2343
 now following: 4454
 
 ____________________
+
+
+2025-01-29 22:51:29.480403-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 2343
+previously following: 4454
+
+Feed 'Siamese Cats':
+  Followed 8 new users!
+  24 posts in total were viewed in this run.
+  Skipped Posts: 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 3 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 4 posts had videos attached.
+  Processed: 16 posts had pics attached: 8 were identified as cat pics and 8 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Siamese Cats':
+  Followed 29 new users!
+  99 posts in total were viewed in this run.
+  Skipped Posts: 29 posts were previously seen, 8 were from users already followed, 0 were your posts.
+  Mutuals: 4 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 3 posts had no media attached, and 7 posts had videos attached.
+  Processed: 48 posts had pics attached: 29 were identified as cat pics and 19 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Cats!':
+  Followed 41 new users!
+  199 posts in total were viewed in this run.
+  Skipped Posts: 99 posts were previously seen, 5 were from users already followed, 0 were your posts.
+  Mutuals: 4 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 2 posts had no media attached, and 6 posts had videos attached.
+  Processed: 83 posts had pics attached: 41 were identified as cat pics and 42 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Tuxedo Cats':
+  Followed 40 new users!
+  299 posts in total were viewed in this run.
+  Skipped Posts: 199 posts were previously seen, 6 were from users already followed, 0 were your posts.
+  Mutuals: 4 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 1 posts had no media attached, and 7 posts had videos attached.
+  Processed: 82 posts had pics attached: 40 were identified as cat pics and 42 were not cats.
+  No errors were encountered while processing pics. 
+
+
+cur followers: 2345
+now following: 4572
+
+____________________
