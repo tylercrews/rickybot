@@ -319,3 +319,43 @@ cur followers: 2432
 now following: 5026
 
 ____________________
+
+
+2025-01-31 14:27:35.920040-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 2465
+previously following: 5026
+
+Feed 'Siamese Cats':
+  Followed 362 new users!
+  997 posts in total were viewed in this run.
+  Skipped Posts: 5 posts were previously seen, 83 were from users already followed, 0 were your posts.
+  Mutuals: 41 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 28 posts had no media attached, and 69 posts had videos attached.
+  Processed: 771 posts had pics attached: 362 were identified as cat pics and 409 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Cats!':
+  Followed 32 new users!
+  997 posts in total were viewed in this run.
+  Skipped Posts: 913 posts were previously seen, 9 were from users already followed, 1 were your posts.
+  Mutuals: 4 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 2 posts had no media attached, and 4 posts had videos attached.
+  Processed: 64 posts had pics attached: 32 were identified as cat pics and 32 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Tuxedo Cats':
+  Followed 0 new users.
+  997 posts in total were viewed in this run.
+  Skipped Posts: 996 posts were previously seen, 0 were from users already followed, 1 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  No errors were encountered while processing pics. 
+
+
+cur followers: 2482
+now following: 5420
+
+____________________
