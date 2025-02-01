@@ -776,3 +776,31 @@ ____________________
 ~~~~~~~~~~~~~~~~~~~~  commenting here to say that 6907 is my fav prime number. This is a lucky moment.  ~~~~~~~~~~~~~~~~~~~~
 
 ____________________
+
+
+2025-02-01 18:20:36.929989-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 3364
+previously following: 6907
+
+Feed 'Caturday':
+  Followed 1322 new users!
+    Of those, 317 were posters, and 1005 were from likes.
+  762 posts in total were viewed in this run.
+  Skipped Posts: 0 posts were previously seen, 45 were from users already followed, 2 were your posts.
+  Mutuals: 32 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 7 posts had no media attached, and 44 posts had videos attached.
+  Processed: 632 posts had pics attached: 317 were identified as cat pics and 315 were not cats.
+  5 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+53. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738453813', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 23:35:03 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'});; 
+59. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738453813', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 23:35:07 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'});; 
+61. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738453813', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 23:35:08 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'});; 
+63. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738453813', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 23:35:11 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'});; 
+64. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738453813', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 23:35:12 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+
+
+cur followers: 3431
+now following: 8224
+
+____________________
