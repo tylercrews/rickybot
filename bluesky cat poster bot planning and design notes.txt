@@ -56,10 +56,10 @@ caturday - https://bsky.app/profile/numb.comfortab.ly/feed/aaad4sb7tyvjw
 handle - @numb.comfortab.ly
 
 Siamese cats - https://bsky.app/profile/mrfenman.bsky.social/feed/aaac6wmikqyhq
-handle - ‪@mrfenman.bsky.social‬
+handle - @mrfenman.bsky.social
 
 cat pics - https://bsky.app/profile/jaz.bsky.social/feed/cv:cat
-handle - ‪@jaz.bsky.social‬
+handle - @jaz.bsky.social 
 
 
 db schema
@@ -292,3 +292,75 @@ should I actually log all of the handles and uris added? is that too much? or do
 
 just had a weird error where I pulled up my own picture and tried to follow myself maybe? that's weird. Need to add some handling for that lol. To clarify it didn't error the program, but caused a sql error because I'm already in the database. But we're not pulling the db until friend pruning, only checking the follow and followback, so I guess we need a check to make sure that the user is not you in case you 
 post a pic, and then start following people
+
+great! logging works on the main add-followers part of the routine. now need to do logging for the updating followers and the deleting followers routines. 
+
+could use a little effort in refactoring too - duplicated constants (datetime just got cloned)
+constants moved up to the top?
+once we get closer to full automation we'll need to do the full refactor, like making the queries prettier. so worry about that later, but get that datetime copy out
+
+1/30/25 0100
+the logging works great, and the caching works great! The performance improvement is incredibly obvious, being that it reduces the time from n*m to oN time, we no longer repeat reprocessing posts and that's like 9/10 of the time is processing the image.
+
+The gains of followers obviously feels like it's slowing down. I think I'm still getting like 70 a day but it feels like a crawl. 
+I have two ideas for how to improve this:
+1. we create our own feed, and expand search terms. instead of just looking for cat, cats, Siamese, we look for all breeds, we look for words like kitty, kitten, and just trust our ai to weed out the nonsense.
+2. more frequent but shallow friend searches. Instead of trying to do this twice a day at 2 and 8, maybe we need to do like 4 times a day at 08, 1300, 1700, 2100. We can just do a couple hundred but it'll be more likely to grab people that are actually on. 
+The problem with this style is if we move forward with google cloud scheduling, they charge 10 cents per run, and this would be like 120 runs per month instead of 60. but maybe that's just a pay to play live with it kind of deal. or maybe we just set up the cron job on the laptop. Maybe I can rig it to an older laptop that just hangs out open all the time. 
+
+now that logging and caching are complete though, we're getting to the point where all we have left to do is automate. So I think I need to start investigating connecting to the sql database from the internet now. Progress might be slowed, but at least we have the logging feature to feel good about and watch some progress for now, I wouldn't even mind taking a break to focus on some other work again for a week. 
+
+Also side note on just the feelings of this project, it feels weird like I'm stressing about 70 followers gained in a day like it's not good enough. that's pretty insane actually.
+I was worried like my picture today not reaching 100 likes meant I wasn't doing something right. But it has 90 likes that's awesome too.
+I even made an unrelated mtg post just now and it already has 10 likes, better than almost any twitter post I ever made before this project.
+The human condition normalizes the dopamine you get every step of the way and asks you to reach for more. But try to keep some perspective here. Everything is sweet.
+
+
+The next direction I want to go is to explore replies to posts. Replies with cat pics are gold because that's the kind of user you want to be friends with. High engagement. 
+
+
+2025-01-31 03:30 -
+I realize now that if I'm not getting to the prefiously cached posts, then maybe I'm not reaching out to enough people. There must be a lot in the gaps that I'm not checking. And now it doesn't cost to put like 1000 posts for each feed, because any duplicates won't get checked.
+I still think that 4 per day should be the way to go, but I should see how many it takes to get to ones that I've seen already
+also should change logging to note diff between cached and seen posts.
+2025-01-31 15:20 -
+Went 1000 posts back this run, and it did not hit any cached posts from the run 12 hours ago.. So that means we can push back further. My goal for tomorrow (caturday) will be to check every post lol.
+The one great part about the caching is if you change your mind and want to go back further than you just ran you won't hit those that you just did. Otherwise it seems very difficult lol.
+
+Really need to implement reply reading next, like I was talking about before. that's gonna be huge.
+
+2025-01-31 1630
+I was scrolling through my Siamese cat feed when I saw a picture that perturbed me - a Siamese cat like ricky, no alt text, with 514 likes from yesterday. The user has less than half my followers and follows fewer people than that. 
+But they do have 2400 posts, where I only have a few less than 200. They must be doing a LOT of replying.
+My first instinct was to just go through and follow everyone who liked that cat post.
+Maybe it's a mistake to try to follow Content creators. I want to get the people that ENJOY the kind of content I'm putting out.
+
+What I need to do is find a way to do a graph traversal, whenever one of these cat pictures I encounter is popular, we have to go through all of the people liking those posts and start following THEM.
+drum up more engagement on our own posts.
+
+Also I want to create a function for the logging so that I can create a customized field where I can say like "we're updating our friends list today because I liked 500 users on my app instead of through rickybot"
+but it has to be like... not permanent I don't want to accidentally set all of the logging functions to that so I won't do it for now.
+
+But new goals
+1. like likers
+2. like replies
+
+we still check if the post is in the cache
+but before we skip it due to it being a mutual follower post or someone we already follow post check the number of likes that the post has.
+	if it is over say 10? 25? then we check if it's a cat post regardless of if we follow that person or not and do like-based-following.
+		but obviously if it's not a cat post then we skip it
+
+This is a fundamental change in strategy, and though it will ruin the "timeline" because I won't have a perfectly cultured feed of cat posts forever, I will improve engagement.
+Should I go to the cat-liker and like one of their posts before following? probably not. who knows what they're posting, after all.
+but i guess if they show up in the cat feed then they'll get some mutual likes.
+
+It's also time to discard other feeds. We only need Caturday + 1 cat type feed. Siamese Cats will be our primary.
+
+Should write a query that groups entries in the follows table by the date_added and follows_you cols, so we can count the number of people from every batch that have and haven't followed
+count follows you, count doesn't follow you, and % of followbacks from this batch
+
+2025-02-01 01:01
+I realize now that liking all likers of a post can lead to "friend bombs." 
+I'm trying to keep a reasonable number of follows from posts and wasn't planning on capping follows from likes, but now i'm seeing posts with like THOUSANDS. I know I want more follows but how many more? hm.
+
+
