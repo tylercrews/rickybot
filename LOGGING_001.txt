@@ -593,3 +593,16 @@ cur followers: 2744
 now following: 4972
 
 ____________________
+
+
+2025-02-01 11:08:02.155018-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 2829
+previously following: 4972
+
+
+cur followers: 2829
+now following: 4972
+
+____________________
