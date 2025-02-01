@@ -663,3 +663,32 @@ cur followers: 2963
 now following: 6817
 
 ____________________
+
+
+2025-02-01 13:36:32.961399-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 3002
+previously following: 6817
+
+Feed 'Caturday':
+Feed 'Caturday':
+  Followed 5 new users!
+    Of those, 5 were from posters, and 0 were from likes.
+  12 posts in total were viewed in this run.
+  Skipped Posts: 0 posts were previously seen, 2 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 10 posts had pics attached: 5 were identified as cat pics and 5 were not cats.
+  5 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+2. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738438595', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 18:56:57 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'});; 
+4. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738438595', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 18:57:00 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'});; 
+8. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738438595', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 18:57:04 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'});; 
+9. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738438595', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 18:57:05 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'});; 
+11. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1738438595', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sat, 01 Feb 2025 18:57:06 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+
+
+cur followers: 3066
+now following: 7964
+
+____________________
