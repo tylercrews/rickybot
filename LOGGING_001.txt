@@ -401,3 +401,89 @@ cur followers: 2594
 now following: 6328
 
 ____________________
+
+
+2025-02-01 01:35:57.065914-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 2692
+previously following: 6329
+
+Feed 'Caturday':
+Feed 'Caturday':
+  Followed 1 new user!
+    Of those, 1 were from posters, and 0 were from likes.  5 posts in total were viewed in this run.
+  Skipped Posts: 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 1 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 3 posts had pics attached: 1 were identified as cat pics and 2 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Caturday':
+  Followed 3 new users!
+    Of those, 3 were from posters, and 0 were from likes.  9 posts in total were viewed in this run.
+  Skipped Posts: 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 2 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 6 posts had pics attached: 3 were identified as cat pics and 3 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Caturday':
+  Followed 0 new users.
+    Of those, 0 were from posters, and 0 were from likes.  9 posts in total were viewed in this run.
+  Skipped Posts: 9 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Caturday':
+  Followed 6 new users!
+    Of those, 6 were from posters, and 0 were from likes.  30 posts in total were viewed in this run.
+  Skipped Posts: 10 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 1 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 1 posts had videos attached.
+  Processed: 17 posts had pics attached: 6 were identified as cat pics and 11 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Caturday':
+  Followed 6 new users!
+    Of those, 6 were from posters, and 0 were from likes.  49 posts in total were viewed in this run.
+  Skipped Posts: 36 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 2 posts had videos attached.
+  Processed: 10 posts had pics attached: 6 were identified as cat pics and 4 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Caturday':
+  Followed 41 new users!
+    Of those, 17 were from posters, and 24 were from likes.  99 posts in total were viewed in this run.
+  Skipped Posts: 52 posts were previously seen, 2 were from users already followed, 0 were your posts.
+  Mutuals: 3 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 0 posts had no media attached, and 5 posts had videos attached.
+  Processed: 37 posts had pics attached: 17 were identified as cat pics and 19 were not cats.
+  1ERRORS WERE ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+
+Feed 'Caturday':
+  Followed 127 new users!
+    Of those, 34 were from posters, and 93 were from likes.  198 posts in total were viewed in this run.
+  Skipped Posts: 99 posts were previously seen, 9 were from users already followed, 0 were your posts.
+  Mutuals: 1 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 3 posts had no media attached, and 7 posts had videos attached.
+  Processed: 79 posts had pics attached: 34 were identified as cat pics and 45 were not cats.
+  No errors were encountered while processing pics. 
+
+Feed 'Siamese Cats':
+  Followed 301 new users!
+    Of those, 75 were from posters, and 226 were from likes.  385 posts in total were viewed in this run.
+  Skipped Posts: 198 posts were previously seen, 11 were from users already followed, 0 were your posts.
+  Mutuals: 13 posts were from users that follow you, and these posts were liked.
+  Unprocessed: 3 posts had no media attached, and 13 posts had videos attached.
+  Processed: 147 posts had pics attached: 75 were identified as cat pics and 72 were not cats.
+  No errors were encountered while processing pics. 
+
+
+cur followers: 2699
+now following: 6818
+
+____________________
