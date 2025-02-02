@@ -363,4 +363,64 @@ count follows you, count doesn't follow you, and % of followbacks from this batc
 I realize now that liking all likers of a post can lead to "friend bombs." 
 I'm trying to keep a reasonable number of follows from posts and wasn't planning on capping follows from likes, but now i'm seeing posts with like THOUSANDS. I know I want more follows but how many more? hm.
 
+2025-02-01 02:51
 
+2500 Deletions got back to weds
+need way to keep track of the db stats
+
+
+2025-02-01 0423
+ok maybe i pushed a little too far
+got rate limited
+so that's not good
+but more importantly it totally borked the whole notebook and messed up my logging. Ran an update-db check to get the new users in. I was excited that my logging was working and I was watching the progress seeing all the ? emojis pop up. Very good visual warning lol. In the except clause I need to add a little more handling to bail out early if we go over like 10
+
+"Under this system, an account may create at most 1,666 records per hour and 11,666 records per day. That means an account can like up to 1,666 records in one hour with no problem. We took the most active human users on the network into account when we set this threshold (you surpassed our expectations!)."
+https://docs.bsky.app/docs/advanced-guides/rate-limits
+Action Type	Value
+CREATE	3 points
+UPDATE	2 points
+DELETE	1 point
+
+
+2025-02-01
+stop liking myself in the post likingfollows
+since we have to make queries to get replies THAT is a reason to cap it to only popular posts, probably only worth it with like 25+ likers
+
+2025-02-01 1220
+690 worked no problem.
+if you have 11666 and 1666 per hour that is 7 runs. if you have 7 runs in a day that is every 3.5 hours
+so theoretically an optimal workload for the day would be <max amount of likes in 1666 points of CRUD> * 7 [at 0100, 0900, 1200, 1500, 1800, 2100, 2400]
+now we just need to push to see what the max requests you can do in an hour really is.
+1000 broke but I think that's because it was our second batch in an hour because I was testing code.
+690 worked good this morning.
+Next time we'll push to 1000 to see
+I'm thinking that even if the liking posts drops down the rate limiting from like 1666 follows to only 1000 or 1500, that's still probably more than we can get from how many actual catposters we can follow in 3 hours, which would probably be like 500 maybe? But actually the reads are not create, update, or deletes so they shouldn't score any more points, it should still be 1666
+hopefully the like queries are taking less than I thought and we can get pretty close to 1500 follows per batch.
+I suppose instead of testing with 1000 next I should test 1500 next to make sure the rate limit is being handled ok now that I have that error handling break.
+Let's stress test and do a full 1669 to make sure we hit the breaking point
+
+Once we're habitually running maxxed out posts the cache will actually be useful, too! making sure we don't repeat work for real. I stopped pasting the queries in but I'll try it on this run that has only 2 hours of gap to see if it's useful in best case scenarios
+
+looks like even if a post has 227 likes I'm only seeing the first 50. must be another page system, gotta fix that handling
+tally up likers who were already followed/following and log that at the end of that function
+
+ok wow the db cache actually worked a little on that stress test run
+
+but we got 1201 new follows in our stress test run. not sure how many that was from liking posts and mutuals posts. 
+need a successful run on the logs I accidentally forgot to put the error array in my join and blew it. next time though.
+you really don't want to hit rate limit though, because then you can't like and respond to users on your phone. bad for engagement.
+second stress test got 1140 new follows, definitely liked a lot more mutual posts because I was going through a lot of the ones I error-parsed last time.
+The error handling is finally fixed and will successfully return out of the function and log now even if bad things happen.
+
+when doing runs hour-to-hour the db cache was actually clutch. Extremely clutch. stopped processing like 6 pages of entries once we got towards the end.
+which made our stress test not actually be so stressful, but that's a good thing. don't want to get rate limited for no reason lol.
+
+
+ALWAYS NEED TO set up deletion day on Friday. Saturday should be adds only. We want to max growth on Saturday 100%, so that means no spending any of our CRUD point allowance on deletions.
+1000 points on two thousand deletions was 333 follows we couldn't get to. but that's fine 3888 - 333 brings it down to 3555 for the day
+
+finally got a successful stress test off!
+error handling worked perfectly
+1322 new users was max, with 32 mutual likes and 317 likes on the cat pics themselves
+= 1671 actions. Pretty damn close to the the 1666 estimated.
