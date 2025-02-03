@@ -1060,3 +1060,19 @@ cur followers: 4460
 now following: 9510
 
 ____________________
+
+
+2025-02-03 17:26:48.968439-05:00
+DELETING OLDEST FOLLOWS THAT ARE NOT FOLLOWING BACK
+
+prior follower count: 4497
+previously following: 9510
+
+4700 entries were deleted from the database.
+Successfully unfollowed 4700 users.
+Encountered 1 failures.
+
+cur followers: 4497
+now following: 8741
+
+____________________
