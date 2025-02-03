@@ -1077,6 +1077,18 @@ now following: 8741
 
 ____________________
 
+2025-02-03 17:40:20.414122-05:00 -- manually fixed top, got deleted by some bad code
+UPDATING "FOLLOWS" TABLE IN DATABASE
+
+prior follower count: 4497
+previously following: 8741
+
+Analysis of follows shows: 
+  Started Following: 31
+  Stopped Following: 0
+  New Follows Added To DB: 4 
+  Follow Link Mismatches: 0
+Successfully produced queries and made changes to table as necessary.
 
 completed at: 2025-02-03 17:40:20.414122-05:00
 time diff: 0:00:11.724382
