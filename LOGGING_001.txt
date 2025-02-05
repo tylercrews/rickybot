@@ -1197,3 +1197,28 @@ cur followers: 4807
 now following: 10919
 
 ____________________
+
+
+2025-02-04 22:12:13.700004-05:00
+UPDATING "FOLLOWS" TABLE IN DATABASE
+
+prior follower count: 4807
+previously following: 10919
+
+10241 entries were found in the database "follows" table prior to updating.
+
+Analysis of follows shows: 
+  Started Following: 281 
+  Stopped Following: 3 
+  New Follows Added To DB: 296 
+  Follow Link Mismatches: 1 
+
+completed at: 2025-02-04 22:12:30.619201-05:00
+time diff: 0:00:16.919197
+
+Successfully produced queries and made changes to table as necessary.
+
+cur followers: 4808
+now following: 10919
+
+____________________
