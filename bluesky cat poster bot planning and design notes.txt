@@ -424,3 +424,91 @@ finally got a successful stress test off!
 error handling worked perfectly
 1322 new users was max, with 32 mutual likes and 317 likes on the cat pics themselves
 = 1671 actions. Pretty damn close to the the 1666 estimated.
+
+
+automation - need to find some way to make sure we always have enough API power.
+if we get a rate limit schedule update for an hour after, delete an hour after that. Or something, just gotta prevent jobs from running within an hour of each other.
+
+
+how can I automate the statistics table? 
+I want to pull this query to keep recording the percent of obtained followers at different times.
+
+Time for a big combination of both documents.
+I want to create a "settings" bar at the top 
+how much I want to run the program, which feeds to run, whether or not to update, and whether or not to delete
+The only thing is I really need to get database connectivity sorted out or I still have to do the copypasting for the cached posts and for the deletions. So annoying. 
+If I could get the database connectivity I wouldn't even need to do copypasting at all. hm. Maybe I should reprioritize that.
+Still, I think we almost always want to update our database shortly after running these queries so I'll at least bring that in and set some variables at the top in place of the parameters I keep changing.
+
+2025-02-02 1607
+when i was on a walk i realized that I do want to make the stats table. 
+It should have date, # added total, # followbacks current, and followback% at sub2h, sub6h, sub12h, sub24h, sub48h, sub72h, sub1week, sub1month, and ending% After a week any non-followers will probably be purged, with our new higher rate I don't think people will last longer than a few days, really. when a date is purged then we get the final ending% value of followbacks. 
+
+
+2025-02-03 0939
+I keep thinking about this problem of automation, and I was wondering of if I should even have any self-hosted parts at all. Perhaps it would be better for my development as a developer to put the aws practices I'm learning into effect instead of the sql ones.
+I was looking at this service that lets you automate a jupyter notebook, but I keep trying to do the math on the runtime 
+
+Maybe I need to use the timer magic on one page of 100 posts in a feed. run that as many times as possible and see how much runtime it takes. 
+Or maybe my logging I can add another timer to the logging before it posts so I can see how much cpu time it will take.
+
+Regardless I'm thinking that maybe if I containerize the function to preserve the bsky and ml imports, we can turn this script into a lambda function on aws so that it's easy to automate.
+Then if I used dynamodb instead of aws rds I could be entirely serverless and that would be pretty cool.
+The only thing is it would discard the database components as they are in favor of a NoSQL version.
+And that would require a bit of refactoring, because I've learned that dynamodb runs on apis to delete key-value pairs, and that the max you can do in a batch is 25, so it isn't really prepared to process huge loads of multiple thousands.
+
+But here's how I'm thinking we refactor.
+Instead of storing the entire database of friends in dynamodb, we store RUNS in dynamodb. we have a key which is the date, and the value is an array of dids that we added during that run. A set amount of days after that run completes, we pull that entry's array, check every follower to see if they're following now. and if they're not, delete them. Pruning based on batch date rather than on a query to get the oldest users from the db.
+The only things that we would have to account for better is 1. getting human-added users into a batch somehow, and 2. picking up on the random one-offs where they followed during that first week but then later unfollowed.
+Maybe like once a week we have a full overhaul of the friends list and see how everything is doing? A super-batch of sorts. Every week we create a superbatch of every follow we have, and then the following week we see how that went and create a new superbatch of what's left next. 
+If we're doing that we almost don't need to worry about the other days as much.
+Maybe one deletion update can happen every night to cover the follows from exactly 7 days prior.
+
+Migrating to AWS will definitely solve the issue of our self-hosted db communication issue. 
+But to implement it first we need to figure out if this containerized deployment of the routine to a lambda function will work at all. So I'll try to get what we've got put into a lambda function for now. Maybe the lambda function can email me the outputs with amazon sns so I can paste the queries in. 
+We'll focus on automating there, and then once we know that we CAN do it that way, I'll incorporate dynamodb and we'll redo the lambda once that works.
+
+i think that this kind of solution should scale better. We know our max scaling is capped by the bluesky api rate limiting now. 
+Caturday is a power day, and the other days can take it easy. That way we can average out our usage over the course of the month (aws bills by month).
+
+this would also solve the issue of rate limits being encountered by deletions too. It takes much longer, looks like about 3930 instead of 1700 (not sure how the rate limiting math works there, should still be 2 points instead of 3 but i guess without the post liking that adds up a lot) but I managed to accidentally stress test without thinking on 4500.
+Curious what happens when we run the same batch of deletions in an hour when our rate limit unexpires but we've already half-processed them.
+Suffice to say we should only delete 3500 users in a batch max in the future from now on. Added error handling to the deletion part too though so that's good.
+
+Well I think the program didn't actually fail due to rate limiting, there was actually a None value in the list that caused an error at 3930, exactly where our program stopped. I left the None value in this time and it appropriately caught the error. 
+I do need to fix the logging to somehow see how many people we actually deleted though.
+
+And also need to add a second logging time to the end to see the end times for everything! Gotta start measuring time.
+
+So to solve the dynamodb problem for the other table, posts, the posts cache.
+what we'll store is just a single row, which is the posts we encountered in our last post. That way the size doesn't grow exponentially, it only is one read and one write every time, and we store it pre-parsed into an array already. Ezpz
+
+
+this run of 403 posts 691 follows took 7:00.2087, which is 420 seconds.
+
+aws gives 3.2 million seconds of compute time per month free
+gb of compute time is measured by how much memory you're using too, so I need to start tracking the memory of my program so I can get an impression of how it's growing per follow+posts
+
+2025-02-03 2209
+OHH! I just had a brilliant idea of how to handle some of the stragglers. If someone unfollows we shouldn't keep them in the pool and reintroduce them to a new batch, instead we should add those people to the delete query and just unfollow them ourselves because there's no way they're coming back. That means all we need to account for is the people we're adding manually.
+
+maybe it's backwards to containerize and then set it up to work with dynamodb and then recontainerize.
+dynamodb should be an easy hookup now that we have things planned out.
+
+2025-02-07 0149
+been taking a break from updating the program so that I can focus on learning AWS concepts, primarily lambdas and how to dockerize this project so we can automate that way.
+Will need to create some memory benchmarks so that we can get an initial impression of how much memory our program needs. We might be able to do it through playing around though, Mostly assuming that we'll be comparing 1gb vs 2gb. Not really worried about the memory limits itself, but rather that the cpu allocated to us will be better with higher mem and that might help run the computer vis.
+
+I'm also thinking about the math of how we should be running it.
+Since we don't really need to limit the cron jobs anymore, we could do as much as 1 every half hour if we really wanted to. I'm not a fan of that idea because I think it will cause too much overlap.
+I think 1 per hour on caturdays, and one every 2 hours on not-caturdays.
+Will need to look how EventBridge does scheduled asynchronous invocations for the lambda function, and see what kind of info I can pass in there. Perhaps it will be able to say what feed we're using, but might need to just handle that in code the way I'm doing it now. 
+
+so let's think about maxes
+11666 per day, 1666 per hour. 1322 new users was max, with 32 mutual likes and 317 likes on the cat pics themselves
+= 1671 actions
+11666/1666 = 7.002400 MAXED OUT runs per day. So if we want to do 4 runs per day we could simply divide the max out by 4, which should give us enough of a buffer since 24/7 is ~ 3.5
+instead of looking for 1322 follows, we'll look for 300, which will also give us plenty of buffer for likes.
+So every hour on caturday we do 300 follows, which will gain us 7200 follows.
+every day except Saturday we'll have a deletion time that gets rid of everything from older than one week prior.
+non caturdays we should do maybe like 250 every 2 hours? that's 3000 per day and should give us plenty of room to do our deletions. Friday will be sketchier, but we just need to schedule the deletions on an off-hour
