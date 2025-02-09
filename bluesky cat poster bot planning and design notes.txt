@@ -512,3 +512,71 @@ instead of looking for 1322 follows, we'll look for 300, which will also give us
 So every hour on caturday we do 300 follows, which will gain us 7200 follows.
 every day except Saturday we'll have a deletion time that gets rid of everything from older than one week prior.
 non caturdays we should do maybe like 250 every 2 hours? that's 3000 per day and should give us plenty of room to do our deletions. Friday will be sketchier, but we just need to schedule the deletions on an off-hour
+
+2025-02-07 1215
+going to try to stress test deletions again. trying a batch of 5000 to see how it goes
+my logging on the deletion function really needs to be improved. 
+I did hit the rate limit, but for some reason it doesn't register deletions like that.
+went from 12934 to 7953 and it said successfully deleted 5000, so I never hit 5 rate limit errors, but when I tried to do some follows afterward to see how much ratelimit space I had left, it was already ratelimited.
+the max deletions you can do in an hour is 4981, it seems.
+I tried to add some printing to show what I'm deleting and now i'm getting rate limit errors on the deletions and it's picking up, but idk why it didn't during the run. weird.
+
+if we don't manage to get through all the users in a deletion queue we should save an array of them to be deleted at the next possible time.
+
+
+1. need to refactor for this deprecation warning about 
+FutureWarning: The class ViTFeatureExtractor is deprecated and will be removed in version 5 of Transformers. Please use ViTImageProcessor instead.  warnings.warn(
+2. should I change timing to see how long the setup takes to get an impression of how long the lambda will actually be charging?
+-- nah this will either work or not lol
+3. still thinking about how many runs to do on caturday
+1322 * 7 = 9250 per day /48 = 192.8
+I think instead of doing 300 every hour maybe we do 175 every half hour. the closer we get to when people are posting the better. 
+smaller batches will be better in case we encounter errors as well, and will decrease the size of the previously seen post CIDs being processed.
+4. FIGURE OUT HOW TO DIFFERENTIATE SUCCESS AND FAILURE WHEN REMOVING FRIENDS
+
+
+I think maybe I need a lambda function that will collapse all the follows obtained from each run in a day
+and join them together?
+or maybe you can just append all the new values to a db entry
+then when deletes happen it will just take the biggest chunk it can out of that array
+but deletes will be more like updates, because we check the status of everyone we followed
+
+so there will be two stores:
+weekly update store of all friends - this allows us to check for sneaky people who stop following us once a week
+daily update store - all follows added from runs on x date, then deletions will be processed 7 days later
+except for caturday runs which will be processed 10 days later instead. 
+still trying to think of an elegant way to do this. 
+we could have 14 buckets and check the corresponding bucket, at the end of every day you turn the current day bucket into the previous week's bucket that could be something
+the caturday handling is still annoying though, but we really HAVE to maximize our gains on this day.
+so Monday is deletion day, Monday will check Saturday, and at the end of every Monday new Saturday turns into old Saturday and new Monday turns into old Monday. we'll just have to add extra handling to include Saturday in the Monday handling.
+
+14 things in dynamodb seems very manageable. and instead of loading and appending every time, we can add a timestamp for the run as a key inside the new_day key, then an array of all the people followed.
+At the end of the day when we're converting new day into old day, THAT's when we'll combine all of the new runs into a single array of follows to be stored in the old_day key directly
+so
+old_monday : [followers, added, the, previous, monday]
+new_monday : 2025-02-10-0123 : [followers, added, this, run]
+		2025-02-10-0532 : [followers, added, this, run]
+
+I also like this because rather than matching some non-specific timestamp date everything will be easier to reference as a key-value pair. Provided that there's a way to iterate through all keys of the dynamodb which obviously there should be.
+Also instead of having delete day be Monday, I think we can combine Friday-Saturday into the delete day.
+We'll just make sure that the update combines everything end of Saturday instead of end of Friday. 
+
+the previously seen cached posts are so useless lol i almost want to scrap this feature.
+
+
+There is a new error that's been popping up today, I suppose it was the same one that broke my function once and inspired me to wrap the getfeed in a try catch, but what's interesting is there's no error message to it. Stackoverflow told me to use repr(e) to get the error type. So at least now I can see that it's an InvokeTimeoutError. But not sure what to do about that. Why would it time out after going through 11 pages? idk but my code is handling it and i'm not totally upset by the early finish. Especially when we convert to shorter runs it will be ok.
+just good that we're logging it appropriately in case it becomes a bigger deal in the future.
+
+to stop storage from cropping up with stats I want to make another Logging file just for stats on GitHub that we'll push to every time that we finalize the weekly stats of a batch. like after 7 days we see how many followbacks we got, logging the percentage and then allowing that data to be deleted, getting it out of the dynamodb capacity.
+Should I use auto-expiration to save on write costs? probably doesn't matter with our limited level of throughput, but we Could that's good to know. Since we have the write capacity unutilized though, I think we should wait to delete until we have for sure processed our data.
+
+Ok I'm watching this course on dynamodb and they're really emphasizing not to get really big attributes in there.
+I think dynamodb will still be perfect for the set of post ids from the previous run. Should never be bigger than like 500 and we really need speed to make that efficient.
+I think DynamoDB might be a good place to store the resulting follows as well.
+But when we combine the resulting follows together and hold them until the following week we should probably store that in S3 instead. Especially since friday+sat will get up to like 13000 follows maybe. Split Friday and sat into two different dynamodb keys and just combine them together into s3
+So we'll have an even better microservices architecture -
+1. main function adds follows, reads and writes last seen set of posts to dynamodb, writes new follows to dynamodb
+2. weekly checkup writes current follows to s3, compares last week's friends from s3 to current follows+followers
+3. daily combiner takes daily run data (follows added) from DynamoDB and combines it into a larger set of daily data to hold for one week
+4. weekly stats processing and deletions takes s3 data of follows from 7 days ago, checks how many follows followbacked, deletes non followers from bluesky, deletes data from s3 and puts output to GitHub as logging.
+
