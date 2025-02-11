@@ -1897,3 +1897,29 @@ cur followers: 7003
 now following: 20495
 
 ____________________
+
+
+2025-02-10 21:07:36.599857-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 7100
+previously following: 20499
+
+Feed 'Siamese Cats':
+  Followed 1048 new users!
+    Of those follows, 255 were posters and 793 were from likes.
+  873 posts in total were viewed during this run.
+  Skipped Posts: (142) - 2 posts were previously seen, 140 were from users already followed, 0 were your posts.
+  Mutuals: 84 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (70) - 24 posts had no media attached, and 46 posts had videos attached.
+  Processed: 577 posts had pics attached: 255 were identified as cat pics and 322 were not cats.
+  No errors were encountered while processing pics. 
+
+
+completed at: 2025-02-10 21:19:24.613869-05:00
+time diff: 0:11:47.841470
+
+cur followers: 7118
+now following: 21547
+
+____________________
