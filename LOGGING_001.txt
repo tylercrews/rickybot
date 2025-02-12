@@ -2178,3 +2178,37 @@ cur followers: 7450
 now following: 12752
 
 ____________________
+
+
+2025-02-12 13:12:45.771874-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 7504
+previously following: 12752
+
+Feed 'Siamese Cats':
+  Followed 737 new users!
+    Of those follows, 135 were posters and 602 were from likes.
+  410 posts in total were viewed during this run.
+  Skipped Posts: (28) - 1 posts were previously seen, 27 were from users already followed, 0 were your posts.
+  Mutuals: 35 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (33) - 10 posts had no media attached, and 23 posts had videos attached.
+  Processed: 314 posts had pics attached: 135 were identified as cat pics and 179 were not cats.
+  5 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+8. ;; 
+9. Response(success=False, status_code=502, content=b'<html><body><h1>502 Bad Gateway</h1>\nThe server returned an invalid or incomplete response.\n</body></html>\n\n', headers={'cache-control': 'no-cache', 'content-type': 'text/html'});; 
+11. Response(success=False, status_code=503, content=b'<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n\n', headers={'cache-control': 'no-cache', 'content-type': 'text/html'});; 
+12. Response(success=False, status_code=503, content=b'<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n\n', headers={'cache-control': 'no-cache', 'content-type': 'text/html'});; 
+13. Response(success=False, status_code=503, content=b'<html><body><h1>503 Service Unavailable</h1>\nNo server is available to handle this request.\n</body></html>\n\n', headers={'cache-control': 'no-cache', 'content-type': 'text/html'})
+
+
+completed at: 2025-02-12 13:19:15.150480-05:00
+time diff: 0:06:29.231016
+
+completed at: 2025-02-12 13:24:38.225843-05:00
+time diff: 0:11:52.306379
+
+cur followers: 7524
+now following: 13487
+
+____________________
