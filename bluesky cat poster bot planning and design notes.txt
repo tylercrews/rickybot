@@ -580,3 +580,55 @@ So we'll have an even better microservices architecture -
 3. daily combiner takes daily run data (follows added) from DynamoDB and combines it into a larger set of daily data to hold for one week
 4. weekly stats processing and deletions takes s3 data of follows from 7 days ago, checks how many follows followbacked, deletes non followers from bluesky, deletes data from s3 and puts output to GitHub as logging.
 
+
+need to write an alert in the logging if ratio goes too high 
+and write a logger line for what the percent is at the final cur followers:now following statement.
+
+the part 12345 system I've got going in GitHub needs to change, need to do a final upload of this part (3 & 5), then part 6 will be where I break the files up into their microservices - 
+the add followers is good where I can run all the steps and it's a self contained program, that will be easy to convert to a python program and lambda-fy it.
+So I need to do that with the Update service, as well as the Delete service (which will include an update service at the beginning.
+
+things to look up how to do 
+1. plug in aws services into the functions in all of the spots where we're inputting or outputting our PostgreSQL queries/results.
+2. dockerizing for lambda, how to upload
+3. getting the secrets in and out of secretkeeper or whatever that one's called
+4. disconnecting runtime when finished
+
+timing time it takes to update might take too long at like 1000000 follows if we only have 15 mins
+
+need to add logging stats how many followers we had at the time of the end of the week.
+like when we delete Mondays we say how many followers we had before and after so we can record it on the % capture followback to compare to
+
+2025-02-11 0414
+I've had what I would call decision paralysis in deciding what my priority for this migration to AWS services should be. I keep getting hung up on the process of lambdaizing and eventbridge and docker, when I really need to just keep getting things done.
+I was reflecting on it once again just now, and had a burst of insight on how to proceed.
+Rather than trying to do the complicated parts first and then filling in the easy parts, I need to just get everything I CAN do done. 
+What that means for me is the next phase of this project is microservice-ization and incorporating dynamodb and s3 where I want to.
+I can use the api services that connect you into those storages and incorporate them into my current workflow while still running my program manually - I was kind of inspired by the AWS recommendations on migrating to dynamodb by transitioning your database by connecting new writes to dynamodb and then once the service is live moving the data over.
+The hangup with dockerization is that pytorch is big and we need to do a containerized lambda for the photos. But pytorch and our ViT are ONLY used in the photo identification code. We don't need to worry about containerized lambdas for our microservices to 1. check follows list from last week and make sure nobody unfollowed us 2. delete users purge 3. combine the daily runs into s3 storage to purge
+So what I want to do next is create a version of this that starts to do all of the aws stuff. Have the runs export to dynamodb. write the microservice to convert dynamodb to s3. get our delete queries from s3 and delete them daily. Those don't need to be containerized and should be easier to set up in lambda. Which means that I can then learn how that normal process works, get some experience there, and set up those functionalities with eventbridge to practice using that.
+Then the final piece of the puzzle will be the final conversion of dockerizing the main gain-follows routine, and using what I already know to set up eventbridge to get it to start going by itself.
+this is doable. I can do this. Clear path and priorities.
+
+First I need to get rid of this none mismatch issue in the update code it's messing up my logs. how do I keep getting myself in this damn database
+
+40000 lines of text is getting very unwieldy to paste into colab, too. it's time to move on from this system of updates for sure lol
+add timestamping to delete service
+check notes for other to do items
+
+Side note I'm very happy to be decoupling the deletion process from the update process - having to recheck your full friends list 3 times a day for these days where i'm purging 10500 people is really obnoxious.
+Also i'm glad that we're going to be deleting users in batches, because when we partially delete a batch it makes the stats look a little funky on the bottom row. not a big deal there though.
+
+2025-02-12 0222
+looks like getting rid of the deprecation error was ezpz. luckily i had the old cat testing colab intact so I could just plug in the new package and it worked exactly like it did before, 100% same results.
+The last big fix I need to do is get rid of the authentication warning from huggingface. supposedly logging in gets you a higher rate limit and might have better download speed, so the last thing I want to fix before microservicing is getting that set up correctly.
+
+
+2025-02-12
+NEED TRY CATCHES AROUND FOLLOWING+FOLLOWERS
+literally anything that has an api call. 
+Had a bad gateway error just now 
+
+2025-02-12
+wow fixing the huggingface and vit warnings were literally the easiest things to do ever lol. shouts out to deepseek and chatgpt.
+Moving on to the unofficial phase 6 today. - microservices.
