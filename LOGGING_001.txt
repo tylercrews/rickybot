@@ -2649,3 +2649,29 @@ cur followers: 8522
 now following: 17440
 
 ____________________
+
+
+2025-02-15 11:02:53.431591-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 8525
+previously following: 17440
+
+Feed 'Caturday':
+  Followed 500 new users!
+    Of those follows, 163 were posters and 337 were from likes.
+  495 posts in total were viewed during this run.
+  Skipped Posts: (138) - 99 posts were previously seen, 39 were from users already followed, 0 were your posts.
+  Mutuals: 49 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (17) - 5 posts had no media attached, and 12 posts had videos attached.
+  Processed: 291 posts had pics attached: 163 were identified as cat pics and 128 were not cats.
+  No errors were encountered while processing pics. 
+
+
+completed at: 2025-02-15 11:09:40.144350-05:00
+time diff: 0:06:44.850283
+
+cur followers: 8533
+now following: 17940
+
+____________________
