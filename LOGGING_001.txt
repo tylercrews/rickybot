@@ -3197,3 +3197,34 @@ cur followers: 9383
 now following: 23312
 
 ____________________
+
+
+2025-02-16 19:37:24.711520-05:00
+FINDING NEW FOLLOWERS
+
+prior follower count: 9484
+previously following: 23312
+
+Feed 'Siamese Cats':
+  Followed 70 new users!
+    Of those follows, 30 were posters and 40 were from likes.
+  99 posts in total were viewed during this run.
+  Skipped Posts: (11) - 0 posts were previously seen, 11 were from users already followed, 0 were your posts.
+  Mutuals: 13 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (6) - 1 posts had no media attached, and 5 posts had videos attached.
+  Processed: 69 posts had pics attached: 30 were identified as cat pics and 39 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:;; 
+ModelError("1 validation error for Response\nfeed.13.post.embed.`app.bsky.embed.images#view`.images.0.aspectRatio.$type\n  Input should be 'app.bsky.embed.defs#aspectRatio' [type=literal_error, input_value='app.bsky.embed.images#aspectRatio', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.10/v/literal_error"): 1 validation error for Response
+feed.13.post.embed.`app.bsky.embed.images#view`.images.0.aspectRatio.$type
+  Input should be 'app.bsky.embed.defs#aspectRatio' [type=literal_error, input_value='app.bsky.embed.images#aspectRatio', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/literal_error
+
+
+completed at: 2025-02-16 19:38:43.373883-05:00
+time diff: 0:01:18.449994
+
+cur followers: 9484
+now following: 23382
+
+____________________
