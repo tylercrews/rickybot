@@ -1,2 +1,40 @@
 LOGGING_ADD_02
 ~~~~~~~~~~~~~~~~~~~~
+
+2025-02-18 13:13:37.748208-05:00
+WARNING - failed to authenticate huggingface
+WARNING - successful response from dynamodb but there were no items in the post cache key.
+prior followers: 9864 | previously following: 14829
+Feed 'Siamese Cats':
+  Followed 0 new users.
+    Of those follows, 0 were posters and 0 were from likes.
+  992 posts in total were viewed during this run.
+  Skipped Posts: (992) - 992 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (0) - 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  No errors were encountered while processing pics. 
+Feed 'Siamese Cats':
+  Followed 38 new users!
+    Of those follows, 38 were posters and 0 were from likes.
+  98 posts in total were viewed during this run.
+  Skipped Posts: (3) - 0 posts were previously seen, 3 were from users already followed, 0 were your posts.
+  Mutuals: 8 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (3) - 1 posts had no media attached, and 2 posts had videos attached.
+  Processed: 84 posts had pics attached: 38 were identified as cat pics and 46 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:;; 
+InvokeTimeoutError(): 
+Feed 'Siamese Cats':
+  Followed 1007 new users!
+    Of those follows, 194 were posters and 813 were from likes.
+  701 posts in total were viewed during this run.
+  Skipped Posts: (144) - 99 posts were previously seen, 44 were from users already followed, 1 were your posts.
+  Mutuals: 61 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (39) - 11 posts had no media attached, and 28 posts had videos attached.
+  Processed: 457 posts had pics attached: 194 were identified as cat pics and 263 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:22:27.105015 | completed run at: 2025-02-18 13:36:04.853223-05:00
+cur followers: 9883 | now following: 15889
+
+____________________
