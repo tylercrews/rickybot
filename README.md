@@ -1,7 +1,6 @@
-# bskyCatPostMan
-Bluesky Bot App To Manage Posting And Account Growth
+# rickybot
+Bluesky Bot App To Manage Account Growth
 
 * feed browsing
 * cat poster identification
 * follower management
-* cat posting automation
