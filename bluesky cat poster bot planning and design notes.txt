@@ -632,3 +632,44 @@ Had a bad gateway error just now
 2025-02-12
 wow fixing the huggingface and vit warnings were literally the easiest things to do ever lol. shouts out to deepseek and chatgpt.
 Moving on to the unofficial phase 6 today. - microservices.
+
+https://chatgpt.com/canvas/shared/67ada1671f608191b452635f1df5c034
+tried to see how close chatgpt could get me to a step by step we'll see how correct it is if I just follow it.
+
+note to self - when you refactor to only have one block of seen posts, make sure you keep the cids of any posts that are seen again in the next run so they're not forgotten. This will enable 30min runs if desired
+
+2025-02-15 2359
+today I painstakingly load tested the Saturday runs. Did a run almost every hour, sometimes half hours or 45 mins to try to make sure we didn't overdo anything. In all I followed just over 8000 people, and gained ~1000 new followers. 
+I think the insights I've gained are 1. I never want to do this many runs manually again. 2. following back closer to the time that people post isn't necessarily going to improve the followback rate dramatically. 3. the numbers I previously stated should be good without overdoing anything. I think it'll be hard to hit the cap every week actually. 4. half hour and 45 mins are unnecessary, doing a run every hour will be plenty sufficient. In fact I'm considering going way down on the main days, maybe like once every 3 or 4 hours instead. There just aren't enough posts to merit running the program that long. 5. I think my strategy of keeping just the most recent seen posts will be sufficient, provided that I make sure that I code it to keep any cids that are seen in the current run (even if they were previously seen). 6. once you have 45000 lines of text in a cell it starts to take a little bit for your ram to handle it in browser lol. I'm really excited to automate this process as well. Definitely going to try to take a break from updates and deletes until we try to start automating.
+1 in 8 day of is a pretty good rate, especially since many of the follows were in the recent 4 hours. All in all I'm pretty satisfied.
+Up to 9200 followers, almost ready to crack that mythical 10000 that chatgpt said would make me a low level influencer. That's exciting.
+
+Started setting up the aws stuff, I really need to get moving on it. Realized that it would be easiest to transition by using an AWS User not a role for the transition code, and then the role will be for when I convert it into a lambda function. Hopefully will make some good progress on that tomorrow.
+
+I also want to make a few logging files - one for regular logging, one for a general follow update to show how many people we're adding and gaining per day, and one for deletions that will show the final stats of followbacks when we remove that day of batches. 
+
+bugfixes still need to fix - make sure you don't follow yourself from likes, and make sure every single api call to amazon and bluesky and GitHub are all wrapped in try catches. 
+
+man, llms are soo good at pulling up the simple code I just don't know like how to use AWS apis and convert python code to json and back. What a lifesaver I feel like this is speeding me up so much. It's almost too easy lmao
+
+getting a weird api response error from the .get_feed() function. There's some weird response. ChatGPT says it seems like a change in the bluesky api since it's not anything in my code, which makes sense. It's just weird that it's happening all of a sudden. And it always happens on the same page - it happened when I went to the second page, now that I've waited 30 mins it's letting me get through 2 pages and erroring on the 3rd. so strange.
+I'll leave it for now and focus on the other things I'm working on, but might need to play around with something if this error keeps popping up:
+ModelError("1 validation error for Response\nfeed.15.post.embed.`app.bsky.embed.images#view`.images.0.aspectRatio.$type\n  Input should be 'app.bsky.embed.defs#aspectRatio' 
+but since it's atproto chatgpt says it should be fixed soon lol. 
+2025-02-17 - yeah looks like it's not happening anymore. That's good. Even if this issue pops up again it shouldn't make a huge impact on our performance since we're going to be doing tinier runs in the automation.
+
+
+so creating the aggregator to convert the dynamodb entries into s3 was pretty easy. But of course I couldn't really test it too easily because there's no data for it to process. So now I just need to do the other parts now that I know for sure that I can get the aws stuff plugged in.
+
+2025-02-17 
+Getting ready to write my status update code, I realized there's a small hangup.
+so the point of this one is to get a status check on our current follows and followers
+I know that I want to delete any followers that unfollowed, because they won't be in any buckets to be checked in the future and the likelihood of them re-following after unfollowing is probably incredibly small.
+But what about manually added follows? Do I want to add those to the prune list? Should I add them to their own bucket to be checked? If they're just cat accounts I don't want them to sit there forever. And I don't want the code to delete people I actually want to follow. 
+I guess I just don't want to get rid of manual follows, and I'll have to just stop following people manually. I've noticed the followback rates on my manual follows aren't really any better anyway.
+so our status checker will just be a weekly check to make sure nobody has stopped following us
+
+2025-02-18 0528
+Looking very goooood. Just did an overhaul to the Add Follows code. It's not tested, but it looks sound. I think I've really done a good job of making sure all our api calls are wrapped in try-catch blocks. And i'm not sure where following ourselves was coming from, but I've discarded that from the finalized set so even though we may not have fixed that bug it won't impact us anymore.
+The last piece to build is the deletion code! Should be able to get that done today, and then I can look into lambdaizing the code. Although that might need to wait until next week -- not only do I want to give this a few runs to make sure it isn't buggy before we totally automate it, I also think that it will be easier once I set up my own laptop, which is coming in next week. So I'll try to set up my dev environment and then figure that out.
+I'm very excited now. I guess I always have been lol.
