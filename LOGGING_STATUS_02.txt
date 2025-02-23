@@ -7,3 +7,4 @@ LOGGING_STATUS_02
 2025-02-18: successfully uploaded current followers as map to s3.
 2025-02-23: successfully compared followers - followers are up 2074 this week. 146 users stopped following. 91 were successfully unfollowed, with 55 failures.
 2025-02-23: successfully uploaded current followers as map to s3.
+2025-02-23: ERROR - there was no previous followers list to compare to found in the s3 bucket. Adding the new list of followers.
