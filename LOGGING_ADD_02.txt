@@ -336,3 +336,24 @@ time diff: 0:12:28.775484 | completed run at: 2025-02-22 23:18:49.807045-05:00
 cur followers: 11944 | now following: 27646
 
 ____________________
+
+2025-02-22 23:57:27.207281-05:00
+prior followers: 11973 | previously following: 27646
+Feed 'Caturday':
+  Followed 196 new users!
+    Of those follows, 69 were posters and 127 were from likes.
+  217 posts in total were viewed during this run.
+  Skipped Posts: (27) - 0 posts were previously seen, 27 were from users already followed, 0 were your posts.
+  Mutuals: 24 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (19) - 10 posts had no media attached, and 9 posts had videos attached.
+  Processed: 146 posts had pics attached: 69 were identified as cat pics and 77 were not cats.
+  5 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+96. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:29 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+97. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:29 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+0. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:31 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+16. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:43 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+19. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:45 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+time diff: 0:03:18.952056 | completed run at: 2025-02-23 00:00:46.159337-05:00
+cur followers: 11974 | now following: 27834
+
+____________________
