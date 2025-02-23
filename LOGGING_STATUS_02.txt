@@ -9,3 +9,4 @@ LOGGING_STATUS_02
 2025-02-23: successfully uploaded current followers as map to s3.
 2025-02-23: ERROR - there was no previous followers list to compare to found in the s3 bucket. Adding the new list of followers.
 2025-02-23: ERROR - there was no previous list of who we follow found in the s3 bucket. Adding the new list of follows.
+2025-02-23: successfully uploaded current users that we follow as map to s3.
