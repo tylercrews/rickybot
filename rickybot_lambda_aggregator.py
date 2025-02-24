@@ -155,9 +155,13 @@ def lambda_handler(event, context):
 	# there should NOT be anything in the current s3 object for this bucket. But just in case there is, like one week didn't properly get cleared out or something, we will add it to the beginning of the aggregation
 	try:
 		s3.head_object(Bucket=S3_BUCKET, Key=ddbs3_key)
-		# except on saturdays - there should be the stuff in friday in the bucket when we check on saturday
-		if yesterday != 'Friday':
-			warning = "WARNING - Object existed in s3 bucket. Aggregating to current results."
+		# except on saturdays - there should be the stuff from friday in the bucket when we check on saturday
+		if yesterday == 'Saturday':
+			good = f"Items were found in the {ddbs3_key} s3 bucket from Friday's runs. Aggregating Saturday's results to that existing data."
+			logging.info(good)
+			logging_aggregator(good)
+		else:
+			warning = "WARNING - Object existed in s3 bucket when there should have been nothing found. Aggregating with current results."
 			logging.warning(warning)
 			logging_aggregator(warning)
 		response = s3.get_object(Bucket=S3_BUCKET, Key=ddbs3_key)
