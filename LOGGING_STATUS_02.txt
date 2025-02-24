@@ -12,3 +12,4 @@ LOGGING_STATUS_02
 2025-02-23: successfully uploaded current users that we follow as map to s3.
 2025-02-23: s3 update - uploaded current followers: SUCCESS | uploaded who we follow: SUCCESS 
 -- initializing lambda function for status now. Should see one final error that there was not a followers and follow list found and then should work
+2025-02-24: ERROR - there was no previous followers list found in the s3 bucket. Adding the new list of followers.
