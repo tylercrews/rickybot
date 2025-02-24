@@ -403,7 +403,6 @@ Feed 'Siamese Cats':
   No errors were encountered while processing pics. 
 time diff: 0:12:20.374307 | completed run at: 2025-02-23 22:53:06.211603-05:00
 cur followers: 12478 | now following: 30744
-
 ____________________
 
 2025-02-24 10:54:28.966168-05:00
@@ -419,7 +418,6 @@ Feed 'Siamese Cats':
   No errors were encountered while processing pics. 
 time diff: 0:09:09.883863 | completed run at: 2025-02-24 11:03:38.850031-05:00
 cur followers: 12616 | now following: 31634
-
 ____________________
 
 2025-02-24 14:20:31.203581-05:00
@@ -436,5 +434,4 @@ Feed 'Siamese Cats':
 3. 
 time diff: 0:12:53.595742 | completed run at: 2025-02-24 14:33:24.799323-05:00
 cur followers: 12746 | now following: 32419
-
 ____________________
