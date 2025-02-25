@@ -450,3 +450,7 @@ Feed 'Siamese Cats':
 time diff: 0:11:58.557942 | completed run at: 2025-02-24 18:47:24.361949-05:00
 cur followers: 12868 | now following: 33307
 ____________________
+
+2025-02-25 00:07:58.312452-05:00
+WARNING - failed to authenticate huggingface
+ERROR - failed to initialize ViT model____________________
