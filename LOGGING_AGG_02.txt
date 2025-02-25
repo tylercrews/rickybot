@@ -10,3 +10,4 @@ LOGGING_AGG_02
 2025-02-23: WARNING - Object existed in s3 bucket. Aggregating to current results.
 2025-02-23: Successfully aggregated follows from FRI+SAT. Today there were 7 runs, with a total of 9216 follows.
 2025-02-24: Successfully aggregated follows from SUN. Today there were 4 runs, with a total of 2913 follows.
+2025-02-25: Successfully aggregated follows from MON. Today there were 4 runs, with a total of 2568 follows.
