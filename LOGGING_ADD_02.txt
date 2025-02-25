@@ -454,3 +454,7 @@ ____________________
 2025-02-25 00:07:58.312452-05:00
 WARNING - failed to authenticate huggingface
 ERROR - failed to initialize ViT model____________________
+
+2025-02-25 01:00:59.853302-05:00
+WARNING - failed to authenticate huggingface
+ERROR - failed to initialize ViT model____________________
