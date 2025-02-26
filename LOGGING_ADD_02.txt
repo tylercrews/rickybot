@@ -488,3 +488,7 @@ Feed 'Siamese Cats':
 time diff: 0:12:06.690871 | completed run at: 2025-02-25 19:35:53.137992-05:00
 cur followers: 13179 | now following: 33284
 ____________________
+
+2025-02-26 00:21:32.122175-05:00
+ERROR - failed to initialize ViT model
+____________________
