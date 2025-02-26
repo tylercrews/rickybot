@@ -16,3 +16,5 @@ To run this program you need to have:
 * Your own BlueSky account
   
 Downloading and running these colabs should not allow you to actually run the code without plugging in colab secrets and/or aws secretmanager secrets where necessary. 
+
+To run the lambdaized version of the Add Followers you need to go to the progress files and use the local_download.py to download the ViT files into a folder. config.json, model.safetensors, and preprocessor_config.json
