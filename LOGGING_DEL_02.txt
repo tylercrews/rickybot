@@ -6,3 +6,4 @@ Follows count - now: 32278 | prev: 34014
 2025-02-25: STATS - Finished checking last week's follows from TUE for deletions. In total there were 2151 follows processed. 259 users followed back. 1892 did not follow back and were deleted. 10 accounts no longer exist. Conversion Rate was 12.04%.
 2025-02-26: Processed 2446 users from the list of 2446. From this batch of deletions 269 users followed back, 2177 did not follow back and were deleted, and 10 accounts no longer exist.
 Follows count - now: 32459 | prev: 34460
+2025-02-26: Finished processing all deletions for today. Object was successfully deleted from s3 bucket.
