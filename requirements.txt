@@ -1,0 +1,8 @@
+boto3
+torch
+transformers
+pillow
+urllib3
+numpy
+requests
+atproto
