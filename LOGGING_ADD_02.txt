@@ -492,3 +492,16 @@ ____________________
 2025-02-26 00:21:32.122175-05:00
 ERROR - failed to initialize ViT model
 ____________________
+
+2025-02-26 00:43:09.207458-05:00
+ERROR - failed to log in to the bluesky client: 3 validation errors for Response
+didDoc
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'@context': ['https://ww...st.host.bsky.network'}]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden
+emailAuthFactor
+  Extra inputs are not permitted [type=extra_forbidden, input_value=False, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden
+active
+  Extra inputs are not permitted [type=extra_forbidden, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden
+____________________
