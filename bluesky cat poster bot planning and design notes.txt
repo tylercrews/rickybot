@@ -673,3 +673,178 @@ so our status checker will just be a weekly check to make sure nobody has stoppe
 Looking very goooood. Just did an overhaul to the Add Follows code. It's not tested, but it looks sound. I think I've really done a good job of making sure all our api calls are wrapped in try-catch blocks. And i'm not sure where following ourselves was coming from, but I've discarded that from the finalized set so even though we may not have fixed that bug it won't impact us anymore.
 The last piece to build is the deletion code! Should be able to get that done today, and then I can look into lambdaizing the code. Although that might need to wait until next week -- not only do I want to give this a few runs to make sure it isn't buggy before we totally automate it, I also think that it will be easier once I set up my own laptop, which is coming in next week. So I'll try to set up my dev environment and then figure that out.
 I'm very excited now. I guess I always have been lol.
+
+Current follow stats, last update was 9806, and that was our 31-day monthiversary. We took two months to reach 487 on Jan 17, so in one month (Feb 17) we got 9319 followers.
+So we can multiply 9319 * 2 and divide by 487 to get our increase in rate
+9319/1mo vs 487/2mo = 243.5/1mo
+(9319 - 243.5) / 243.5 * 100 = 3727.10% rate increase
+
+2025-02-19 0128
+theorycrafting how many times we have to run our delete function every day so we don't waste a lot of lambda runs. in theory it shouldn't ding us too much but we don't need to run 12 deletion runs a day if we're going to use 6 tops
+if our max number of followers added is (9319 * 2) 18638, and we can delete 3500 per session, we need at most 5.5 sessions per day if we're MAXING two days. which we're not. there's one day where we'll get max (sat) and one day where we will not (Friday)
+but we're actually going to get 8400 followers on Saturdays at 350 per hour
+and we're going to get 4800 on Fridays at 400 per 2 hours
+if our max follow count is on the fri+sat days and we get 13200 on those, with 3500 deletions that only takes 3.77 runs to get through them all, giving us the flexibility of going up to 14000 follows, which means we could go up to 375 per hour on Saturdays (9000) and 416 on weekdays (4992) OR 
+350 on Saturdays still (8400) and 466 on weekdays (5592)
+
+plus I really doubt that we'll ever be hitting perfect follow counts, and I've already set up the aggregate function to keep any leftovers in the s3 bucket if there are any, so nothing to worry about there. 
+
+The one downside of doing things this way is that our stats are VERY muddled. we don't get to see how we're performing per-run at all, and theoretically with holdovers we might even really see them per day.
+Is there a way we could fix that? 
+Our singular deletion runs will basically be logging just X/3500. 
+I suppose every day we could use the dynamodb to keep track of the running totals: we have attributes for followbacks, deleted accounts, total followed
+and then when we finish processing the S3 for the day we can do an extra logging function that summates the stats for the day. I like that.
+I was kind of hoping to keep this function without accessing dynamodb so it would be lighter, but it really doesn't matter because the only reason we were splitting off to s3 was for the weight of having 30000 strings in a set in dynamodb at once. 
+Ok so we'll make a del_stats key similar to how we have the cache key, and we'll keep track of relevant stats - and this del_stats key will be its own day of the week so that it doesn't get accidentally deleted by the aggregator doing it's thing
+ALSO I just realized our projected deletion count will be WAY enough to cover everything with 4 runs, because we're processing ~14000 FOLLOWS, and not all of those follows need to be deleted.
+
+2025-02-19 0708
+it appears that we made the right decision implementing s3. I ran the aggregator and had a successful first run, which is great. 
+Went to the AWS portal and checked my s3 bucket and saw that it was successfully converted, which is awesome. While I was there I saw the file sizes - the 4 runs that gained 2151 followers yesterday takes 75.5 kb. However, the map of our followers takes a whopping 898kb, which makes sense as it's something like 24000 * 2? 
+400kb is the max you can keep in dynamodb, which definitely wouldn't have worked for us. It also explains why our chrome was starting to crash out, trying to copy and paste like a megabyte of memory lol
+However, I'm also a bit concerned about our max run size. 
+If we get to 14000 I think we'll be at about 500kb. DynamoDB file size is measured by Item not by Attribute, so even though we've split up our runs I think we'll be out of luck by the end of Friday+Saturday. 
+I'm trying to think of a better solution but we already almost have one implemented - just in case of leftovers in the s3 bucket I did write the code so that we could insert on top of it.
+So theoretically I could just empty out Friday's follows into the fri+sat bucket, and free up the rest of our dynamodb memory for Saturday.
+If we set up the cron job for 12:30 and make sure Saturday's runs don't start until 1am, then that means that we'll also get a perfect little snapshot of how well Friday performed (not in conversion rate, but simply in follow acquisition).
+So the more I think about it the better it sounds. We just need to run the aggregator one more time to pre-test before fri+sat, if we run the code now it should see the stuff already in s3, add nothing to it, and readd it. and yes! we have 0 runs but a total of 2151 follows. Sweet.
+So i'll just get rid of the check to not run on Saturday, and turn off the warning that the s3 should be empty on Saturday
+theoretically we could have just created another item for Saturday, and then had the aggregator take care of both later though. hm.
+
+2025-02-20 1208
+so far runs are going very smoothly for the 
+-- i don't remember what I was going to say there.
+Thursdays run was 2800 follows and is 101kb of data in our s3 storage. if that is a constant, then we reasonably have about 10000 follows that we can put into dynamodb without any risk of it crashing i'm feeling comfortable about our new setup being able to handle the 8400 from Saturday
+I really want to start lambdaing. Even without deletes fully tested and without adding being figured out with containerization, we should be able to lambda the aggregate and status update functions to run on their routines.
+
+2025-02-22 0137
+CRUCIAL SETTING - I've written all my code in colab, and I was planning on copying it into vscode or something to edit it, but realized there Had to be a download as py file in colab. Which there is.
+But pasting my code from colab to aws has everything garbled because aws expects 4 whitespace spaces per indent and colab by default only uses 2.
+so before you download make sure you change that setting.
+OH MY GOODNESS I NEEDED TO SET THAT BEFORE i STARTED WORKING NOW EVERYTHING IS STUCK I'M SO WRECKED
+lol nvm i just actually need to install vs code i'll be fine
+
+2025-02-22 0459
+HOLY SHIT YEAH IT WORKED LET'S GO!! 
+FIRST LAMBDA-IFICATION IS COMPLETE
+had to fix timeout issue and memory allocation because I forgot the settings start at minimum. but the second run worked! first was 0420, retries at 0423 and 0427 because they timed out at 3m, but the second run at 0431 was a success! Confirmed with the GitHub logging and the table.scan() of what our dynamodb looks like rn.
+
+I need to write a reflection about how crazy it develops your brain thinking about the real specs of the programs you're working on. I never really think about what size my code is but even this small-ish file is 1mb. Really curious about what the add followers part looks like.
+
+after a year's worth of commits I should to apply to tesla lmao. I'm really excited once the other microservices go up the commit history will really light up to near max.
+maybe I should do a repurposed one where I do the same thing but with twitter.
+then we Really start looking successful. multiple platforms? potential of getting paid? and if you can fully automate both then hell yeah. 
+it's kind of funny that now bsky is free and x 𝕏 is paid, so it's really an effective strategy to hone everything in on bluesky and then try to merge the code over to 𝕏.
+their pricing model - 
+Free Tier: Very limited, only allows posting a few tweets and reading 1,500 tweets per month.
+Basic Tier ($100/month): Allows 50,000 tweets read and 3,000 posted per month.
+Enterprise Tier (Custom Pricing, Very Expensive): Needed for large-scale applications like analytics, large data pulls, or managing multiple accounts. OK i've saved those stats in another file, but the strategy would have to dramatically shift - only following 400 accts per day even if you spend $175 per month it's a total scam. They go by read count, $200 per month to get 3000 reads it's crazy.
+
+The reason I needed to write right now is because it feels SO good to have been worrying about this process for WEEKS. studying what's going on with all these aws services. And now I do have at least one whole microserve fully automated where I won't have to think about it ever again unless it fails and I have to manually run one.
+
+I'm trying to look up how many posts we view per day so that I can adjust to twitter and it is a little annoying hand querying.
+wish I could code it into an excel sheet tool.
+
+you can't scan ALT TEXT on X. That's the most tragic thing that really makes it the better experience as a developer. also finding posts through feeds to avoid reading posts directly like you can on bluesky because it seems like the best way you'd be able to do it is ration a certain amount of posts per day read, 15000 reads per month is 500 reads per day. 
+right now we're doing like 3 batches of 1000 and getting 1000 follows per run, and we're usually seeing 600 posts and getting 1000 follows
+so we could do like 500 per day for one run and try to get our 400 followers, and spend $200 a month to do that lmao.
+maybe it's best not to use chatgpt to summarize documentation lmao
+is 100 per month for 10000 reads any better? jeezy peezy. anyway that'll be something to worry about later if you're interested. Hate to see such heavy restrictions 
+
+2025-02-22 1106
+had our first mystery error Idk what happened but it looks like we did a whole run and just didn't add them. So that's a little weird. It was our 4th run of the day not sure what happened. I woke up like an hour later and couldnt salvage it so I guess we'll have to adjust the update status code to take care of it
+so strange though, there wasn't any kind of error at the end of the add-users cell that was running it just stopped at 84 for some reason. Then the other cells didn't run. Pretty weird maybe it was just a colab issue.
+
+how could we make the status update code a little more efficient so we're not checking the profile of like 30000 people. I guess I'm just a little worried about overlapping with the delete code?
+
+oh hey looks like having all my colabs up at once finally bit me in the butt - I ran the status update code, making 91 successful deletions and 55 failures. So probably just a timeout issue. Also why does my update code not have an early termination set up that's no good.
+
+Good thing we ran into this before lambdaing it. Definitely need to rework just a bit.
+if we hit errors we should add them back into the old followers so we can see to delete them later? or will follows just handle that itself.
+
+so we need a full list of follows to see what we have every week. then we need to look back to last week's list and see if that follow existed last week. If so it's a full 7 days old and is worth checking. We'll already have our current followers up in a set I believe, so then we can cross reference to see if they're a follower without making more bluesky api calls other than the delete. That's pretty sick.
+
+looks like 9300 follows are 323.8kb on range so we should be good there confirmed.
+
+whelp. I'm feeling a lot les confident about this second one. Who knows what's going to happen. The code is largely untested because I haven't had several weeks to test it from week to week. But I'm pretty confident that I adapted the update code well. 
+-- encountered an error with the first deployment, turns out my package is busted. Possibly because I tried to install atproto into the same folder as yesterday and one of the installed folders had an overlap that got messed up.
+So don't try to reuse layer folders lmao no building off them it takes like 5 seconds anyway.
+
+The filename _pydantic_core.cp313-win_amd64.pyd breaks down as follows:
+cp313 → Built for Python 3.13.
+win_amd64 → Built for Windows x86-64 (AMD64), NOT ARM64.
+So, this is not an ARM64-compatible build. If you're running Python on Windows ARM64, you need to reinstall it correctly.
+
+keep hitting this pydantic core error turns
+0 17 is cron for noon
+
+2025-02-24 0937
+finally figured out what was going wrong with the docker build image. someone on reddit posted a similar issue when building with windows and the comments said to use the providence flag
+docker build --provenance=false --platform linux/arm64 -t docker-image-name .
+this command worked for me and we have our first successful docker image!
+there is one thing that I'm a little concerned about - in my aggregate unction I see a logging warning that there were objects in the s3 bucket, and I added an if statement so it wouldn't create that warning if yesterday was Friday. But it should have been? So something's wrong there. OH. it's because yesterday will only have stuff in it already if yesterday was SATURDAY.
+
+deletion cron job
+cron(0 0-10/2 * * 0-5)
+nvm needed to reformat for aws because they do chars for days of the week instead of nums
+Also it turns out they can't do ranges like that, you just specify hours
+cron(0 5,7,9,11,13,15 ? * SUN-FRI *)
+(this is midnight, 2, 4, 6, 8, and 10 translated from est to utc)
+
+cron(0 4-23 ? * SAT *)  # 05:00-23:00 UTC on Saturday (also does 11pm friday to account for time zone shifts
+cron(0 0-4 ? * SUN *)   # 00:00-04:00 UTC on Sunday
+
+man everything is so wonky because of the utc issue. 
+made a nice little graph of how I'm going to schedule all the jobs and space them out to hopefully never hit the action caps.
+after all the planning here are our cron jobs for adds:
+cron(0 0,2,4-23 ? * SAT *)
+cron(0 0-4,6,8,10,12,14,16,18,20,22 ? * SUN *)
+cron(0 0,2,4,6,8,10,12,14,16,18,20,22 ? * MON-FRI *)
+
+2025-02-24 0800
+alright! moment of truth!
+In one hour we'll have our first scheduled cron job add follows run. I'm so excited holy cow. I might never have to manually run these follow runs again 
+whoops forgot to set the run settings oops. 11pm
+Now this is a heavier cpu function, so I'm going to allocate 2gigs to hopefully get a good enough cpu that it runs faster. I'd be open to running a little more, but only if it takes like 10 mins or doesn't boot up fast enough.
+
+ok so I messed up with the aws variables, forgot to change them to not use colab. So fixed that. but was also getting some timeout issues, so I'm just gonna crank up the memory to max to see if we can get a successful run off first, then downshift as necessary (it says you can pick a number up to 10240 but erorrs if you go over 3008. So trying with 3 gigs.)
+
+all set up with a new image and more memory gonna force a test real quick
+
+2025-02-26 0216
+oh man it took SO much work trying to get the Add Follows function to work. Claude gave me some better direction in what I needed to do, but what's crazy is youtube still the goat for random helpful info. Someone showed me how to local download the ViT and incorporate it into a docker image, so I used Claude to do that with mine (since mine was a different kind of model than the vid). LLM's do AWESOME work with using logs to spit out what the issue is with a program. lmao sometimes I get a little text blind or I'm not sure which part is the important part looking at a wall of logging and they just see it instantly.
+I guess I need to practice that.
+But in any case I've got the add follows lambda set up and it's on a cron job now! never going to need to add follows againnnnnnnnn.
+
+Now it's just the deletes to do! I could do some testing rn but I almost want to just launch into croning it. Seems a little risky but what's the worst that could happen?
+
+2025-02-26 0509
+let's think about some math.
+I'm using 3gigs for my add follows routine. so that means instead of the 400,000 free gbs we only have 133333s. 
+our runs are looking like 4 mins + 1 min of startup time = 60*5=300s
+133,333 / 300 = 444.44 / 31 = 14.33 per day that we can do and still end up in free tier.
+So this is outside our budget, we'll end up spending money. Let's see if we can go down to 2 gigabytes.
+If we can go to 2gb and still end up at ~6 mins we'll be better off for it
+billed duration is only 3 mins and 4 mins so that's good!
+our memory used in mb is 1300 and that's with a max 1000 seen posts. so def dropping down to 2048 from 3008 mb of memory allocated to see how performance goes next time.
+555 / 31 = 17.921, so with the 13 per day fom deletions and adds, we get 4*6 to go towards the caturday runs, 24, and then we have 17 left over for the update and a few deletions and the aggregation runs. I think that might be a sweet spot of barely not spending money. But that depends on how long these runs take. Might need to cut down on the run count and increase the length of the runs?
+
+luckily after the free tier the next charge is First 6 Billion GB-seconds / month	$0.0000166667 for every GB-second.
+which means the second amount of 400,000 GbS is only $7. That's not so bad if we go over.
+
+2025-02-26 0619
+Alright, the delete code is dockerized and lambdafied. Feeling a bit nervous about this one because it's harder to test and we won't know how it handles fri+sat until we get there, but any big fuckups will get covered by the status update service so nbd.
+Fingers crossed! Today is our first official day of full automation now. That's crazy. It's been a long ride lmao. I'll be updating this with notes about the runs as I observe them for the rest of the week at least.
+Just in case you ever have to update a docker here're the commands lol 
+# log in to aws
+aws ecr get-login-password --region <REGION> | docker login --username AWS --password-stdin <ACCOUNTNUM>.dkr.ecr.<REGION>.amazonaws.com
+# create aws ecr repo if necessary
+ aws ecr create-repository --repository-name <AWS REPO>
+# build docker image in linux compatible format for arm64 chips
+docker build --provenance=false --platform linux/arm64 -t <DOCKER IMAGE NAME> .
+# tag the docker image to the aws repo
+ docker tag <DOCKER IMAGE NAME>:latest <ACCOUNTNUM>.dkr.ecr.<REGION>.amazonaws.com/<AWS REPO>:latest
+# and push updates to the aws repo
+docker push <ACCOUNTNUM>.dkr.ecr.<REGION>.amazonaws.com/<AWS REPO>:latest
+
+Great work, btw. Proud of you :*
