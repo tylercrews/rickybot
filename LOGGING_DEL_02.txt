@@ -28,3 +28,5 @@ Follows count - now: 0 | prev: 33488
 Follows count - now: 31233 | prev: 31405
 2025-02-28: Finished processing all deletions for today. Object was successfully deleted from s3 bucket.
 2025-02-28: STATS - Finished checking last week's follows from FRI+SAT for deletions. In total there were 215 follows processed. 28 users followed back. 187 did not follow back and were deleted. 2 accounts no longer exist. Conversion Rate was 13.02%.
+REAL STATS - 1078 followed back. 8147 did not. 11.69% conversion rate.
+
