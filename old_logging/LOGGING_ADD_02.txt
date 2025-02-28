@@ -1,0 +1,840 @@
+LOGGING_ADD_02
+~~~~~~~~~~~~~~~~~~~~
+
+2025-02-18 13:13:37.748208-05:00
+WARNING - failed to authenticate huggingface
+WARNING - successful response from dynamodb but there were no items in the post cache key.
+prior followers: 9864 | previously following: 14829
+Feed 'Siamese Cats':
+  Followed 0 new users.
+    Of those follows, 0 were posters and 0 were from likes.
+  992 posts in total were viewed during this run.
+  Skipped Posts: (992) - 992 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (0) - 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  No errors were encountered while processing pics. 
+Feed 'Siamese Cats':
+  Followed 38 new users!
+    Of those follows, 38 were posters and 0 were from likes.
+  98 posts in total were viewed during this run.
+  Skipped Posts: (3) - 0 posts were previously seen, 3 were from users already followed, 0 were your posts.
+  Mutuals: 8 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (3) - 1 posts had no media attached, and 2 posts had videos attached.
+  Processed: 84 posts had pics attached: 38 were identified as cat pics and 46 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:;; 
+InvokeTimeoutError(): 
+Feed 'Siamese Cats':
+  Followed 1007 new users!
+    Of those follows, 194 were posters and 813 were from likes.
+  701 posts in total were viewed during this run.
+  Skipped Posts: (144) - 99 posts were previously seen, 44 were from users already followed, 1 were your posts.
+  Mutuals: 61 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (39) - 11 posts had no media attached, and 28 posts had videos attached.
+  Processed: 457 posts had pics attached: 194 were identified as cat pics and 263 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:22:27.105015 | completed run at: 2025-02-18 13:36:04.853223-05:00
+cur followers: 9883 | now following: 15889
+
+____________________
+
+2025-02-18 18:19:11.648416-05:00
+prior followers: 9979 | previously following: 15889
+Feed 'Siamese Cats':
+  Followed 139 new users!
+    Of those follows, 139 were posters and 0 were from likes.
+  394 posts in total were viewed during this run.
+  Skipped Posts: (28) - 0 posts were previously seen, 28 were from users already followed, 0 were your posts.
+  Mutuals: 30 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (27) - 9 posts had no media attached, and 18 posts had videos attached.
+  Processed: 309 posts had pics attached: 139 were identified as cat pics and 170 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:;; 
+InvokeTimeoutError(): 
+time diff: 0:06:38.152965 | completed run at: 2025-02-18 18:25:49.801381-05:00
+cur followers: 9984 | now following: 16072
+
+____________________
+
+2025-02-18 18:19:11.648416-05:00
+prior followers: 9979 | previously following: 15889
+Feed 'Siamese Cats':
+  Followed 139 new users!
+    Of those follows, 139 were posters and 0 were from likes.
+  394 posts in total were viewed during this run.
+  Skipped Posts: (28) - 0 posts were previously seen, 28 were from users already followed, 0 were your posts.
+  Mutuals: 30 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (27) - 9 posts had no media attached, and 18 posts had videos attached.
+  Processed: 309 posts had pics attached: 139 were identified as cat pics and 170 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:;; 
+InvokeTimeoutError(): 
+time diff: 0:06:38.152965 | completed run at: 2025-02-18 18:25:49.801381-05:00
+cur followers: 9984 | now following: 16072
+Feed 'Siamese Cats':
+  Followed 1002 new users!
+    Of those follows, 174 were posters and 828 were from likes.
+  941 posts in total were viewed during this run.
+  Skipped Posts: (433) - 393 posts were previously seen, 40 were from users already followed, 0 were your posts.
+  Mutuals: 63 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (44) - 8 posts had no media attached, and 36 posts had videos attached.
+  Processed: 401 posts had pics attached: 174 were identified as cat pics and 227 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:15:53.492706 | completed run at: 2025-02-18 18:35:05.141122-05:00
+cur followers: 9996 | now following: 17074
+
+____________________
+
+2025-02-19 13:45:11.604693-05:00
+prior followers: 10146 | previously following: 17074
+Feed 'Siamese Cats':
+  Followed 443 new users!
+    Of those follows, 129 were posters and 314 were from likes.
+  397 posts in total were viewed during this run.
+  Skipped Posts: (29) - 0 posts were previously seen, 29 were from users already followed, 0 were your posts.
+  Mutuals: 40 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (25) - 7 posts had no media attached, and 18 posts had videos attached.
+  Processed: 303 posts had pics attached: 129 were identified as cat pics and 174 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:;; 
+InvokeTimeoutError(): 
+time diff: 0:06:19.764458 | completed run at: 2025-02-19 13:51:31.369151-05:00
+cur followers: 10156 | now following: 17517
+
+____________________
+
+2025-02-19 18:26:27.706934-05:00
+prior followers: 10204 | previously following: 17517
+Feed 'Siamese Cats':
+  Followed 1000 new users!
+    Of those follows, 221 were posters and 779 were from likes.
+  738 posts in total were viewed during this run.
+  Skipped Posts: (90) - 0 posts were previously seen, 90 were from users already followed, 0 were your posts.
+  Mutuals: 76 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (52) - 18 posts had no media attached, and 34 posts had videos attached.
+  Processed: 520 posts had pics attached: 221 were identified as cat pics and 299 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:12:05.430592 | completed run at: 2025-02-19 18:38:33.137526-05:00
+cur followers: 10226 | now following: 18517
+
+____________________
+
+2025-02-19 23:23:56.830344-05:00
+prior followers: 10302 | previously following: 18517
+Feed 'Siamese Cats':
+  Followed 1000 new users!
+    Of those follows, 281 were posters and 719 were from likes.
+  916 posts in total were viewed during this run.
+  Skipped Posts: (114) - 1 posts were previously seen, 113 were from users already followed, 0 were your posts.
+  Mutuals: 109 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (65) - 25 posts had no media attached, and 40 posts had videos attached.
+  Processed: 628 posts had pics attached: 281 were identified as cat pics and 347 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:11:59.850052 | completed run at: 2025-02-19 23:35:56.680396-05:00
+cur followers: 10325 | now following: 19517
+
+____________________
+
+2025-02-20 11:54:06.965322-05:00
+prior followers: 10427 | previously following: 19517
+Feed 'Siamese Cats':
+  Followed 1000 new users!
+    Of those follows, 237 were posters and 763 were from likes.
+  806 posts in total were viewed during this run.
+  Skipped Posts: (85) - 2 posts were previously seen, 82 were from users already followed, 1 were your posts.
+  Mutuals: 102 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (53) - 18 posts had no media attached, and 35 posts had videos attached.
+  Processed: 566 posts had pics attached: 237 were identified as cat pics and 327 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+4. [SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2580);; 
+98. [SSL: DECRYPTION_FAILED_OR_BAD_RECORD_MAC] decryption failed or bad record mac (_ssl.c:2580)
+time diff: 0:11:29.976537 | completed run at: 2025-02-20 12:05:36.941859-05:00
+cur followers: 10454 | now following: 20517
+
+____________________
+
+2025-02-20 16:15:42.316554-05:00
+prior followers: 10545 | previously following: 20517
+Feed 'Siamese Cats':
+  Followed 902 new users!
+    Of those follows, 177 were posters and 725 were from likes.
+  594 posts in total were viewed during this run.
+  Skipped Posts: (70) - 0 posts were previously seen, 69 were from users already followed, 1 were your posts.
+  Mutuals: 66 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (45) - 14 posts had no media attached, and 31 posts had videos attached.
+  Processed: 413 posts had pics attached: 177 were identified as cat pics and 236 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+InvokeTimeoutError(): 
+time diff: 0:09:49.373514 | completed run at: 2025-02-20 16:25:31.690068-05:00
+cur followers: 10564 | now following: 21419
+
+____________________
+
+2025-02-20 21:23:09.066700-05:00
+prior followers: 10661 | previously following: 21419
+Feed 'Siamese Cats':
+  Followed 987 new users!
+    Of those follows, 206 were posters and 781 were from likes.
+  690 posts in total were viewed during this run.
+  Skipped Posts: (105) - 3 posts were previously seen, 102 were from users already followed, 0 were your posts.
+  Mutuals: 68 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (39) - 13 posts had no media attached, and 26 posts had videos attached.
+  Processed: 478 posts had pics attached: 206 were identified as cat pics and 272 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("1 validation error for Response\nfeed.19.post.embed.`app.bsky.embed.images#view`.images.0.aspectRatio.$type\n  Input should be 'app.bsky.embed.defs#aspectRatio' [type=literal_error, input_value='app.bsky.embed.images#aspectRatio', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.10/v/literal_error"): 1 validation error for Response
+feed.19.post.embed.`app.bsky.embed.images#view`.images.0.aspectRatio.$type
+  Input should be 'app.bsky.embed.defs#aspectRatio' [type=literal_error, input_value='app.bsky.embed.images#aspectRatio', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/literal_error
+time diff: 0:08:34.691723 | completed run at: 2025-02-20 21:31:43.758423-05:00
+cur followers: 10670 | now following: 22406
+
+____________________
+
+2025-02-21 13:54:24.332519-05:00
+prior followers: 10790 | previously following: 22406
+Feed 'Siamese Cats':
+  Followed 1000 new users!
+    Of those follows, 185 were posters and 815 were from likes.
+  583 posts in total were viewed during this run.
+  Skipped Posts: (74) - 0 posts were previously seen, 73 were from users already followed, 1 were your posts.
+  Mutuals: 62 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (53) - 19 posts had no media attached, and 34 posts had videos attached.
+  Processed: 394 posts had pics attached: 185 were identified as cat pics and 209 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:08:32.572211 | completed run at: 2025-02-21 14:02:56.904730-05:00
+cur followers: 10806 | now following: 23406
+
+____________________
+
+2025-02-21 18:37:51.288425-05:00
+prior followers: 10899 | previously following: 18737
+Feed 'Siamese Cats':
+  Followed 1005 new users!
+    Of those follows, 208 were posters and 797 were from likes.
+  664 posts in total were viewed during this run.
+  Skipped Posts: (74) - 1 posts were previously seen, 73 were from users already followed, 0 were your posts.
+  Mutuals: 75 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (37) - 14 posts had no media attached, and 23 posts had videos attached.
+  Processed: 478 posts had pics attached: 208 were identified as cat pics and 270 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:11:50.183980 | completed run at: 2025-02-21 18:49:41.472405-05:00
+cur followers: 10928 | now following: 19742
+
+____________________
+
+2025-02-21 21:18:00.365757-05:00
+prior followers: 11002 | previously following: 19742
+Feed 'Siamese Cats':
+  Followed 1003 new users!
+    Of those follows, 266 were posters and 737 were from likes.
+  877 posts in total were viewed during this run.
+  Skipped Posts: (112) - 0 posts were previously seen, 112 were from users already followed, 0 were your posts.
+  Mutuals: 96 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (59) - 12 posts had no media attached, and 47 posts had videos attached.
+  Processed: 610 posts had pics attached: 266 were identified as cat pics and 344 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:21:35.833817 | completed run at: 2025-02-21 21:39:36.199574-05:00
+cur followers: 11021 | now following: 20742
+
+____________________
+
+2025-02-22 04:00:50.054113-05:00
+prior followers: 11090 | previously following: 20742
+Feed 'Caturday':
+  Followed 1001 new users!
+    Of those follows, 171 were posters and 830 were from likes.
+  587 posts in total were viewed during this run.
+  Skipped Posts: (67) - 0 posts were previously seen, 67 were from users already followed, 0 were your posts.
+  Mutuals: 67 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (40) - 9 posts had no media attached, and 31 posts had videos attached.
+  Processed: 413 posts had pics attached: 171 were identified as cat pics and 242 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:08:48.862182 | completed run at: 2025-02-22 04:09:38.916295-05:00
+cur followers: 11099 | now following: 21743
+
+____________________
+
+2025-02-22 07:35:33.023835-05:00
+prior followers: 11161 | previously following: 21743
+Feed 'Caturday':
+  Followed 1000 new users!
+    Of those follows, 222 were posters and 778 were from likes.
+  766 posts in total were viewed during this run.
+  Skipped Posts: (91) - 2 posts were previously seen, 89 were from users already followed, 0 were your posts.
+  Mutuals: 94 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (43) - 7 posts had no media attached, and 36 posts had videos attached.
+  Processed: 538 posts had pics attached: 222 were identified as cat pics and 316 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:10:46.685214 | completed run at: 2025-02-22 07:46:19.709049-05:00
+cur followers: 11182 | now following: 22743
+
+____________________
+
+2025-02-22 12:00:47.552141-05:00
+prior followers: 11303 | previously following: 22743
+Feed 'Caturday':
+  Followed 1001 new users!
+    Of those follows, 253 were posters and 748 were from likes.
+  728 posts in total were viewed during this run.
+  Skipped Posts: (87) - 0 posts were previously seen, 87 were from users already followed, 0 were your posts.
+  Mutuals: 95 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (47) - 13 posts had no media attached, and 34 posts had videos attached.
+  Processed: 499 posts had pics attached: 253 were identified as cat pics and 246 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:09:57.321752 | completed run at: 2025-02-22 12:10:44.873893-05:00
+cur followers: 11326 | now following: 23744
+
+____________________
+
+2025-02-22 13:47:08.663627-05:00
+prior followers: 11408 | previously following: 23744
+Feed 'Caturday':
+  Followed 1000 new users!
+    Of those follows, 286 were posters and 714 were from likes.
+  874 posts in total were viewed during this run.
+  Skipped Posts: (113) - 2 posts were previously seen, 111 were from users already followed, 0 were your posts.
+  Mutuals: 131 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (52) - 12 posts had no media attached, and 40 posts had videos attached.
+  Processed: 578 posts had pics attached: 286 were identified as cat pics and 292 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:11:12.595247 | completed run at: 2025-02-22 13:58:21.258874-05:00
+cur followers: 11442 | now following: 24744
+
+____________________
+
+2025-02-22 16:42:56.847143-05:00
+prior followers: 11575 | previously following: 24744
+Feed 'Caturday':
+  Followed 1004 new users!
+    Of those follows, 258 were posters and 746 were from likes.
+  780 posts in total were viewed during this run.
+  Skipped Posts: (83) - 3 posts were previously seen, 80 were from users already followed, 0 were your posts.
+  Mutuals: 111 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (52) - 13 posts had no media attached, and 39 posts had videos attached.
+  Processed: 534 posts had pics attached: 258 were identified as cat pics and 276 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:10:20.742602 | completed run at: 2025-02-22 16:53:17.589745-05:00
+cur followers: 11599 | now following: 25748
+
+____________________
+
+2025-02-22 23:06:21.031561-05:00
+prior followers: 11922 | previously following: 26646
+Feed 'Caturday':
+  Followed 1000 new users!
+    Of those follows, 284 were posters and 716 were from likes.
+  855 posts in total were viewed during this run.
+  Skipped Posts: (113) - 1 posts were previously seen, 112 were from users already followed, 0 were your posts.
+  Mutuals: 108 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (56) - 20 posts had no media attached, and 36 posts had videos attached.
+  Processed: 578 posts had pics attached: 284 were identified as cat pics and 294 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:12:28.775484 | completed run at: 2025-02-22 23:18:49.807045-05:00
+cur followers: 11944 | now following: 27646
+
+____________________
+
+2025-02-22 23:57:27.207281-05:00
+prior followers: 11973 | previously following: 27646
+Feed 'Caturday':
+  Followed 196 new users!
+    Of those follows, 69 were posters and 127 were from likes.
+  217 posts in total were viewed during this run.
+  Skipped Posts: (27) - 0 posts were previously seen, 27 were from users already followed, 0 were your posts.
+  Mutuals: 24 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (19) - 10 posts had no media attached, and 9 posts had videos attached.
+  Processed: 146 posts had pics attached: 69 were identified as cat pics and 77 were not cats.
+  5 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+96. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:29 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+97. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:29 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+0. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:31 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+16. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:43 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+19. Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '5000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1740287194', 'ratelimit-policy': '5000;w=3600', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 23 Feb 2025 05:00:45 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+time diff: 0:03:18.952056 | completed run at: 2025-02-23 00:00:46.159337-05:00
+cur followers: 11974 | now following: 27834
+
+____________________
+
+2025-02-23 13:42:10.017358-05:00
+prior followers: 12212 | previously following: 27834
+Feed 'Siamese Cats':
+  Followed 907 new users!
+    Of those follows, 273 were posters and 634 were from likes.
+  988 posts in total were viewed during this run.
+  Skipped Posts: (173) - 1 posts were previously seen, 172 were from users already followed, 0 were your posts.
+  Mutuals: 113 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (62) - 17 posts had no media attached, and 45 posts had videos attached.
+  Processed: 640 posts had pics attached: 273 were identified as cat pics and 367 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:14:38.237093 | completed run at: 2025-02-23 13:56:48.254451-05:00
+cur followers: 12239 | now following: 28741
+
+____________________
+
+2025-02-23 18:25:36.432552-05:00
+prior followers: 12329 | previously following: 28741
+Feed 'Siamese Cats':
+  Followed 1003 new users!
+    Of those follows, 289 were posters and 714 were from likes.
+  986 posts in total were viewed during this run.
+  Skipped Posts: (154) - 1 posts were previously seen, 153 were from users already followed, 0 were your posts.
+  Mutuals: 120 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (77) - 23 posts had no media attached, and 54 posts had videos attached.
+  Processed: 635 posts had pics attached: 289 were identified as cat pics and 346 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:11:09.141260 | completed run at: 2025-02-23 18:36:45.573812-05:00
+cur followers: 12343 | now following: 29744
+
+____________________
+
+2025-02-23 22:40:45.837296-05:00
+prior followers: 12459 | previously following: 29744
+Feed 'Siamese Cats':
+  Followed 1000 new users!
+    Of those follows, 252 were posters and 748 were from likes.
+  812 posts in total were viewed during this run.
+  Skipped Posts: (131) - 3 posts were previously seen, 128 were from users already followed, 0 were your posts.
+  Mutuals: 86 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (50) - 12 posts had no media attached, and 38 posts had videos attached.
+  Processed: 545 posts had pics attached: 252 were identified as cat pics and 293 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:12:20.374307 | completed run at: 2025-02-23 22:53:06.211603-05:00
+cur followers: 12478 | now following: 30744
+____________________
+
+2025-02-24 10:54:28.966168-05:00
+prior followers: 12610 | previously following: 30744
+Feed 'Siamese Cats':
+  Followed 890 new users!
+    Of those follows, 258 were posters and 632 were from likes.
+  965 posts in total were viewed during this run.
+  Skipped Posts: (162) - 2 posts were previously seen, 159 were from users already followed, 1 were your posts.
+  Mutuals: 147 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (45) - 9 posts had no media attached, and 36 posts had videos attached.
+  Processed: 611 posts had pics attached: 258 were identified as cat pics and 353 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:09:09.883863 | completed run at: 2025-02-24 11:03:38.850031-05:00
+cur followers: 12616 | now following: 31634
+____________________
+
+2025-02-24 14:20:31.203581-05:00
+prior followers: 12719 | previously following: 31634
+Feed 'Siamese Cats':
+  Followed 787 new users!
+    Of those follows, 230 were posters and 557 were from likes.
+  970 posts in total were viewed during this run.
+  Skipped Posts: (170) - 2 posts were previously seen, 168 were from users already followed, 0 were your posts.
+  Mutuals: 117 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (70) - 24 posts had no media attached, and 46 posts had videos attached.
+  Processed: 613 posts had pics attached: 230 were identified as cat pics and 383 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+3. 
+time diff: 0:12:53.595742 | completed run at: 2025-02-24 14:33:24.799323-05:00
+cur followers: 12746 | now following: 32419
+____________________
+
+2025-02-24 18:35:25.804007-05:00
+prior followers: 12850 | previously following: 32419
+Feed 'Siamese Cats':
+  Followed 888 new users!
+    Of those follows, 263 were posters and 625 were from likes.
+  960 posts in total were viewed during this run.
+  Skipped Posts: (174) - 4 posts were previously seen, 170 were from users already followed, 0 were your posts.
+  Mutuals: 124 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (76) - 38 posts had no media attached, and 38 posts had videos attached.
+  Processed: 586 posts had pics attached: 263 were identified as cat pics and 323 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:11:58.557942 | completed run at: 2025-02-24 18:47:24.361949-05:00
+cur followers: 12868 | now following: 33307
+____________________
+
+2025-02-25 00:07:58.312452-05:00
+WARNING - failed to authenticate huggingface
+ERROR - failed to initialize ViT model____________________
+
+2025-02-25 01:00:59.853302-05:00
+WARNING - failed to authenticate huggingface
+ERROR - failed to initialize ViT model____________________
+
+2025-02-25 14:24:41.026010-05:00
+prior followers: 13053 | previously following: 33307
+Feed 'Siamese Cats':
+  Followed 707 new users!
+    Of those follows, 233 were posters and 474 were from likes.
+  960 posts in total were viewed during this run.
+  Skipped Posts: (190) - 4 posts were previously seen, 186 were from users already followed, 0 were your posts.
+  Mutuals: 119 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (65) - 19 posts had no media attached, and 46 posts had videos attached.
+  Processed: 586 posts had pics attached: 233 were identified as cat pics and 353 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:10:06.245872 | completed run at: 2025-02-25 14:34:47.271882-05:00
+cur followers: 13064 | now following: 34014
+____________________
+
+2025-02-25 19:23:46.447121-05:00
+prior followers: 13155 | previously following: 32278
+Feed 'Siamese Cats':
+  Followed 1006 new users!
+    Of those follows, 243 were posters and 763 were from likes.
+  859 posts in total were viewed during this run.
+  Skipped Posts: (155) - 3 posts were previously seen, 152 were from users already followed, 0 were your posts.
+  Mutuals: 106 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (55) - 18 posts had no media attached, and 37 posts had videos attached.
+  Processed: 543 posts had pics attached: 243 were identified as cat pics and 300 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:12:06.690871 | completed run at: 2025-02-25 19:35:53.137992-05:00
+cur followers: 13179 | now following: 33284
+____________________
+
+2025-02-26 00:21:32.122175-05:00
+ERROR - failed to initialize ViT model
+____________________
+
+2025-02-26 00:43:09.207458-05:00
+ERROR - failed to log in to the bluesky client: 3 validation errors for Response
+didDoc
+  Extra inputs are not permitted [type=extra_forbidden, input_value={'@context': ['https://ww...st.host.bsky.network'}]}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden
+emailAuthFactor
+  Extra inputs are not permitted [type=extra_forbidden, input_value=False, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden
+active
+  Extra inputs are not permitted [type=extra_forbidden, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.9/v/extra_forbidden
+____________________
+
+2025-02-26 01:43:54.335737-05:00
+prior followers: 13288 | previously following: 33284
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 124 were posters and 276 were from likes.
+  415 posts in total were viewed during this run.
+  Skipped Posts: (76) - 0 posts were previously seen, 76 were from users already followed, 0 were your posts.
+  Mutuals: 53 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (21) - 8 posts had no media attached, and 13 posts had videos attached.
+  Processed: 265 posts had pics attached: 124 were identified as cat pics and 141 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:41.597575 | completed run at: 2025-02-26 01:48:35.933312-05:00
+cur followers: 13289 | now following: 33684
+____________________
+
+2025-02-26 03:01:00.058230-05:00
+prior followers: 13308 | previously following: 33684
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 101 were posters and 299 were from likes.
+  796 posts in total were viewed during this run.
+  Skipped Posts: (463) - 413 posts were previously seen, 50 were from users already followed, 0 were your posts.
+  Mutuals: 53 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (20) - 9 posts had no media attached, and 11 posts had videos attached.
+  Processed: 260 posts had pics attached: 101 were identified as cat pics and 159 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:46.206313 | completed run at: 2025-02-26 03:05:46.264543-05:00
+cur followers: 13308 | now following: 34084
+____________________
+
+2025-02-26 05:00:51.336584-05:00
+prior followers: 13331 | previously following: 34084
+Feed 'Siamese Cats':
+  Followed 163 new users!
+    Of those follows, 57 were posters and 106 were from likes.
+  956 posts in total were viewed during this run.
+  Skipped Posts: (703) - 650 posts were previously seen, 53 were from users already followed, 0 were your posts.
+  Mutuals: 32 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (12) - 4 posts had no media attached, and 8 posts had videos attached.
+  Processed: 209 posts had pics attached: 57 were identified as cat pics and 152 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:03:30.001730 | completed run at: 2025-02-26 05:04:21.338314-05:00
+cur followers: 13333 | now following: 34247
+____________________
+
+2025-02-26 07:00:51.186155-05:00
+prior followers: 13354 | previously following: 34247
+Feed 'Siamese Cats':
+  Followed 213 new users!
+    Of those follows, 73 were posters and 140 were from likes.
+  957 posts in total were viewed during this run.
+  Skipped Posts: (636) - 578 posts were previously seen, 58 were from users already followed, 0 were your posts.
+  Mutuals: 37 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (25) - 2 posts had no media attached, and 23 posts had videos attached.
+  Processed: 259 posts had pics attached: 73 were identified as cat pics and 186 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:05:32.914736 | completed run at: 2025-02-26 07:06:24.100891-05:00
+cur followers: 13357 | now following: 34460
+____________________
+
+2025-02-26 09:00:59.462699-05:00
+prior followers: 13406 | previously following: 32458
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 70 were posters and 330 were from likes.
+  288 posts in total were viewed during this run.
+  Skipped Posts: (50) - 0 posts were previously seen, 50 were from users already followed, 0 were your posts.
+  Mutuals: 45 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (14) - 7 posts had no media attached, and 7 posts had videos attached.
+  Processed: 179 posts had pics attached: 70 were identified as cat pics and 109 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:03:09.810945 | completed run at: 2025-02-26 09:04:09.273644-05:00
+cur followers: 13409 | now following: 32858
+____________________
+
+2025-02-26 11:00:59.540823-05:00
+prior followers: 13450 | previously following: 32858
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 130 were posters and 270 were from likes.
+  439 posts in total were viewed during this run.
+  Skipped Posts: (60) - 0 posts were previously seen, 60 were from users already followed, 0 were your posts.
+  Mutuals: 59 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (30) - 3 posts had no media attached, and 27 posts had videos attached.
+  Processed: 290 posts had pics attached: 130 were identified as cat pics and 160 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:05:13.387958 | completed run at: 2025-02-26 11:06:12.928781-05:00
+cur followers: 13454 | now following: 33258
+____________________
+
+2025-02-26 13:00:50.949083-05:00
+prior followers: 13524 | previously following: 33258
+Feed 'Siamese Cats':
+  Followed 402 new users!
+    Of those follows, 93 were posters and 309 were from likes.
+  367 posts in total were viewed during this run.
+  Skipped Posts: (56) - 0 posts were previously seen, 56 were from users already followed, 0 were your posts.
+  Mutuals: 44 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (20) - 6 posts had no media attached, and 14 posts had videos attached.
+  Processed: 247 posts had pics attached: 93 were identified as cat pics and 154 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:16.404933 | completed run at: 2025-02-26 13:05:07.354016-05:00
+cur followers: 13531 | now following: 33660
+____________________
+
+2025-02-26 15:00:51.304956-05:00
+prior followers: 13570 | previously following: 33660
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 82 were posters and 318 were from likes.
+  308 posts in total were viewed during this run.
+  Skipped Posts: (52) - 0 posts were previously seen, 52 were from users already followed, 0 were your posts.
+  Mutuals: 32 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (24) - 10 posts had no media attached, and 14 posts had videos attached.
+  Processed: 200 posts had pics attached: 82 were identified as cat pics and 118 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:03:25.222332 | completed run at: 2025-02-26 15:04:16.527288-05:00
+cur followers: 13572 | now following: 34060
+____________________
+
+2025-02-26 17:00:50.800532-05:00
+prior followers: 13625 | previously following: 34060
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 101 were posters and 299 were from likes.
+  375 posts in total were viewed during this run.
+  Skipped Posts: (55) - 2 posts were previously seen, 53 were from users already followed, 0 were your posts.
+  Mutuals: 50 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (29) - 8 posts had no media attached, and 21 posts had videos attached.
+  Processed: 241 posts had pics attached: 101 were identified as cat pics and 140 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:06.057325 | completed run at: 2025-02-26 17:04:56.857857-05:00
+cur followers: 13633 | now following: 34460
+____________________
+
+2025-02-26 19:00:58.753778-05:00
+prior followers: 13687 | previously following: 34461
+Feed 'Siamese Cats':
+  Followed 401 new users!
+    Of those follows, 121 were posters and 280 were from likes.
+  475 posts in total were viewed during this run.
+  Skipped Posts: (96) - 0 posts were previously seen, 96 were from users already followed, 0 were your posts.
+  Mutuals: 51 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (25) - 8 posts had no media attached, and 17 posts had videos attached.
+  Processed: 303 posts had pics attached: 121 were identified as cat pics and 182 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:05:09.834655 | completed run at: 2025-02-26 19:06:08.588433-05:00
+cur followers: 13690 | now following: 34862
+____________________
+
+2025-02-26 21:00:51.347136-05:00
+prior followers: 13727 | previously following: 34863
+Feed 'Siamese Cats':
+  Followed 401 new users!
+    Of those follows, 91 were posters and 310 were from likes.
+  327 posts in total were viewed during this run.
+  Skipped Posts: (61) - 0 posts were previously seen, 61 were from users already followed, 0 were your posts.
+  Mutuals: 36 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (26) - 6 posts had no media attached, and 20 posts had videos attached.
+  Processed: 204 posts had pics attached: 91 were identified as cat pics and 113 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:03:37.540460 | completed run at: 2025-02-26 21:04:28.887596-05:00
+cur followers: 13732 | now following: 35264
+____________________
+
+2025-02-26 23:00:51.113179-05:00
+prior followers: 13758 | previously following: 35264
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 139 were posters and 261 were from likes.
+  496 posts in total were viewed during this run.
+  Skipped Posts: (87) - 1 posts were previously seen, 86 were from users already followed, 0 were your posts.
+  Mutuals: 53 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (32) - 9 posts had no media attached, and 23 posts had videos attached.
+  Processed: 324 posts had pics attached: 139 were identified as cat pics and 184 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #9. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
+time diff: 0:05:28.265272 | completed run at: 2025-02-26 23:06:19.378451-05:00
+cur followers: 13760 | now following: 35664
+____________________
+
+2025-02-27 01:00:51.047094-05:00
+prior followers: 13797 | previously following: 35664
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 118 were posters and 282 were from likes.
+  915 posts in total were viewed during this run.
+  Skipped Posts: (570) - 495 posts were previously seen, 75 were from users already followed, 0 were your posts.
+  Mutuals: 56 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (21) - 7 posts had no media attached, and 14 posts had videos attached.
+  Processed: 268 posts had pics attached: 118 were identified as cat pics and 150 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:41.665324 | completed run at: 2025-02-27 01:05:32.712418-05:00
+cur followers: 13801 | now following: 36064
+____________________
+
+2025-02-27 03:00:50.664632-05:00
+prior followers: 13817 | previously following: 36064
+Feed 'Siamese Cats':
+  Followed 219 new users!
+    Of those follows, 62 were posters and 157 were from likes.
+  966 posts in total were viewed during this run.
+  Skipped Posts: (727) - 686 posts were previously seen, 40 were from users already followed, 1 were your posts.
+  Mutuals: 34 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (16) - 5 posts had no media attached, and 11 posts had videos attached.
+  Processed: 189 posts had pics attached: 62 were identified as cat pics and 127 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:03:40.306697 | completed run at: 2025-02-27 03:04:30.971329-05:00
+cur followers: 13818 | now following: 36283
+____________________
+
+2025-02-27 05:00:50.823441-05:00
+prior followers: 13842 | previously following: 36284
+Feed 'Siamese Cats':
+  Followed 145 new users!
+    Of those follows, 68 were posters and 77 were from likes.
+  965 posts in total were viewed during this run.
+  Skipped Posts: (710) - 669 posts were previously seen, 40 were from users already followed, 1 were your posts.
+  Mutuals: 34 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (21) - 7 posts had no media attached, and 14 posts had videos attached.
+  Processed: 200 posts had pics attached: 68 were identified as cat pics and 132 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:03:25.480416 | completed run at: 2025-02-27 05:04:16.303857-05:00
+cur followers: 13842 | now following: 36429
+____________________
+
+2025-02-27 07:00:51.283589-05:00
+prior followers: 13868 | previously following: 36429
+Feed 'Siamese Cats':
+  Followed 223 new users!
+    Of those follows, 71 were posters and 152 were from likes.
+  971 posts in total were viewed during this run.
+  Skipped Posts: (645) - 575 posts were previously seen, 69 were from users already followed, 1 were your posts.
+  Mutuals: 26 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (49) - 8 posts had no media attached, and 41 posts had videos attached.
+  Processed: 251 posts had pics attached: 71 were identified as cat pics and 179 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg3 #38. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
+time diff: 0:04:09.670012 | completed run at: 2025-02-27 07:05:00.953601-05:00
+cur followers: 13872 | now following: 36652
+____________________
+
+2025-02-27 09:00:51.020282-05:00
+prior followers: 13914 | previously following: 34285
+Feed 'Siamese Cats':
+  Followed 401 new users!
+    Of those follows, 110 were posters and 291 were from likes.
+  422 posts in total were viewed during this run.
+  Skipped Posts: (82) - 1 posts were previously seen, 81 were from users already followed, 0 were your posts.
+  Mutuals: 62 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (35) - 4 posts had no media attached, and 31 posts had videos attached.
+  Processed: 243 posts had pics attached: 110 were identified as cat pics and 133 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:17.173694 | completed run at: 2025-02-27 09:05:08.193976-05:00
+cur followers: 13921 | now following: 34686
+____________________
+
+2025-02-27 11:00:51.323813-05:00
+prior followers: 13961 | previously following: 34686
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 93 were posters and 307 were from likes.
+  359 posts in total were viewed during this run.
+  Skipped Posts: (60) - 0 posts were previously seen, 60 were from users already followed, 0 were your posts.
+  Mutuals: 57 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (28) - 9 posts had no media attached, and 19 posts had videos attached.
+  Processed: 214 posts had pics attached: 93 were identified as cat pics and 121 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:03:44.464146 | completed run at: 2025-02-27 11:04:35.787959-05:00
+cur followers: 13970 | now following: 35086
+____________________
+
+2025-02-27 13:00:51.196817-05:00
+prior followers: 14016 | previously following: 35086
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 122 were posters and 278 were from likes.
+  574 posts in total were viewed during this run.
+  Skipped Posts: (102) - 1 posts were previously seen, 100 were from users already followed, 1 were your posts.
+  Mutuals: 87 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (33) - 10 posts had no media attached, and 23 posts had videos attached.
+  Processed: 352 posts had pics attached: 122 were identified as cat pics and 230 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:05:53.750094 | completed run at: 2025-02-27 13:06:44.946911-05:00
+cur followers: 14023 | now following: 35486
+____________________
+
+2025-02-27 15:00:51.085749-05:00
+prior followers: 14062 | previously following: 35486
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 107 were posters and 293 were from likes.
+  460 posts in total were viewed during this run.
+  Skipped Posts: (93) - 0 posts were previously seen, 93 were from users already followed, 0 were your posts.
+  Mutuals: 49 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (35) - 12 posts had no media attached, and 23 posts had videos attached.
+  Processed: 283 posts had pics attached: 107 were identified as cat pics and 176 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:50.070457 | completed run at: 2025-02-27 15:05:41.156206-05:00
+cur followers: 14066 | now following: 35886
+____________________
+
+2025-02-27 17:00:51.180331-05:00
+prior followers: 14120 | previously following: 35886
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 102 were posters and 298 were from likes.
+  393 posts in total were viewed during this run.
+  Skipped Posts: (90) - 1 posts were previously seen, 89 were from users already followed, 0 were your posts.
+  Mutuals: 46 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (25) - 7 posts had no media attached, and 18 posts had videos attached.
+  Processed: 232 posts had pics attached: 102 were identified as cat pics and 129 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #30. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
+time diff: 0:04:03.067614 | completed run at: 2025-02-27 17:04:54.247945-05:00
+cur followers: 14123 | now following: 36286
+____________________
+
+2025-02-27 19:00:59.046579-05:00
+prior followers: 14177 | previously following: 36286
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 124 were posters and 276 were from likes.
+  496 posts in total were viewed during this run.
+  Skipped Posts: (87) - 3 posts were previously seen, 84 were from users already followed, 0 were your posts.
+  Mutuals: 61 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (39) - 10 posts had no media attached, and 29 posts had videos attached.
+  Processed: 309 posts had pics attached: 124 were identified as cat pics and 185 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:05:07.656426 | completed run at: 2025-02-27 19:06:06.703005-05:00
+cur followers: 14179 | now following: 36686
+____________________
