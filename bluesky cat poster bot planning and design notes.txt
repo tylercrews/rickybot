@@ -848,3 +848,109 @@ docker build --provenance=false --platform linux/arm64 -t <DOCKER IMAGE NAME> .
 docker push <ACCOUNTNUM>.dkr.ecr.<REGION>.amazonaws.com/<AWS REPO>:latest
 
 Great work, btw. Proud of you :*
+
+run 1 at 5am was 3.5m with 3gigs, 250 posts checked
+run 2 at 7am was 5.5m with 2gigs, 300 posts checked.
+so yeah, we just need more memory. Can't be helped.
+so we're gonna be looking at that 133,333 number, might end up paying a monthly sub to aws like they wanted. but it'll be worth.
+
+first automated deletion run was a success, running 3.5 mins. Just need to observe that we bail out of the 3 subsequent 'empty' runs and i'll be satisfied that the weekly runs are good to go.
+However I'm starting to think that for the add follows the best thing would be to just cut the runs in half for not-saturday. Reducing to 6 runs might save 2 mins per run of startup time, which would be like 6*27. We'll see, I want to at least observe how it runs like this for about a week unless our usage chart is like insane
+
+run 3 at 9am was 3.30m with 3gigs, 238 posts checked
+
+for the empty delete runs we're looking at 5.25 seconds. that's a quarter of a minute totally no big deal I like that.
+Alright!
+
+as for the other runs, the longest wa 5.5m still, there was another of those, the average is 5mins, and the shortest is still 3.2 mins. 
+I'm making MASSIVE GAINS today though. 
+started today at 13288 followers, and now we're at 13572. A 500 follower jump is practically unheard of. that's like half of caturday numbers!!
+Looks like following people shortly after they post might really be making a difference.
+
+FOR STATISTICS SAKE 
+FULL LAMBDA AUTOMATION BEGAN 2025-02-26 01:43:54.33
+prior followers: 13288 | previously following: 33284
+So we can measure growth at like 1 week, two weeks, 1 month from there.
+
+next time you need to upload an update I realize it would have been way better to name the logging files with no number, and and there could be a fifth microservice that migrates that over to a back, or just manually copy it over to a new file and delete everything from the old one leaving it with the same name to start filling up again.
+
+followers at 9pm -  followers: 13732
+followers at 11pm - followers: 13760
+followers at 01am - followers: 13801
+so in the span of 24 hours gained ~500 followers.
+
+wow that means we could do a time-to-500 like how we compared to the original manual run
+61 days * 24 hours vs 24 hours is nuts
+6100%? it would simplify down to that right. or 6000% that number feels less cool though actually than 3172 lmfao
+
+I need to create an aws desktop what is the name of those again 
+create one with the display of all the services running, recent costs for each, successful runs of each
+
+2025-02-27 1328
+runs are going really well.
+I posted a picture during "dead hours" - the only runs that haven't been able to hit the full 400 are at 3am, 5am, and 7am. Posted a pic at 3:45 last night and it's only up to 465 likes today. Fascinating that it feels like that is "underperforming" now (another pic posted at 11:30am already has 525 likes). 
+But there's been some interesting analysis on the dead hours. Even though I'm only getting 200 new follows during those runs, I'm still getting ~40 follow-backs in between each run. So it may be possible that I'm hitting a higher conversion rate during that period. It almost makes me wish that I had things set up to see the conversion rate per run instead of per day, but I think I have plenty of statistics as it is.
+
+need to clean up the unused ECR registry before 12 months so I'm not getting charged for all the test images
+
+2025-02-28 0827
+good news and bad news, the good news is that it appears my code handled rate limiting well. The bad news is that for the first deletion run of friday only 3000 deletions occurred instead of 3500, meaning we got rate limited well before.
+For now I've disabled the add followers runs - 9:00 won't occur, deletions will occur at 10:00, we'll get through 3500 deletions of the 6216 remaining users, and it will take the third deletion run at 12 and I can turn on follows again at 1.
+
+THIS is when I need to do my dead zone runs. Instead of having 12 + 4 a day I need to do like 9+3 and 8 + 4. Literally just skip a few and prioritize the deletions having enough space to not get rate limited.
+For the normal weekdays actually we could do like 10 + 2 + 2 extra checks
+for fri sat should definitely do 8 + 4.
+and the deletion runs will occur during 1am 3am 5am 7am est since those are the runs failing to find 400 new follows 1am is the closest with 366
+
+5 and 7 have never managed to get all 400 follows. 3am sometimes, 1am most of the time, 9am all the time
+
+So the checks will be in between we should have enough to not get rate limited there
+i.e.
+now deletions will be at 3, 4, 5, 6, 7, 8 on fridays
+5, 6, 7, 8 on s-th
+
+best case/expected case is that 7 and 8 will be empty runs no matter what, and then we'll have plenty of time to transition back to normal runs so we don't get rate limited. Worst case is we still have people and it carries over. 
+
+To see if this will work I'm going to run another deletion at 9 so that we have a delete every hour for this fri+sat.
+Hopefully the only reason we got rate limited is because follows chew into the 5 min range and so we still had part of our max rate per hour gobbled.
+Maybe it would be better to give some buffer on fridays of an hour and a half.
+0300, 0415, 0530, 0645, 0800, 0900 seems like a good schedule for fridays actually, but that doesnt fit into a cron job very well at all lol you'd need 4 different triggers.
+we'll see how this 9am run goes right now, and if we need to space the runs out a little further then so be it, i'll set up whatever amount of triggers I have to.
+quick prayge
+
+now that we have a second run at 9am that also maxed at 3005 I think that there's an issue with our delete cap. We're maxing out at 3005 users consistently per hour, so it's probably irrelevant to the add runs beforehand. So the 75 mins won't help. I think I need to adjust the code to stop at 2750 users processed.
+Because the crucial thing is that instead of straight up feeding a list of deletions, now we're costing Reads to our bluesky allotment. reads cost 1 point per, which I was disregarding before because they weren't actually interacting with us.
+
+So I have two potential solutions to refactor the delete code - 1. we do a pre-delete status check of all the users in the s3 bucket so we can efficiently delete 3500 deletions every time. 
+2. reduce this to 2750 and have 8 runs per day on fridays to be safe. (2750 will cover 14000 in 5.45 runs)
+3. do nothing just let it max out every time. - I don't like this because it messes up the logging.
+
+I think we can do 2750 and do deletions at 2, 3, 4, 5, 6, 7, 8 (7 runs) and that will be more than enough to cover fri+sat
+going with option 2 will be the most straightforward to implement. We'll just put a cap on the number processed. 
+We could get fancy and literally count the bluesky points - add 1 per processed and 2 per delete.
+but it's a little weird. regardless of the delete count, 345 or 359 we always process 3004 users from the list before we start timing out.
+
+So I was hoping that at least the stats would work correctly, but that didn't work quite right either, it didn't seem to pull any of the stats from the dynamodb. So I'm gonna have to spend some time manually testing and getting this program right before redeploying. Which I should have done in the first place, just got too excited I guess.
+The plus side is that now that I see it in action on the fri+sat day I have the great idea of testing the weekdays in super small batches (like 100) to make sure that the logging is working correctly. Idk why I was so resigned to just wait to test on fri+sat.
+Another plus side is that 1. our error handling let the function calls survive, and 2. our S3 storage strategy and list handling and error handling all worked seemingly perfectly. So that's awesome.
+
+Also looks like I only need 1gb of memory for the deletion, it's kind of time gated by the bluesky api calls more than anything anyway. 
+
+So I'm gonna take the delete lambda offline for now, but luckily it wasn't going to be running anymore today and tomorrow anyway so I have plenty of time to get it back online. Well, not back online we'll be going to manual testing sunday.
+
+And honestly I'm not particularly happy with how I'm logging the deletions anyway, now that I see it in action I think we can refine that a bit as well.
+
+2025-02-28 1719
+I was on my daily walk and reflecting on everything, still bemoaning how if I had a way to create kind of a function parameter I wouldn't have to do a full update to fine tune the performance of my microservices.
+And then it hit me - The AWS SecretsManager secret! I can store some important parameters in there that the add and delete functions run on - the feed urls, how many follows to add (sat+week), how many posts to check (sat+week), how many posts to process before cutting off, how many deletes to process before cutting off, or a total "bluesky_api_points" to cut off at if we refactor that way.
+I can keep those values in secrets manager, and if they ever need to be tuned they'll be updated in the secret instead of in the actual program so we don't need to do a full docker update!
+That's gonna be sweet.
+Especially in the far future if something weird happens like a feed I'm using gets deleted and needs to be replaced like that one time. It'll be so cool to just plug in a new feed anytime I want. Gotta review and see if there are any other parameters that I should use for all of the microservices.
+
+Another thing I'm currently thinking about is reply-engagement. My like count is very high (like over 500) but replies are only in the single or double digits. Is the overlap between people who reply on posts and people who like posts a complete overlap? or are we leaving some replyers on the table? I'll need to test to investigate.
+
+Finally, I'm considering a fifth microservice that would go through my own posts once a day and follow all the people who like my posts. I feel like that would be a high followback rate activity.
+
+Maybe I'm not as done with this project as I thought I was lol. Definitely feels like the hard part is behind me though, I'm excited at still having a little room to optimize.
+
+One last thing to mention is that we're in a bit of an awkward growth phase right now. With our follows/day finally maxxed out by automation, it feels weird that we're about to be at 15k followers but 45k following, brushing up on that 33% value I had originally come up with. But I'm confident that will even out over the next two weeks because our number of follows that aren't following back can only go down from here. And who knows how good the conversion rate will be now that we're automating.
