@@ -32,3 +32,4 @@ REAL STATS - 1078 followed back. 8147 did not. 11.69% conversion rate.
 
 2025-03-02: Processed 28 users from the list of 2913. From this batch of deletions 3 users followed back, 25 did not follow back and were deleted, and 1 accounts no longer exist.
 Follows count - now: 40678 | prev: 40699
+2025-03-02: successfully uploaded the list of remaining follows to check to s3.
