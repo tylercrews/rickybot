@@ -42,3 +42,5 @@ Follows count - now: 40304 | prev: 40535Successfully reuploaded remainder of lis
 Follows count - now: 40070 | prev: 40304. Successfully reuploaded remaining 2164 users to s3.
 2025-03-02: Processed 1128 users from the list of 2164. From this batch of deletions 128 users followed back, 1000 did not follow back and were deleted, and 5 accounts no longer exist.
   Follows count - now: 39143 | prev: 40070. Successfully reuploaded remaining 1036 users to s3.
+2025-03-02: Processed 1036 users from the list of 1038. 2 failures were encountered and need to be retried. From this batch of deletions 123 users followed back, 913 did not follow back and were deleted, and 7 accounts no longer exist.
+  Follows count - now: 38289 | prev: 39142. Successfully reuploaded remaining 2 users to s3.
