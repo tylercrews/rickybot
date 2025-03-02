@@ -46,3 +46,9 @@ Follows count - now: 40070 | prev: 40304. Successfully reuploaded remaining 2164
   Follows count - now: 38289 | prev: 39142. Successfully reuploaded remaining 2 users to s3.
 2025-03-02: Processed 2 users from the list of 2. From this batch of deletions 0 users followed back, 2 did not follow back and were deleted, and 0 accounts no longer exist.
   Follows count - now: 38289 | prev: 38289
+2025-03-02: Finished checking last week's follows from SUN for deletions. Object was successfully deleted from s3 bucket. TODAY'S STATS: 
+  2915 total follows processed. 
+  325 users followed back. 
+  2590 did not follow back and were deleted. 
+  15 accounts no longer exist. 
+  11.15% Conversion Rate.
