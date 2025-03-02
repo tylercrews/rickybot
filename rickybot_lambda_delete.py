@@ -46,17 +46,17 @@ DDB_ATTR_NOFOLLOWBACK = 'NO-FOLLOWBACK'
 
 PRIMARY_KEY = 'DOW' # the dynamodb table's primary key. there is no sort key
 DOW_KEYS = {
-		'Sunday': 'SUN',
-		'Monday': 'MON',
-		'Tuesday': 'TUE',
-		'Wednesday': 'WED',
-		'Thursday': 'THU',
-		'Friday': 'FRI+SAT',
-		'Saturday': 'FRI+SAT'
+	'Sunday': 'SUN',
+	'Monday': 'MON',
+	'Tuesday': 'TUE',
+	'Wednesday': 'WED',
+	'Thursday': 'THU',
+	'Friday': 'FRI+SAT',
+	'Saturday': 'FRI+SAT'
 }
 USER_TIMEZONE = "US/Eastern"
 
-FILE_PATH = "LOGGING_DEL_02.txt"
+FILE_PATH = "LOGGING_DEL.txt"
 BRANCH = "main"
 
 MY_DID = 'did:plc:ktkc7jfakxzjpooj52ffc6ra'
@@ -112,14 +112,13 @@ def lambda_handler(event, context):
 	BSKY_PASSWORD = secret_map['bsky_password']
 	GITHUB_TOKEN = secret_map['github_token']
 	GITHUB_REPO = secret_map['github_user/repo']
-	# HUGGING_TOKEN = secret_map['hugging_token']
+	DELETION_MAX = int(secret_map['deletion_max'])
 
 	# before the program starts let's set up the logging function so we can insert it at any point where our program could break
 	def logging_deletions(logging_text):
 		# LOGGING ALL THE CHANGES TO OUR LOGGING FILE IN GITHUB
-		datetime_object = datetime.datetime.fromtimestamp(cur_timestamp.timestamp())
-		date_only = str(datetime_object.date())
-		commit_message = "Logging follow deletions on " + date_only
+		str_timestamp = str(cur_timestamp)
+		commit_message = "Logging follow deletions on " + str_timestamp
 
 		# Step 1: Get the file's current content and SHA
 		url = f"https://api.github.com/repos/{GITHUB_REPO}/contents/{FILE_PATH}"
@@ -132,23 +131,23 @@ def lambda_handler(event, context):
 		content = base64.b64decode(response_json["content"]).decode("utf-8")
 
 		# Step 2: Modify the file content
-		new_content = content + date_only + ': ' + logging_text + '\n'
+		new_content = content + str_timestamp + ': ' + logging_text + '\n'
 		encoded_content = base64.b64encode(new_content.encode("utf-8")).decode("utf-8")
 
 		# Step 3: Push the updated content
 		data = {
-				"message": commit_message,
-				"content": encoded_content,
-				"sha": file_sha,
-				"branch": BRANCH,
+			"message": commit_message,
+			"content": encoded_content,
+			"sha": file_sha,
+			"branch": BRANCH,
 		}
 		update_response = requests.put(url, headers=headers, json=data)
 
 		if update_response.status_code == 200:
-				logger.info("Logging file updated successfully! Here's what was added to the logs:")
-				logger.info(date_only + ": " + logging_text)
+			logger.info("Logging file updated successfully! Here's what was added to the logs:")
+			logger.info(str_timestamp + ": " + logging_text)
 		else:
-				logger.error(f"ERROR - {update_response.json()}")
+			logger.error(f"ERROR - {update_response.json()}")
 
 	# initialize dynamodb
 	try:
@@ -184,7 +183,7 @@ def lambda_handler(event, context):
 		response = s3.get_object(Bucket=S3_BUCKET, Key=s3_key)
 		# creates a list from the json info in the s3 bucket
 		old_follows = json.loads(response["Body"].read())
-		logger.info(old_follows, type(old_follows))
+		logger.info(len(old_follows), type(old_follows), old_follows)
 	except s3.exceptions.ClientError as e:
 		if e.response["Error"]["Code"] == "404": # object was not found at the key
 			# this isn't necessarily an ERROR because we're going to do more deletion runs than we need, but logging as an error to make sure it shows up
@@ -247,9 +246,10 @@ def lambda_handler(event, context):
 			# we could really validate this by using the next line of code, but it's overkill - I don't want to get hyperspecific
 			# if e.response.content.message == 'Profile not found':
 			count_users_dne += 1
-		except:
+		except Exception as e:
 			# if we had a general exception then we should retry this user later, probably just timed out or something.
 			failed_to_delete.append(user_did)
+			logger.warning((f'general exception getting profile of user {user_did}. {repr(e)}: {e}'))
 			error_count += 1
 			if error_count > 3: # something's going wrong with this run, either rate limiting or timing out for some reason
 				break
@@ -261,14 +261,15 @@ def lambda_handler(event, context):
 				follow_uri = user_profile.viewer.following
 				if follow_uri != None: # maybe I manually unfollowed
 					client.delete_follow(follow_uri)
-			except:
+			except Exception as e:
 				# something went wrong and we failed to delete this user, it's extremely rare for this to happen unless you're just rate limited, so save this for later
 				failed_to_delete.append(user_did)
+				logger.warning(f'exception encountered deleting user {user_profile.handle}. {repr(e)}: {e}')
 				error_count += 1
 				if error_count > 3: # we're probably getting rate limited, so stop processing users
 					break
 			finally:
-				if no_followback >= 3500: # this is a hard cap on deletions so you don't get rate limited.
+				if no_followback >= DELETION_MAX: # check to see if we reached the hard cap on deletions so you don't get rate limited.
 					break
 		else:
 			followed_back += 1
@@ -283,18 +284,19 @@ def lambda_handler(event, context):
 		logger.warning(warning)
 		logging_deletions(warning)
 
-	# ok so we're out of the loop and here's what we need to do
-	# log our progress through the list of deletions.
-	logging_deletions(f'Processed {processed_count} users from the list of {len(old_follows)}.{"" if len(failed_to_delete) == 0 else f" {len(failed_to_delete)} failures were encountered and need to be retried."} From this batch of deletions {followed_back} users followed back, {no_followback} did not follow back and were deleted, and {count_users_dne} accounts no longer exist.\nFollows count - now: {following_after} | prev: {following_before}')
 	# add any users that we failed to delete back to the end of the list. hopefully this should usually be 0
 	old_follows.extend(failed_to_delete)
+	# logging flags
+	s3_reupload = -1
+	s3_deletion_success = False
 	# now we check to see if we made it to the end of the list.
 	if processed_count >= len(old_follows):
 		finished_deleting = True
 		# now delete the s3 object
 		try:
 			s3.delete_object(Bucket=S3_BUCKET, Key=s3_key)
-			logging_deletions('Finished processing all deletions for today. Object was successfully deleted from s3 bucket.')
+			s3_deletion_success = True
+			logger.info('Finished processing all deletions for today. Object was successfully deleted from s3 bucket.')
 		except Exception as e:
 			err = f'ERROR - failed to delete the list of follows from the s3 bucket: {e}'
 			logger.error(err)
@@ -304,20 +306,22 @@ def lambda_handler(event, context):
 		leftover_follows = old_follows[processed_count : ]
 		try:
 			s3.put_object(
-					Bucket=S3_BUCKET,
-					Key=s3_key,
-					Body=json.dumps(leftover_follows),
-					ContentType="application/json"
+				Bucket=S3_BUCKET,
+				Key=s3_key,
+				Body=json.dumps(leftover_follows),
+				ContentType="application/json"
 			)
-			logging_deletions(f'successfully uploaded the list of remaining follows to check to s3.')
+			s3_reupload = len(leftover_follows)
+			logger.info(f'successfully uploaded the list of remaining follows to check to s3.')
 		except Exception as e:
 			err = f"ERROR - failed to upload list of leftover follows to s3: {e}"
 			logger.error(err)
 			logging_deletions(err)
 			# don't terminate early here, we want the stats still
 
-	# delete s3 if nothing left to put in
-	# do logging here
+	# log our progress through the list of deletions, noting the status of the s3 reupload if it occurred
+	logging_deletions(f'Processed {processed_count} users from the list of {len(old_follows)}.{"" if len(failed_to_delete) == 0 else f" {len(failed_to_delete)} failures were encountered and need to be retried."} From this batch of deletions {followed_back} users followed back, {no_followback} did not follow back and were deleted, and {count_users_dne} accounts no longer exist.\n  Follows count - now: {following_after} | prev: {following_before}{f". Successfully reuploaded remaining {s3_reupload} users to s3." if s3_reupload > 0 else ""}')
+	
 
 	# pull up dynamodb, see if there were old stats, and add them to our current stats
 	try:
@@ -348,38 +352,38 @@ def lambda_handler(event, context):
 				err = f"ERROR - failed to delete item {DDB_DELSTATS_KEY} from dynamodb: {e}"
 				logger.error(err)
 				logging_deletions(err)
-		else:
-			# if we're not finished deleting then we update the ddb delstats for next run
-			try:
-				table.update_item(
-						Key={'DOW': DDB_DELSTATS_KEY},
-						UpdateExpression='SET #attr1 = :val1, #attr2 = :val2, #attr3 = :val3, #attr4 = :val4',
-						ExpressionAttributeNames={
-								'#attr1': DDB_ATTR_PROCESSED,
-								'#attr2': DDB_ATTR_DNE,
-								'#attr3': DDB_ATTR_FOLLOWBACKS,
-								'#attr4': DDB_ATTR_NOFOLLOWBACK
-						},
-						ExpressionAttributeValues={
-								':val1': processed_count,
-								':val2': count_users_dne,
-								':val3': followed_back,
-								':val4': no_followback
-						}
-				)
-			except Exception as e:
-				err = f'ERROR - completed deletions but failed to store running deletion statistics in dynamodb.\n{e}'
-				logger.error(err)
-				logging_deletions(err)
-				return {
-					'statusCode': 207,
-					'body': json.dumps(err)
-				}
 
 	# now log the statistics regardless of if there was anything in ddb (there will not be if there was only one deletion run for the day)
 	if finished_deleting:
 			conversion_rate = round(followed_back / (followed_back + no_followback) * 100, 2)
-			logging_deletions(f"STATS - Finished checking last week's follows from {s3_key} for deletions. In total there were {processed_count} follows processed. {followed_back} users followed back. {no_followback} did not follow back and were deleted. {count_users_dne} accounts no longer exist. Conversion Rate was {conversion_rate}%.")
+			logging_deletions(f"Finished {s3_key}. Last week's follows have been pruned. {'Object was successfully deleted from s3 bucket. ' if s3_deletion_success else ''}TODAY'S STATS: \n  {processed_count} total follows processed. \n  {followed_back} users followed back. \n  {no_followback} did not follow back and were deleted. \n  {count_users_dne} accounts no longer exist. \n  {conversion_rate}% Conversion Rate.")
+	else:
+		# if we're not finished deleting then we update the ddb delstats for next run
+		try:
+			table.update_item(
+				Key={'DOW': DDB_DELSTATS_KEY},
+				UpdateExpression='SET #attr1 = :val1, #attr2 = :val2, #attr3 = :val3, #attr4 = :val4',
+				ExpressionAttributeNames={
+					'#attr1': DDB_ATTR_PROCESSED,
+					'#attr2': DDB_ATTR_DNE,
+					'#attr3': DDB_ATTR_FOLLOWBACKS,
+					'#attr4': DDB_ATTR_NOFOLLOWBACK
+				},
+				ExpressionAttributeValues={
+					':val1': processed_count,
+					':val2': count_users_dne,
+					':val3': followed_back,
+					':val4': no_followback
+				}
+			)
+		except Exception as e:
+			err = f'ERROR - completed deletions but failed to store running deletion statistics in dynamodb.\n{e}'
+			logger.error(err)
+			logging_deletions(err)
+			return {
+				'statusCode': 207,
+				'body': json.dumps(err)
+			}
 
 	return {
 		'statusCode': 200,
