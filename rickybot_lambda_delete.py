@@ -249,7 +249,7 @@ def lambda_handler(event, context):
 		except Exception as e:
 			# if we had a general exception then we should retry this user later, probably just timed out or something.
 			failed_to_delete.append(user_did)
-			logger.warning((f'general exception getting profile of user {user_did}. {repr(e)}: {e}'))
+			logger.warning(f'general exception getting profile of user {user_did}. {repr(e)}: {e}')
 			error_count += 1
 			if error_count > 3: # something's going wrong with this run, either rate limiting or timing out for some reason
 				break
