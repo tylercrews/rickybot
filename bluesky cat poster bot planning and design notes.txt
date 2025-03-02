@@ -954,3 +954,16 @@ Finally, I'm considering a fifth microservice that would go through my own posts
 Maybe I'm not as done with this project as I thought I was lol. Definitely feels like the hard part is behind me though, I'm excited at still having a little room to optimize.
 
 One last thing to mention is that we're in a bit of an awkward growth phase right now. With our follows/day finally maxxed out by automation, it feels weird that we're about to be at 15k followers but 45k following, brushing up on that 33% value I had originally come up with. But I'm confident that will even out over the next two weeks because our number of follows that aren't following back can only go down from here. And who knows how good the conversion rate will be now that we're automating.
+
+reflecting on rate limit points again
+5000 points per hour,
+create is 3 points, update is 2 points, delete is 1 point. 
+Again, reads do not take any points. But it makes sense that you can only do 2500 deletes. I don't know why 3500 were working before, maybe they were just taking a lot longer? So we just need to change the cap to 2500, but use the secretsmanager to bring it down to 2400 if necessary.
+I guess it gives you a little leeway, which is why we were making it to 2650 deletes.
+We'll go down to 2500 but store that value in the secret. Should be able to handle everything we're doing on 2400 even.
+
+2025-03-02 0828
+Refactoring the logging and exporting that value and fixing the bug that was preventing the stats from being logged looks like it was a success. It turns out I put the code to update stats in an else block that wouldn't ever be triggered unless the stats block already existed in the first place. Reuploaded to ECR and should be able to see it in action tomorrow.
+A little worried about the status function performing correctly. 
+But I kind of need an excuse to upload new versions of the add and status lambdas so I can change the logging filepath and implement the new secretsmanager to the adds. 
+If it ain't broke don't fix it?
