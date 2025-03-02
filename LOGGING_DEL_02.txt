@@ -30,3 +30,5 @@ Follows count - now: 31233 | prev: 31405
 2025-02-28: STATS - Finished checking last week's follows from FRI+SAT for deletions. In total there were 215 follows processed. 28 users followed back. 187 did not follow back and were deleted. 2 accounts no longer exist. Conversion Rate was 13.02%.
 REAL STATS - 1078 followed back. 8147 did not. 11.69% conversion rate.
 
+2025-03-02: Processed 28 users from the list of 2913. From this batch of deletions 3 users followed back, 25 did not follow back and were deleted, and 1 accounts no longer exist.
+Follows count - now: 40678 | prev: 40699
