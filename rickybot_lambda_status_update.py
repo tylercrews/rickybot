@@ -30,7 +30,7 @@ S3_KEY_WHO_YOU_FOLLOW = 'STATUS-WHO-YOU-FOLLOW'
 
 
 USER_TIMEZONE = "US/Eastern"
-FILE_PATH = "LOGGING_STATUS_02.txt"
+FILE_PATH = "LOGGING_STATUS.txt"
 BRANCH = "main"
 
 def lambda_handler(event, context):
@@ -65,7 +65,6 @@ def lambda_handler(event, context):
 	BSKY_PASSWORD = secret_map['bsky_password']
 	GITHUB_TOKEN = secret_map['github_token']
 	GITHUB_REPO = secret_map['github_user/repo']
-	HUGGING_TOKEN = secret_map['hugging_token']
 
 	# before the program starts let's set up the logging function so we can insert it at any point where our program could break
 	def logging_status(logging_text):
