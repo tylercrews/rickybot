@@ -16,3 +16,4 @@ LOGGING_STATUS_02
 2025-02-24: ERROR - there was no previous list of who we follow found in the s3 bucket. Adding the new list of follows.
 2025-02-24: s3 update - uploaded followers: SUCCESS | uploaded who we follow: SUCCESS 
 2025-03-05: followers status - up 4360 followers this week. 204 users stopped following. 100 were successfully unfollowed, with 104 failures.
+2025-03-05: who you follow status - up 9271 follows this week. 15170 users have aged out and were necessary to prune. 5000 were successfully unfollowed, with 10170 failures.
