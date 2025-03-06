@@ -967,3 +967,58 @@ Refactoring the logging and exporting that value and fixing the bug that was pre
 A little worried about the status function performing correctly. 
 But I kind of need an excuse to upload new versions of the add and status lambdas so I can change the logging filepath and implement the new secretsmanager to the adds. 
 If it ain't broke don't fix it?
+
+2025-03-04 1824
+Things are going great with the adds and deletes. It was finally time for the weekly status run, but I encountered an error that I need to work through where I didn't realize that I had an uncommented reference to the huggingtoken value for no reason in that code. So gotta do a quick reupload which will let us change the logger filename.
+On my walk today I was thinking about a problem I may need to address though - usually the required deletions from the status updates shouldn't be that large. Maybe like 20 people who stopped following. But if, somehow, I managed to follow 3000 people by hand within a week that didn't follow me back, that could rate limit me. 
+Now that I write it out it sounds like I don't need to worry much about that happening. It crossed my mind because I was following people who liked my pinned post while I was donating blood yesterday.
+But if you're repeating this project and you're not me, just fyi - don't do that lol.
+But maybe I should be handling this so that we don't get timeouts. If I at least set a deletion cap, the remaining users would stick around until next week. We'll see how this run goes first though.
+
+But one thing I wanted to start thinking about is the definition of "success" of this bot. There's this site:
+https://vqv.app/
+it shows the top 500 bluesky accounts by follower count.
+To break into the top 500 you need 118,000 followers.
+If you get to 150,000 followers you're in the top 350. Not sure if that will still be the case when we get to that amount, I assume that each of those will have gained followers.
+But we've been pretty consistently getting 50 followers every two hours. It's crazy. 
+THEORETICALLY to get the 100,000 followers to make it into the top 500, it will be 100,000 / 50 * 2 hours / 24 = 166.66 days. So that's the dream is to make it into the top 500 users.
+
+2025-3-04 2021
+ok good news and bad news
+good news is the status update fix worked, and our run successfully completed without errors.
+bad news is that the results are totally insane. it says we have 15170 users in our follows from over a week ago that still do not follow us and need to be pruned. It also says it was able to follow 5000 of them, failing to remove 10,170. Could that really be true? I did have 45,000 follows. Could it be deleting people that I follow at random??
+Here's another thought - am I just refollowing people that I delete? Like a lot? I did get one message about it and blocked them. but what if it's happening by like 10s of thousands of users? That can't be, can it?
+I'm kind of worried I need to take this service offline so that I can watch it run manually like the deletions. 
+
+I think I have to think of a way to do this status update more frequently so that we can flush out all these old users in a way that's not going to contaminate our current stats. 
+
+Our aggregation occurs at 4:20am, and deletions for the day happen shortly after, with no new adds.
+So at 7am when our first run post deletions occur, then there should be Nobody followed that is not accounted for in an s3 bucket.
+So if we pull all of the existing s3 objects for every day that is not today, then we have all of the follows that are currently 'percolating' for the week.
+Which means we can create a hashset from THOSE users as the only users that we should not delete if they are not following us back. 
+That way we're not running off this s3 bucket of just "whoever existed last week" and we can stay more up to date with status updates without interfering with the current runs.
+also our time is at 8 mins already and we only had 45000 followers. it almost seems like if we double our followers count our lambda won't be able to run fast enough.
+So do we move this process to manual runs permanently? No way.
+
+I don't want to overreact here though. Theoretically, come next tuesday, if things are working as intended then we should still only have 10,170 left to prune, and we'll get rid of another 5000. 
+then two weeks from now it will have balanced out. 
+
+2025-03-05 2302 
+ah dangit I saw my follow count drop 5000 and I realized I left the test trigger on the status function so now it's deleted 5000 at random from who knows. 
+it did go from 10000 out of date to 33000 so it's detecting changes well? 
+My stats will be a little messed up now but it's ok.
+whoops. fixed now.
+
+2025-03-06 0141
+Received another complaint about multiple unfollowing and readdings.
+I can't publicly apologize that I'm running code that's harassing these people, I've got to fix that.
+So I'm going to have to keep a running hashset of all the people I've followed and load it in and out of S3 every time. 
+I think I always wanted to do that but it was so hard to load in the whole database before.
+How much data does 30million user ids take?
+But THIS was the reason I was waiting for to update the add follows list. we'll get that fixed up and start a new logging chapter. 
+Maybe instead of keeping a giant hash set of ids to screen out we should instead just block users so that we can't accidentally read them.
+https://docs.bsky.app/blog/block-implementation
+according to the documentation on block implementation, blocks do NOT remove follows. So to prune the follows list you would have to still remove the follow And block them, which I assume would cost twice as many api actions on the bluesky total, making it more difficult to get through our deletions.
+But on the plus side it would handle everything on bluesky's end, not require us to load in and save a GIANT hashset of follows from all time, and it actually will technically speed up our process of adding follows because blocked users won't appear in our feeds when we generate them (supposedly).
+So the question becomes - is it worth it for user experience to not add/readd people to never give someone the chance to follow again after just one week?
+I'll have to think about this.
