@@ -1200,3 +1200,21 @@ Feed 'Siamese Cats':
 time diff: 0:04:39.977550 | completed run at: 2025-03-05 19:05:35.215737-05:00
 cur followers: 17506 | now following: 41253
 ____________________
+
+2025-03-05 21:00:55.161525-05:00
+prior followers: 17537 | previously following: 36206
+Feed 'Siamese Cats':
+  Followed 180 new users!
+    Of those follows, 78 were posters and 102 were from likes.
+  284 posts in total were viewed during this run.
+  Skipped Posts: (43) - 0 posts were previously seen, 43 were from users already followed, 0 were your posts.
+  Mutuals: 47 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (23) - 4 posts had no media attached, and 19 posts had videos attached.
+  Processed: 171 posts had pics attached: 78 were identified as cat pics and 93 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #2. RequestException(Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '35000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1741226460', 'ratelimit-policy': '35000;w=86400', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Thu, 06 Mar 2025 02:00:59 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})): Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '35000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1741226460', 'ratelimit-policy': '35000;w=86400', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Thu, 06 Mar 2025 02:00:59 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+InvokeTimeoutError(): 
+time diff: 0:02:56.883337 | completed run at: 2025-03-05 21:03:52.044862-05:00
+cur followers: 17537 | now following: 36384
+____________________
