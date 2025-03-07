@@ -1036,3 +1036,30 @@ The bluesky documentation SAYS that muted users will not appear in my feeds. But
 I guess the only way is to mute someone on a feed and see if they show up.
 I did just do some testing manually with an existing feed and muting the top user. So it does look like it works that the posts won't show up at all, and so our add follows routine won't ever see them again.
 Hopefully it will all go smoothly.
+
+2025-03-07 0213
+first round of deletions with muting was successful. Still deleted 2500 without timing out. Not sure why but only 2192 were muted. 
+The only thing that went wrong was the logging stats - turns out that client.app.bsky.graph.get_mutes().mutes is the same as get_follows or get_feed, it gets pages of 50 at a time so the len was just 50. I'll have to fix that somehow. 
+Still not sure about the 318 discrepancy. It can't be because it errored out.
+The function took 9.5 mins, bumping the time up to 15 to max it out.
+what's interesting is we hit 3 errors on mutes for invalid requests. But those accounts are successfully muted when I check them. 
+Also i've introduced a slight bug where the mutes can cause the error count to go up above the acceptable amount, but it will never break out of the loop until an error is observed from the deletion call.
+OH DEAR GOD I just noticed that we only had 4400 in the bucket to delete for last fri+sat and so none of our aggregates were working, I introduced that huggingface token bug 
+i think I can fix this if I just run every day for the past week manually.
+Ok crisis averted there.
+But what in the world is going on with these mutes? I guess getting 90% of them muted is better than none.
+The other reasons - ok so we mark them as no followback before 
+* checking that there is no follow_uri, maybe I unfollowed a lot of them or there's some reason they don't make it into muting.
+so I should move that try catch block out? no we still only want to mute if we're actually deleting the follow. So we'll leave it where it is. I think everything's ok.
+The bad news that I've discovered is that there's no quickfunction to get the mutes count, you'd have to count them by page. Which is a little silly do I want to waste the time doing that? Probably not.
+
+2025-03-07 1611
+I realized I have made a terrible oversight. As I looked through my mentions and saw someone telling me to ~'fuck off and die' for following and unfollowing them, I looked at their profile and saw they weren't a cat poster at all. 
+It made me realize that I needed to make sure that even though I've now made sure that I shouldn't be following and unfollowing Posters, the majority of my new follows are Likers, and those still show up in the list even if the account is muted.
+So I need to make a tweak to make sure I'm not following anyone that I've muted.
+luckily I've already figured that out, it's a pretty easy check since I'm iterating through the likes anyway.
+print(len(likes))
+for like in likes:
+  print(like)
+  print(like.actor.viewer.muted)  # this is the check we need to do to fix.
+Did a quick test with a manual run of the microservice and it works as intended. Hopefully the reupload of the full docker image smoothly.
