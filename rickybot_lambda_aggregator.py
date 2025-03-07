@@ -39,7 +39,7 @@ DOW_KEYS = {
 }
 USER_TIMEZONE = "US/Eastern"
 
-FILE_PATH = "LOGGING_AGG_02.txt"
+FILE_PATH = "LOGGING_AGG.txt"
 BRANCH = "main"
 
 def lambda_handler(event, context):
@@ -85,7 +85,6 @@ def lambda_handler(event, context):
 	BSKY_PASS = secret_map['bsky_password']
 	GITHUB_TOKEN = secret_map['github_token']
 	GITHUB_REPO = secret_map['github_user/repo']
-	HUGGING_TOKEN = secret_map['hugging_token']
 
 	# before the program starts let's set up the logging function so we can insert it at any point where our program could break
 	def logging_aggregator(logging_text):
@@ -111,18 +110,18 @@ def lambda_handler(event, context):
 
 		# Step 3: Push the updated content
 		data = {
-			"message": commit_message,
-			"content": encoded_content,
-			"sha": file_sha,
-			"branch": BRANCH,
+				"message": commit_message,
+				"content": encoded_content,
+				"sha": file_sha,
+				"branch": BRANCH,
 		}
 		update_response = requests.put(url, headers=headers, json=data)
 
 		if update_response.status_code == 200:
-			logging.info("Logging file updated successfully! Here's what was added to the logs:")
-			logging.info(date_only + ": " + logging_text)
+				logging.info("Logging file updated successfully! Here's what was added to the logs:")
+				logging.info(date_only + ": " + logging_text)
 		else:
-			logging.error(f"ERROR - github logging failed. {update_response.json()}")
+				logging.error(f"ERROR - github logging failed. {update_response.json()}")
 
 	# initialize dynamodb and s3
 	try:
@@ -171,7 +170,7 @@ def lambda_handler(event, context):
 		follows_aggregation.update(data)
 	except s3.exceptions.ClientError as e:
 		if e.response["Error"]["Code"] == "404":
-			logging.info("Clear to proceed - object did not exist in s3 bucket")
+				logging.info("Clear to proceed - object did not exist in s3 bucket")
 	except Exception as e:
 		err = f'ERROR - failed to get s3 object'
 		logging.error(err)
@@ -185,7 +184,7 @@ def lambda_handler(event, context):
 	count_runs_combined = 0 # for logging purposes
 	try:
 		ddb_response = table.get_item(
-			Key={'DOW': ddbs3_key},
+				Key={'DOW': ddbs3_key},
 		)
 	except Exception as e:
 		err = f"ERROR - failed to check key's existence: {e}"
