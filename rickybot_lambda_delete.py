@@ -231,6 +231,8 @@ def lambda_handler(event, context):
 	no_followback = 0
 	finished_deleting = False # flag to let us know if we can delete the running deletion stats
 	error_count = 0
+	muted_user_count = 0
+	muted_fails = 0
 
 	# now go through the followers, check if they still exist, see if they followed back, delete if necessary
 	for user_did in old_follows:
@@ -261,12 +263,20 @@ def lambda_handler(event, context):
 				follow_uri = user_profile.viewer.following
 				if follow_uri != None: # maybe I manually unfollowed
 					client.delete_follow(follow_uri)
+					# here we also want to try to mute the user so they will not be in our future feeds to be readded and harassed with multiple follow/unfollow cycles
+					try:
+						client.mute(user_did)
+						muted_user_count += 1
+					except Exception as e:
+						logger.warning(f'exception encountered muting user {user_profile.handle}: {e}')
+						muted_fails += 1
+						error_count += 1
 			except Exception as e:
 				# something went wrong and we failed to delete this user, it's extremely rare for this to happen unless you're just rate limited, so save this for later
 				failed_to_delete.append(user_did)
 				logger.warning(f'exception encountered deleting user {user_profile.handle}. {repr(e)}: {e}')
 				error_count += 1
-				if error_count > 3: # we're probably getting rate limited, so stop processing users
+				if error_count > 7: # we're probably getting rate limited, so stop processing users
 					break
 			finally:
 				if no_followback >= DELETION_MAX: # check to see if we reached the hard cap on deletions so you don't get rate limited.
@@ -282,6 +292,14 @@ def lambda_handler(event, context):
 	except Exception as e:
 		warning = f'WARNING - failed to get updated follow count: {e}'
 		logger.warning(warning)
+		logging_deletions(warning)
+	# get a new mutes count to show change
+	mutes_after = 0
+	try:
+		mutes_after = len(client.app.bsky.graph.get_mutes().mutes)
+	except:
+		warning = 'WARNING - failed to get updated follow count'
+		print(warning)
 		logging_deletions(warning)
 
 	# add any users that we failed to delete back to the end of the list. hopefully this should usually be 0
@@ -320,7 +338,7 @@ def lambda_handler(event, context):
 			# don't terminate early here, we want the stats still
 
 	# log our progress through the list of deletions, noting the status of the s3 reupload if it occurred
-	logging_deletions(f'Processed {processed_count} users from the list of {len(old_follows)}.{"" if len(failed_to_delete) == 0 else f" {len(failed_to_delete)} failures were encountered and need to be retried."} From this batch of deletions {followed_back} users followed back, {no_followback} did not follow back and were deleted, and {count_users_dne} accounts no longer exist.\n  Follows count - now: {following_after} | prev: {following_before}{f". Successfully reuploaded remaining {s3_reupload} users to s3." if s3_reupload > 0 else ""}')
+	logging_deletions(f'Processed {processed_count} users from the list of {len(old_follows)}.{"" if len(failed_to_delete) == 0 else f" {len(failed_to_delete)} failures were encountered and need to be retried."} From this batch of deletions {followed_back} users followed back, {no_followback} did not follow back and were deleted, and {count_users_dne} accounts no longer exist. {muted_user_count} of the unfollowed users were successfully muted, with {muted_fails} errors.\n  Follows count - now: {following_after} | prev: {following_before}{"" if mutes_after == 0 else f"| mutes: "+str(mutes_after)}{f". Successfully reuploaded remaining {s3_reupload} users to s3." if s3_reupload > 0 else ""}')
 	
 
 	# pull up dynamodb, see if there were old stats, and add them to our current stats
