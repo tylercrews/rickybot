@@ -1022,3 +1022,17 @@ according to the documentation on block implementation, blocks do NOT remove fol
 But on the plus side it would handle everything on bluesky's end, not require us to load in and save a GIANT hashset of follows from all time, and it actually will technically speed up our process of adding follows because blocked users won't appear in our feeds when we generate them (supposedly).
 So the question becomes - is it worth it for user experience to not add/readd people to never give someone the chance to follow again after just one week?
 I'll have to think about this.
+So it appears that there's a far less aggressive and more private option called "muting" 
+"Muting a user hides their posts from your feeds. Mutes are private, and stored on your PDS. Muting a user is as easy as liking a post or following a user.
+> client.mute(did)"
+So we'll see if it's as expensive but I think this is a far better option than blocking because it will prevent the users from showing up in our feeds, which is the important part of not readding them with the add follows algorithm.
+
+2025-03-06 2053
+I created the necessary fixes for the status and delete microservices to mute every user that is deleted. Hopefully that fixes everything. Also managed to figure out how to get the number of muted accounts on my user so we can log that. We'll see at the next run at 2am if it works or not. Fingers crossed.
+Would have liked to test a little more, but the command was a VERY basic addition, and I want to get it into production asap so I can stop harassing users. 
+Fingers crossed! 
+What's very awkward is that it's difficult to test if this works like it says it should work.
+The bluesky documentation SAYS that muted users will not appear in my feeds. But if the muting still allows them into the api-generated feeds we're going to need to fix that. 
+I guess the only way is to mute someone on a feed and see if they show up.
+I did just do some testing manually with an existing feed and muting the top user. So it does look like it works that the posts won't show up at all, and so our add follows routine won't ever see them again.
+Hopefully it will all go smoothly.
