@@ -39,13 +39,10 @@ os.makedirs('/tmp/huggingface/transformers', exist_ok=True)
 # input variables - x is target follows y is num of posts we want to look through, whichever end criteria we reach first
 EMBEDDED_PIC = 'app.bsky.embed.images#view'
 EMBEDDED_VID = 'app.bsky.embed.video#view'
-FEED_CATURDAY = 'at://did:plc:tenurhgjptubkk5zf5qhi3og/app.bsky.feed.generator/#caturday'
-FEED_SIAMESE = 'at://did:plc:jv3qdc5vxujp6taaa7nte35i/app.bsky.feed.generator/aaac6wmikqyhq'
 FEED_CATPICS = 'at://did:plc:q6gjnaw2blty4crticxkmujt/app.bsky.feed.generator/cv:cat'
 FEED_CATS = 'at://did:plc:jfhpnnst6flqway4eaeqzj2a/app.bsky.feed.generator/cats'
 FEED_TUXEDOCATS = 'at://did:plc:eubjsqnf5edgvcc6zuoyixhw/app.bsky.feed.generator/tuxedo-cats'
 # FEED_CATURDAY = 'at://did:plc:pmyqirafcp3jqdhrl7crpq7t/app.bsky.feed.generator/aaad4sb7tyvjw' # this one is old idk why it disappeared but it was still working?
-FEED_NAME = {FEED_CATURDAY: "'Caturday'", FEED_SIAMESE: "'Siamese Cats'", FEED_CATPICS: "'Cat Pics'", FEED_CATS: "'Cats!'", FEED_TUXEDOCATS: "'Tuxedo Cats'"}
 URL_BEGIN = 'https://bsky.app/profile/'
 URL_POST = '/post/'
 # my did to check against
@@ -57,7 +54,7 @@ USER_TIMEZONE = "US/Eastern" # you should fill this in with your own timezone he
 LINE_BREAK = '\n'
 END_LOGGING = '____________________\n'
 
-FILE_PATH = "LOGGING_ADD_02.txt"  # Replace with the file path in your repo
+FILE_PATH = "LOGGING_ADD.txt"  # Replace with the file path in your repo
 BRANCH = "main"  # Replace with your branch name
 
 REGION = 'us-east-2'
@@ -80,16 +77,6 @@ DOW_KEYS = {
 		'Friday': 'FRI+SAT',
 		'Saturday': 'FRI+SAT'
 }
-
-# run settings
-POSTS_CATURDAY = 1000
-FOLLOWS_CATURDAY = 350 #350 when automated to 1 run per 1 hour
-POSTS_OTHERCAT = 1000
-FOLLOWS_OTHERCAT = 400 # 400 when automated to 1 run per 2 hours
-# running these very frequently so we don't need to do too many:
-# by my math cap for day is 9250, so 1 run per hr caps at 385, 2 hours is 770, but we need to save some of that room for deletions, especially on Fridays. So when we automate I want to do 1000-350, 1000-400.
-# not sure about post count, but 1000 is still good I suppose. Shouldn't take more than about 400 posts to get 400 likes, but can't hurt to have more on slower days I suppose
-
 
 def lambda_handler(event, context):
 	# get the day of the week so we know what dynamodb key to pull from and which bucket to aggregate to
@@ -136,7 +123,20 @@ def lambda_handler(event, context):
 	BSKY_PASSWORD = secret_map['bsky_password']
 	GITHUB_TOKEN = secret_map['github_token']
 	GITHUB_REPO = secret_map['github_user/repo']
-	# HUGGING_TOKEN = secret_map['hugging_token']
+	FEED_CATURDAY = secret_map['feed_caturday']
+	FEED_REGDAY = secret_map['feed_regday']
+	FEED_NAME_REGDAY = secret_map['feed_name_regday']
+	FEED_NAME = {FEED_CATURDAY: "'Caturday'", FEED_REGDAY: FEED_NAME_REGDAY}
+	# run settings are also imported from secretesmanager so they can be tuned without updating the function
+	POSTS_CATURDAY = int(secret_map['posts_caturday'])
+	FOLLOWS_CATURDAY = int(secret_map['follows_caturday']) #350 when automated to 1 run per 1 hour
+	POSTS_OTHERCAT = int(secret_map['posts_regday'])
+	FOLLOWS_OTHERCAT = int(secret_map['follows_regday']) # 400 when automated to 1 run per 2 hours
+	# running these very frequently so we don't need to do too many:
+	# by my math cap for day is 9250, so 1 run per hr caps at 385, 2 hours is 770, but we need to save some of that room for deletions, especially on Fridays. So when we automate I want to do 1000-350, 1000-400.
+	# not sure about post count, but 1000 is still good I suppose. Shouldn't take more than about 400 posts to get 400 likes, but can't hurt to have more on slower days I suppose
+
+
 
 	# now that we have our github token set up we should set up our logging function to use whenever we encounter any errors
 	def logging_add(logging_text):
@@ -349,7 +349,11 @@ def lambda_handler(event, context):
 					you_are_followed_by = like.actor.viewer.followed_by
 					user_did = like.actor.did
 					user_handle = like.actor.handle
-					if you_follow_them or you_are_followed_by or user_did == MY_DID or user_did in users_followed:
+					user_muted = like.actor.viewer.muted
+					if user_muted:
+						logger.info(f'        User is muted. DO NOT FOLLOW. handle: {user_handle}')
+						continue
+					elif you_follow_them or you_are_followed_by or user_did == MY_DID or user_did in users_followed:
 						logger.info(f'        Already seen user. handle: {user_handle}')
 						continue
 					else:
