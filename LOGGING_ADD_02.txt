@@ -1504,3 +1504,19 @@ Feed 'Siamese Cats':
 time diff: 0:05:35.074054 | completed run at: 2025-03-07 15:06:21.114602-05:00
 cur followers: 18250 | now following: 32449
 ____________________
+
+2025-03-07 16:22:35.852455-05:00
+WARNING - failed to authenticate huggingface
+prior followers: 18280 | previously following: 32449
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 81 were posters and 319 were from likes.
+  285 posts in total were viewed during this run.
+  Skipped Posts: (39) - 0 posts were previously seen, 39 were from users already followed, 0 were your posts.
+  Mutuals: 41 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (23) - 4 posts had no media attached, and 19 posts had videos attached.
+  Processed: 182 posts had pics attached: 81 were identified as cat pics and 101 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:19.809270 | completed run at: 2025-03-07 16:26:55.661725-05:00
+cur followers: 18281 | now following: 32849
+____________________
