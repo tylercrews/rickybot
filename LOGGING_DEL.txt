@@ -92,3 +92,5 @@ Follows count - now: 40070 | prev: 40304. Successfully reuploaded remaining 2164
   Follows count - now: 35972 | prev: 38157| mutes: 50. Successfully reuploaded remaining 1927 users to s3.
 2025-03-07 03:00:49.598663-05:00: Processed 2860 users from the list of 7662. From this batch of deletions 360 users followed back, 2500 did not follow back and were deleted, and 15 accounts no longer exist. 2216 of the unfollowed users were successfully muted, with 2 errors.
   Follows count - now: 34067 | prev: 35972| mutes: 48. Successfully reuploaded remaining 4802 users to s3.
+2025-03-07 04:00:49.731570-05:00: Processed 2872 users from the list of 4802. From this batch of deletions 372 users followed back, 2500 did not follow back and were deleted, and 11 accounts no longer exist. 2191 of the unfollowed users were successfully muted, with 2 errors.
+  Follows count - now: 31882 | prev: 34067| mutes: 49. Successfully reuploaded remaining 1930 users to s3.
