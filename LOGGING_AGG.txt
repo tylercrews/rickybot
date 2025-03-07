@@ -23,3 +23,4 @@ LOGGING_AGG_02
 2025-03-07: Successfully aggregated follows from MON. Today there were 12 runs, with a total of 3937 follows.
 2025-03-07: Successfully aggregated follows from SUN. Today there were 12 runs, with a total of 4212 follows.
 2025-03-07: WARNING - Object existed in s3 bucket when there should have been nothing found. Aggregating with current results.
+2025-03-07: WARNING - found no items in this key, runs may have failed yesterday
