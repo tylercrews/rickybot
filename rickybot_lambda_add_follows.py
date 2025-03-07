@@ -537,7 +537,7 @@ def lambda_handler(event, context):
 		followed_users = follow_more_users(POSTS_CATURDAY, FOLLOWS_CATURDAY, FEED_CATURDAY)
 	else:
 		logger.info("Just a regular day, but we're still following more cats. :3")
-		followed_users = follow_more_users(POSTS_OTHERCAT, FOLLOWS_OTHERCAT, FEED_SIAMESE)
+		followed_users = follow_more_users(POSTS_OTHERCAT, FOLLOWS_OTHERCAT, FEED_REGDAY)
 
 	# just in case we said we followed ourselves somehow, we'll discard that value
 	followed_users.discard(MY_DID)
