@@ -165,6 +165,8 @@ def lambda_handler(event, context):
 	count_removed = 0
 	count_failed_removal = 0
 	success_for_followers = False
+	error_count = 0
+	mute_count = 0
 	try:
 		s3.head_object(Bucket=S3_BUCKET, Key=S3_KEY_FOLLOWING_YOU)
 		logging.info("Object existed in s3 bucket.")
@@ -178,9 +180,14 @@ def lambda_handler(event, context):
 				try:
 					client.delete_follow(follow_uri)
 					count_removed += 1
+					client.mute(user_did)
+					mute_count += 1
 				except Exception as e:
 					# logging.error(f'failed on {i} - uri: {follow_uri} \n {e}')
 					count_failed_removal +=1
+					error_count += 1
+					if error_count > 7: # we're probably getting rate limited, so stop processing users
+						break
 		follow_diff = len(current_followers) - len(old_followers)
 		logging_status(f'followers status - {"up" if follow_diff >= 0 else "down"} {abs(follow_diff)} followers this week. {count_removed + count_failed_removal} users stopped following. {count_removed} were successfully unfollowed, with {count_failed_removal} failures.')
 	except s3.exceptions.ClientError as e:
@@ -237,6 +244,7 @@ def lambda_handler(event, context):
 	count_failed_removal = 0
 	success_for_who_we_follow = False
 	users_deleted = []
+	error_count = 0 # refresh error count
 	try:
 		s3.head_object(Bucket=S3_BUCKET, Key=S3_KEY_WHO_YOU_FOLLOW)
 		logging.info("Object existed in s3 bucket.")
@@ -251,16 +259,21 @@ def lambda_handler(event, context):
 				try:
 					client.delete_follow(follow_uri)
 					count_removed += 1
+					client.mute(user_did)
+					mute_count += 1
 					# if we're successfully able to delete the follow we shouldn't keep it in our list of follows too.
 					users_deleted.append(user_did)
 				except Exception as e:
 					# logging.error(f'failed on {i} - uri: {follow_uri} \n {e}')
 					count_failed_removal +=1
+					error_count += 1
+					if error_count > 7: # we're probably getting rate limited, so stop processing users
+						break
 		# now that we're done iterating through the dict we can safely remove all the users that we deleted and should not be included in it
 		for user in users_deleted:
 			del cur_who_you_follow[user]
 		follow_diff = len(cur_who_you_follow) - len(prev_who_we_were_following)
-		logging_status(f'who you follow status - {"up" if follow_diff >= 0 else "down"} {abs(follow_diff)} follows this week. {count_removed + count_failed_removal} users have aged out and were necessary to prune. {count_removed} were successfully unfollowed, with {count_failed_removal} failures.')
+		logging_status(f'who you follow status - {"up" if follow_diff >= 0 else "down"} {abs(follow_diff)} follows this week. {count_removed + count_failed_removal} users have aged out and were necessary to prune. {count_removed} were successfully unfollowed, with {count_failed_removal} failures. {mute_count} of those users were muted.')
 	except s3.exceptions.ClientError as e:
 		if e.response["Error"]["Code"] == "404": # object was not found at the key
 			err = "ERROR - there was no previous list of who we follow found in the s3 bucket. Adding the new list of follows."
