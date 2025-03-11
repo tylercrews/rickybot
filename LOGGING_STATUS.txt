@@ -22,3 +22,4 @@ LOGGING_STATUS_02
 2025-03-06: who you follow status - down 4716 follows this week. 33691 users have aged out and were necessary to prune. 5017 were successfully unfollowed, with 28674 failures.
 2025-03-06: s3 update - uploaded followers: SUCCESS | uploaded who we follow: SUCCESS 
 2025-03-11: followers status - up 3044 followers this week. 10 users stopped following. 2 were successfully unfollowed, with 8 failures.
+2025-03-11: followers status - up 3 followers this week. 1 users stopped following. 0 were successfully unfollowed, with 1 failures.
