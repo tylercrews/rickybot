@@ -142,3 +142,5 @@ Follows count - now: 40070 | prev: 40304. Successfully reuploaded remaining 2164
 2025-03-12 05:00:18.791378-04:00: WARNING - failed to get updated follow count
 2025-03-12 05:00:18.791378-04:00: Processed 2647 users from the list of 3803. 4 failures were encountered and need to be retried. From this batch of deletions 279 users followed back, 2367 did not follow back and were deleted, and 8 accounts no longer exist. 357 of the unfollowed users were successfully muted, with 0 errors.
   Follows count - now: 0 | prev: 39824. Successfully reuploaded remaining 1156 users to s3.
+2025-03-12 06:00:19.258699-04:00: Processed 1156 users from the list of 1156. From this batch of deletions 102 users followed back, 1054 did not follow back and were deleted, and 6 accounts no longer exist. 144 of the unfollowed users were successfully muted, with 0 errors.
+  Follows count - now: 39323 | prev: 39467| mutes: 50
