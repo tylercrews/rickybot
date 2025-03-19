@@ -1063,3 +1063,82 @@ for like in likes:
   print(like)
   print(like.actor.viewer.muted)  # this is the check we need to do to fix.
 Did a quick test with a manual run of the microservice and it works as intended. Hopefully the reupload of the full docker image smoothly.
+
+
+2025-03-10 0600
+need to expand more on these:
+1. getting stats, creating display of data over time
+2. reflect on how the muting change actually improved the quality of our follows instead of spamming people who already did not want to follow. I've observed fewer follows per run, but nearly 200% followbacks. Hopefully the stats next week support this personal observation.
+3. need to update the status-update function before it runs to gather how many users are currently muted.
+4. To allow for better scaling - may need to break the status update 'monolithic microservice' into 4 chained lambdas. One lambda finishes, passes info to the next, and allows for 1 hour to process followers, follows, mutes, some other fourth thing, instead of trying to fit all of them into 15 minutes. Not an ideal thing to do, letting the runtime just triple, but it may be a necessary evil to allow for scale.
+
+2025-03-11 0637
+Something is seriously wrong with the delete code. I think that's why the status update is out of control with like 15000 people to delete, because the deletion runs aren't accurately doing what they're saying.
+"2025-03-11 06:00:18.474992-04:00: Processed 1597 users from the list of 1598. 1 failures were encountered and need to be retried. From this batch of deletions 163 users followed back, 1434 did not follow back and were deleted, and 7 accounts no longer exist. 453 of the unfollowed users were successfully muted, with 0 errors.
+  Follows count - now: 41438 | prev: 41890| mutes: 50. Successfully reuploaded remaining 1 users to s3."
+I can confirm this number of 41.4k is accurate. Which means only 450 users were deleted. So good news is that the muted users (which have been far fewer than the number of deletions in almost every case) may be actually accurate to what we're doing.
+But what's no good is taht the number of follows we're unfollowing is much lower. Like over a thousand lower now?
+
+2025-03-11 1802
+The status update needs to come fully offline while it gets reworked.
+We had a full timeout where the function went to 15 minutes, didn't complete, retried because it errored out, and produced some weird behavior. 
+Also I really don't like how I have the current logging output set up. 
+We need to fully break this down more.
+Also I would like to time it so the function is not occurring during prime time now it's happening at 6pm and that's a terrible time to do it.
+Maybe the status update just needs to funnel the deletions into the deletions for tuesday or thursday
+
+I also feel like I could optimize the runs during the weekdays - taking away a few runs in the early hours of the morning and adding them to the afternoon.
+
+So how do we refactor?
+break into three phases:
+step 1. who follows us check - need to get the current list, compare to last list, see if any are missing so that we can delete them.
+	this output should save as a map to s3 so that we can use it for phase 2.
+step 2. who we follow, excluding who follows us - pull the set of who follows us, go through the users that we follow. If they're not following us we track them after a week and add them to the delete queue.
+	We can add the users to the s3 bucket for the day that should already be deleted, then run subsequent operations. 
+step 4. perform delete operations on all of the users that appear in the queue, adding them to the mute list. 
+step 5. mute count - simply iterate through the full list of mutes
+
+But the question is this - do we keep the once-a-week policy, or try to set it up to run more frequently?
+
+2025-03-12 1327
+I got rate limited on the delete function today. It makes it hard to see what's actually going on, but again it looks like even though it's saying it's processing 3800 and deleting 3400 only the 400 that are getting muted are being deleted.
+For now I want to keep observing and just lower the cap for deletions to 2250 since it's rate limiting at 2300
+What's very strange is that I could be getting rate limited on users that have already been deleted? otherwise how is the follow count not going down when the rate limit is still activating. 
+I have a suspicion that this has to do with the follow-unfollow issue that we've repaired with the mutes. Maybe these 2000 users that are "deleted" are ones that were already deleted like yesterday or the day before. 
+I need some kind of output to see what's going on in more detail.
+
+2025-03-13 0645
+Had one successful run at 2250, this time we had 2250 deletions and 1900 mutes. But the second deletion run an hour later got rate limited. 
+So it looks like we need to scale back a bit more. if we have 5000 points per hour, 2 points for a del and 3 for a create we have 1666 creates and 2500 deletes per hour. Theoetically if we just divide by 0 we get 833 mutes and 1250 deletes
+we had 10500 last week and that would be covered in 7 runs, and we have 8 on fridays. we'll reduce to 1750 just in case we have like 14000, but there's no way we had that many. 
+I'm worried a bit about hitting the full daily rate limit now, but we'll see how it goes.
+
+2025-03-14 0914
+lowering to 1750 managed to get through all of the runs for fri+sat without erroring out. Consistently got about 1600 mutes per run, and that was also the number of follows that were actually deleted even though 1750 were claimed. Still need to do some debugging and better logging to represent this, but at least it seems like it's under control now.
+
+2025-03-16 1454
+With mutes the amount of follows I'm generating through runs has decreased dramatically, Usually about half target. Even on caturday. It looks like we may have peaked and we're on a downswing, unfortunately.
+The pluses of this though, are that once we can safely lower the deletions to 1550 to try to get it in line with the mute restriction and fully align those. 
+Additionally it's becoming more and more feasible to just write a 'purging' code. No more checking followers to see who stopped following, just pull all the people we recently followed from today and this past week, see who isn't following, and unfollow them. 
+We're still at a decent follower-follow ratio right now (22.5k : 37.7k) but now that we're looking like we're not going to reach the dream of 50k/100k where they'll even out, I think I want to even up the numbers as much as possible.
+This should probably be a manual run rather than a lambdafied run, gotta put it into a delete queue that we'd run manually until it's finished.
+I'm also tossing around the idea of following dog-posters, or animal posters in general. maybe it's time to investigate some more popular feeds?
+I don't know. The temptation to fight to keep number going up is kind of what's wrong with all of tech. Sometimes exponential growth just isn't sustainable. As awesome as it would be for my resume to make it into the top 1000 users on bluesky it doesn't seem to be in the cards.
+
+2025-03-18 1028
+Today's big deletion run had 1673/1750 successful mutes out of the deletions, so I think things are working as intended and we're not hitting the cap. We're just getting fewer and fewer mute duplicates now that we've been running the mute for nearly a week.
+I'm curious to see the actual stats of our follower rate gain. With so many fewer follows it FEELS like we're not growing nearly as rapidly, but when I look at the follower counts it seems we're still getting 20-40 between runs, so it can't be nearly as bad as I expected. However the follows during the slow hours have crawled down to like 10 every 2 hours so that's something. 
+I still haven't decided what to do about the status update purges. I'm tempted just to just use the database version of the code for old time's sake.
+
+2025-03-19 1639
+Not going to bother doing something fancier. Returned to the database and input all of our current follows. In exactly one week I'll be able to get a new status update that covers everything.
+Here's something really fascinating though - when I got the status update it grabbed about 32.5k users to put into the database. But my current follow count is 37.5k. I'm missing about 5000.
+So confused, I queried the database, got the users, and tried to see if the status update ran incorrectly. It didn't get any new users, it said previous follows were 37.5k but no new users to add.
+Why? I suspect that these users are the ones that have blocked us over the past few months. Which would be almost impressive lol getting blocked by over 5000 people. But since the status update can't find them, we need another way to get rid of them. 
+So it turns out you can't even see these follows when you iterate completely through the follows list. I tried to iterate through all 37500 and add everything to a list, but the list came out to a size of 32500. 
+I've been testing with a bluesky handle of a user that accused me of content thieving and blocked me when I denied it.
+I've found a third party tool that requires you plug in your username and password, but i'd prefer not to do that. 
+But it would be extremely beneficial to get these users out of my follows list, they account for 1/3 of the surplus (follows more than following) right now.
+Not sure how to address with the current apis, so I've put in a support ticket.
+
+Also as a side note, today's deletions were even more successful - out of the 1750 deletions in the first run, 1712 were successfully muted. So it looks like things are going good on that side of things. I just have to find a way to purge these blockers and purge the ones that have slipped through the cracks and things should be looking much prettier account-numbers wise.
