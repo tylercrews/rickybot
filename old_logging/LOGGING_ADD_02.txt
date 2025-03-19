@@ -838,3 +838,43 @@ Feed 'Siamese Cats':
 time diff: 0:05:07.656426 | completed run at: 2025-02-27 19:06:06.703005-05:00
 cur followers: 14179 | now following: 36686
 ____________________
+
+
+2025-03-19 16:30:43.884212-04:00
+UPDATING "FOLLOWS" TABLE IN DATABASE
+
+prior follower count: 23466
+previously following: 37264
+
+1 entries were found in the database "follows" table prior to updating.
+
+Analysis of follows shows: 
+  Started Following: 0 
+  Stopped Following: 0 
+  New Follows Added To DB: 32454 
+  Follow Link Mismatches: 0 
+
+completed at: 2025-03-19 16:31:55.121630-04:00
+time diff: 0:01:11.237418
+
+Successfully produced queries and made changes to table as necessary.
+
+cur followers: 23466
+now following: 37264
+32454 entries were found in the database "follows" table prior to updating.
+
+Analysis of follows shows: 
+  Started Following: 4 
+  Stopped Following: 0 
+  New Follows Added To DB: 1 
+  Follow Link Mismatches: 1 
+
+completed at: 2025-03-19 16:44:43.897490-04:00
+time diff: 0:14:00.013278
+
+Successfully produced queries and made changes to table as necessary.
+
+cur followers: 23470
+now following: 37265
+
+____________________
