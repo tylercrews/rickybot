@@ -5041,3 +5041,18 @@ pg1 #29. RequestException(Response(success=False, status_code=429, content=XrpcE
 time diff: 0:00:10.273646 | completed run at: 2025-03-25 16:00:56.169462-04:00
 cur followers: 25099 | now following: 30818
 ____________________
+
+2025-03-25 18:00:46.077628-04:00
+prior followers: 25103 | previously following: 30818
+Feed 'Siamese Cats':
+  Followed 400 new users!
+    Of those follows, 109 were posters and 291 were from likes.
+  621 posts in total were viewed during this run.
+  Skipped Posts: (99) - 31 posts were previously seen, 67 were from users already followed, 1 were your posts.
+  Mutuals: 120 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (45) - 14 posts had no media attached, and 31 posts had videos attached.
+  Processed: 357 posts had pics attached: 109 were identified as cat pics and 248 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:06:12.533244 | completed run at: 2025-03-25 18:06:58.610872-04:00
+cur followers: 25106 | now following: 31218
+____________________
