@@ -4971,3 +4971,19 @@ Feed 'Siamese Cats':
 time diff: 0:02:10.404415 | completed run at: 2025-03-25 04:02:56.333292-04:00
 cur followers: 24983 | now following: 37221
 ____________________
+
+2025-03-25 08:00:53.988439-04:00
+prior followers: 25006 | previously following: 35354
+Feed 'Siamese Cats':
+  Followed 172 new users!
+    Of those follows, 59 were posters and 113 were from likes.
+  736 posts in total were viewed during this run.
+  Skipped Posts: (275) - 243 posts were previously seen, 32 were from users already followed, 0 were your posts.
+  Mutuals: 78 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (44) - 6 posts had no media attached, and 38 posts had videos attached.
+  Processed: 339 posts had pics attached: 59 were identified as cat pics and 279 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg3 #53. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
+time diff: 0:05:29.396719 | completed run at: 2025-03-25 08:06:23.385158-04:00
+cur followers: 25007 | now following: 35526
+____________________
