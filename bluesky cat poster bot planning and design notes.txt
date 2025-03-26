@@ -1142,3 +1142,23 @@ But it would be extremely beneficial to get these users out of my follows list, 
 Not sure how to address with the current apis, so I've put in a support ticket.
 
 Also as a side note, today's deletions were even more successful - out of the 1750 deletions in the first run, 1712 were successfully muted. So it looks like things are going good on that side of things. I just have to find a way to purge these blockers and purge the ones that have slipped through the cracks and things should be looking much prettier account-numbers wise.
+
+2025-03-25 1533 
+interesting website someone showed me to see who's blocking you - https://clearsky.app/tyrowo.com/labeled
+unfortunately though, it seems that bluesky is not going to respond to my issue from last week about the API to remove blocked users from our followed list.
+Luckily we don't have to worry about re-following them because they're blocked or suspended or whatever, but someone created a Typescript tool here:
+https://cleanfollow-bsky.pages.dev/
+It seems that it manually checks the pages as your logged in user to see the response status of the account, flags any ones that aren't normally accessible, and I couldn't figure out how it was able to unfollow them. I guess just once you see the status of the account you already have the did so you can just unfollow the user maybe? Might need to look through their github again.
+I wanted to write some of that code myself but instead I've decided to be lazy, change my password to a temporary, log in to this random person's tool, and have them do it for me. And it worked great.
+It found and deleted ~ 5122. The runtime to check all the follows was a long time, about two hours for 35000 users. So I missed a run, and I think I'm going to have to miss this 4pm from timeouts, so we've lost two prime time runs, but that's ok. #worth
+I think we only deleted 5000 users like old times - I'm definitely fully rate limited right now, and from my follower math it looks like it didn't delete the last 
+So maybe I'll go back and do another cleanup in a week or two, when I'm up in the middle of the night and we can skip a 2am run or something. Or even better, when we're done with the deletions for the day and can miss an 8am run.
+
+Anyway. We hit an incredibly huge milestone this morning imo. 25000 followers. So with the cleanup bringing us down from 36k to 31k we're closer than ever to evening out.
+Excited to see how the status-update goes tomorrow. I think surely there are another couple thousand that have just fallen through the cracks of our delete code when I've had mistakes going. So we might be all evened up tomorrow!
+
+2025-03-26 11:11
+well good news and bad, I suppose. The good news is that there were only 206 follows that were 'unaccounted' for by previous runs. Which means that we have more good news that we've done an exceptional job of keeping track of our follows throughout both processes.
+Bad news is not that bad - with only 206 deletions, we're not going to be evening out our follower-follow ratio like I'd hoped. there are another ~180 we can get rid of by running the blocked-user-removal tool again, though.
+What that means is that we're at  25237 followers and following 29784 and that ~4500 gap is just going to be the flux of whoever we've added for the week. 
+I'm just really impressed that everyone else is accounted for, that's pretty wild.
