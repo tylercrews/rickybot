@@ -953,3 +953,18 @@ cur followers: 25232
 now following: 29988
 
 ____________________
+
+
+2025-03-26 10:59:39.998349-04:00
+MANUALLY DELETING OLDEST FOLLOWS THAT ARE NOT FOLLOWING BACK
+
+prior follower count: 25235
+previously following: 29988
+
+Successfully unfollowed 206 users. Successfully muted 206 of those users.
+Encountered 1 failures.
+
+cur followers: 25237
+now following: 29784
+
+____________________
