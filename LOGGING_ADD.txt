@@ -6035,3 +6035,18 @@ IndexError('list index out of range'): list index out of range
 time diff: 0:03:29.601133 | completed run at: 2025-03-30 16:04:11.581715-04:00
 cur followers: 26373 | now following: 30499
 ____________________
+
+2025-03-30 18:00:42.047823-04:00
+prior followers: 26386 | previously following: 30499
+Feed 'Siamese Cats':
+  Followed 231 new users!
+    Of those follows, 90 were posters and 141 were from likes.
+  654 posts in total were viewed during this run.
+  Skipped Posts: (274) - 237 posts were previously seen, 37 were from users already followed, 0 were your posts.
+  Mutuals: 81 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (27) - 7 posts had no media attached, and 20 posts had videos attached.
+  Processed: 272 posts had pics attached: 90 were identified as cat pics and 182 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:40.312947 | completed run at: 2025-03-30 18:05:22.360770-04:00
+cur followers: 26388 | now following: 30730
+____________________
