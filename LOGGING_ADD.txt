@@ -6066,3 +6066,18 @@ pg2 #32. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
 time diff: 0:04:03.155787 | completed run at: 2025-03-30 20:04:57.619012-04:00
 cur followers: 26409 | now following: 30946
 ____________________
+
+2025-03-30 22:00:54.245340-04:00
+prior followers: 26433 | previously following: 30946
+Feed 'Siamese Cats':
+  Followed 154 new users!
+    Of those follows, 79 were posters and 75 were from likes.
+  633 posts in total were viewed during this run.
+  Skipped Posts: (317) - 284 posts were previously seen, 33 were from users already followed, 0 were your posts.
+  Mutuals: 63 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (16) - 5 posts had no media attached, and 11 posts had videos attached.
+  Processed: 237 posts had pics attached: 79 were identified as cat pics and 158 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:04:29.655633 | completed run at: 2025-03-30 22:05:23.900973-04:00
+cur followers: 26434 | now following: 31100
+____________________
