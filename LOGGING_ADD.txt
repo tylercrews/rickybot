@@ -784,3 +784,18 @@ Feed 'Caturday':
 time diff: 0:02:34.902498 | completed run at: 2025-04-05 17:03:05.100062-04:00
 cur followers: 27570 | now following: 30450
 ____________________
+
+2025-04-05 18:00:30.300382-04:00
+prior followers: 27581 | previously following: 30450
+Feed 'Caturday':
+  Followed 130 new users!
+    Of those follows, 45 were posters and 85 were from likes.
+  622 posts in total were viewed during this run.
+  Skipped Posts: (416) - 395 posts were previously seen, 21 were from users already followed, 0 were your posts.
+  Mutuals: 58 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (11) - 4 posts had no media attached, and 7 posts had videos attached.
+  Processed: 137 posts had pics attached: 45 were identified as cat pics and 92 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:02:21.902095 | completed run at: 2025-04-05 18:02:52.202477-04:00
+cur followers: 27581 | now following: 30580
+____________________
