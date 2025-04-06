@@ -29,3 +29,4 @@ LOGGING_DEL_04
   35 accounts no longer exist. 
   14.91% Conversion Rate.
 2025-04-06 05:00:18.978300-04:00: WARNING - failed to get updated follow count: Response(success=False, status_code=429, content=XrpcError(error='RateLimitExceeded', message='Rate Limit Exceeded'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '3000', 'ratelimit-remaining': '0', 'ratelimit-reset': '1743930319', 'ratelimit-policy': '3000;w=300', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-egyFOcXCrKQFzoI7522/4+PpxIk"', 'date': 'Sun, 06 Apr 2025 09:05:16 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+2025-04-06 05:00:18.978300-04:00: WARNING - failed to get updated follow count
