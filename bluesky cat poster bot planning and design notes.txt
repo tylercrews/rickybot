@@ -1162,3 +1162,16 @@ well good news and bad, I suppose. The good news is that there were only 206 fol
 Bad news is not that bad - with only 206 deletions, we're not going to be evening out our follower-follow ratio like I'd hoped. there are another ~180 we can get rid of by running the blocked-user-removal tool again, though.
 What that means is that we're at  25237 followers and following 29784 and that ~4500 gap is just going to be the flux of whoever we've added for the week. 
 I'm just really impressed that everyone else is accounted for, that's pretty wild.
+
+2025-04-07 1831
+Got a warning email from bluesky moderation saying my account was spamming people, I suspect they were only clued in because of the support ticket I wrote. 
+Wrote a nice email apologizing for the follow+unfollow spam I was accidentally hitting people with. No response after a week I guess we'll see what happens.
+
+2025-04-12 1524
+got a second warning email a few days ago and responded to that too. Today my account has been labeled as "spam" by the bluesky moderation team.
+All of my posts just say "spam" now. :( the spam label is way more hardcore than I imagined it being. 
+I still want the app to be running for my github, but I'm going to turn it down very low for the bluesky moderation team.
+I guess I shouldn't have expected a real response.
+I'll reduce down to just 10 followers per session, absurdly low, but within more of a human use. Maybe I can get acceptable parameters from the bluesky team.
+:(
+RIP rickybot.
