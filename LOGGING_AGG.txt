@@ -90,3 +90,4 @@ LOGGING_AGG_02
 2025-05-02: Successfully aggregated follows from THU. Today there were 12 runs, with a total of 116 follows.
 2025-05-03: Successfully aggregated follows from FRI+SAT. Today there were 16 runs, with a total of 246 follows.
 2025-05-04: Items were found in the FRI+SAT s3 bucket from Friday's runs. Aggregating Saturday's results to that existing data.
+2025-05-04: Successfully aggregated follows from FRI+SAT. Today there were 19 runs, with a total of 682 follows.
