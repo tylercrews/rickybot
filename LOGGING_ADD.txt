@@ -6757,3 +6757,19 @@ Feed 'Siamese Cats':
 time diff: 0:01:20.984037 | completed run at: 2025-05-07 14:02:07.068561-04:00
 cur followers: 29476 | now following: 23593
 ____________________
+
+2025-05-07 16:00:45.791024-04:00
+prior followers: 29480 | previously following: 23593
+Feed 'Siamese Cats':
+  Followed 25 new users!
+    Of those follows, 16 were posters and 9 were from likes.
+  85 posts in total were viewed during this run.
+  Skipped Posts: (5) - 0 posts were previously seen, 5 were from users already followed, 0 were your posts.
+  Mutuals: 22 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (7) - 1 posts had no media attached, and 6 posts had videos attached.
+  Processed: 51 posts had pics attached: 16 were identified as cat pics and 34 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #23. <HTTPError 422: 'Unprocessable Entity'>: HTTP Error 422: Unprocessable Entity
+time diff: 0:00:52.138285 | completed run at: 2025-05-07 16:01:37.929309-04:00
+cur followers: 29480 | now following: 23618
+____________________
