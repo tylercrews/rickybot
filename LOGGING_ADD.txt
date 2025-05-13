@@ -7887,3 +7887,18 @@ pg1 #36. ValueError('mean must have 1 elements if it is an iterable, got 3'): me
 time diff: 0:00:33.888275 | completed run at: 2025-05-13 10:01:20.156878-04:00
 cur followers: 29843 | now following: 24104
 ____________________
+
+2025-05-13 12:00:45.738670-04:00
+prior followers: 29848 | previously following: 24104
+Feed 'Siamese Cats':
+  Followed 25 new users!
+    Of those follows, 5 were posters and 20 were from likes.
+  19 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 2 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (1) - 0 posts had no media attached, and 1 posts had videos attached.
+  Processed: 16 posts had pics attached: 5 were identified as cat pics and 11 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:00:19.961737 | completed run at: 2025-05-13 12:01:05.700407-04:00
+cur followers: 29848 | now following: 24117
+____________________
