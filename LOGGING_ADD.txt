@@ -9647,3 +9647,25 @@ Feed 'Siamese Cats':
 time diff: 0:00:46.420811 | completed run at: 2025-05-23 00:01:32.316773-04:00
 cur followers: 30309 | now following: 25042
 ____________________
+
+2025-05-23 02:00:45.873655-04:00
+prior followers: 30312 | previously following: 25042
+Feed 'Siamese Cats':
+  Followed 0 new users.
+    Of those follows, 0 were posters and 0 were from likes.
+  0 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (0) - 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("1 validation error for Response\nfeed.35.post.embed.`app.bsky.embed.images#view`.images.0.aspectRatio.$type\n  Input should be 'app.bsky.embed.defs#aspectRatio' [type=literal_error, input_value='app.bsky.embed.images#aspectRatio', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.10/v/literal_error"): 1 validation error for Response
+feed.35.post.embed.`app.bsky.embed.images#view`.images.0.aspectRatio.$type
+  Input should be 'app.bsky.embed.defs#aspectRatio' [type=literal_error, input_value='app.bsky.embed.images#aspectRatio', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.10/v/literal_error
+WARNING - failed to store followed users in dynamodb.
+An error occurred (ValidationException) when calling the UpdateItem operation: ExpressionAttributeValues contains invalid value: One or more parameter values were invalid: An number set  may not be empty for key :val
+time diff: 0:00:01.922042 | completed run at: 2025-05-23 02:00:47.795697-04:00
+cur followers: 30312 | now following: 25042
+____________________
