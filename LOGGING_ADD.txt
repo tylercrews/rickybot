@@ -10584,3 +10584,18 @@ Feed 'Siamese Cats':
 time diff: 0:01:14.561102 | completed run at: 2025-05-27 18:02:00.173500-04:00
 cur followers: 30537 | now following: 24975
 ____________________
+
+2025-05-27 20:00:54.475253-04:00
+prior followers: 30542 | previously following: 24975
+Feed 'Siamese Cats':
+  Followed 25 new users!
+    Of those follows, 8 were posters and 17 were from likes.
+  30 posts in total were viewed during this run.
+  Skipped Posts: (1) - 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 7 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (2) - 1 posts had no media attached, and 1 posts had videos attached.
+  Processed: 20 posts had pics attached: 8 were identified as cat pics and 12 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:00:24.806678 | completed run at: 2025-05-27 20:01:19.281931-04:00
+cur followers: 30542 | now following: 25000
+____________________
