@@ -10885,3 +10885,18 @@ pg2 #18. <HTTPError 504: 'Gateway Timeout'>: HTTP Error 504: Gateway Timeout
 time diff: 0:01:46.163328 | completed run at: 2025-05-29 14:02:32.279229-04:00
 cur followers: 30617 | now following: 25007
 ____________________
+
+2025-05-29 16:00:45.901146-04:00
+prior followers: 30623 | previously following: 25007
+Feed 'Siamese Cats':
+  Followed 25 new users!
+    Of those follows, 18 were posters and 7 were from likes.
+  131 posts in total were viewed during this run.
+  Skipped Posts: (4) - 0 posts were previously seen, 4 were from users already followed, 0 were your posts.
+  Mutuals: 33 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (19) - 12 posts had no media attached, and 7 posts had videos attached.
+  Processed: 75 posts had pics attached: 18 were identified as cat pics and 57 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:01:13.112909 | completed run at: 2025-05-29 16:01:59.014055-04:00
+cur followers: 30623 | now following: 25032
+____________________
