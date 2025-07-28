@@ -2795,3 +2795,20 @@ Feed 'Siamese Cats':
 time diff: 0:01:12.992796 | completed run at: 2025-07-28 08:01:58.829907-04:00
 cur followers: 33676 | now following: 27160
 ____________________
+
+2025-07-28 10:00:46.383366-04:00
+prior followers: 33676 | previously following: 27160
+Feed 'Siamese Cats':
+  Followed 3 new users!
+    Of those follows, 3 were posters and 0 were from likes.
+  34 posts in total were viewed during this run.
+  Skipped Posts: (2) - 0 posts were previously seen, 2 were from users already followed, 0 were your posts.
+  Mutuals: 12 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (3) - 1 posts had no media attached, and 2 posts had videos attached.
+  Processed: 16 posts had pics attached: 3 were identified as cat pics and 13 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+IndexError('list index out of range'): list index out of range
+time diff: 0:00:19.089129 | completed run at: 2025-07-28 10:01:05.472495-04:00
+cur followers: 33676 | now following: 27163
+____________________
