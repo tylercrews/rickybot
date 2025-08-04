@@ -858,3 +858,9 @@ LOGGING_DEL_04
   8.96% Conversion Rate.
 2025-08-04 05:00:18.652356-04:00: Processed 239 users from the list of 239. From this batch of deletions 24 users followed back, 215 did not follow back and were deleted, and 4 accounts no longer exist. 210 of the unfollowed users were successfully muted, with 2 errors.
   Follows count - now: 27379 | prev: 27588| mutes: 50
+2025-08-04 05:00:18.652356-04:00: Finished MON. Last week's follows have been pruned. Object was successfully deleted from s3 bucket. TODAY'S STATS: 
+  239 total follows processed. 
+  24 users followed back. 
+  215 did not follow back and were deleted. 
+  4 accounts no longer exist. 
+  10.04% Conversion Rate.
