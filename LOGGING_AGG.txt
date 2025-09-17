@@ -246,3 +246,4 @@ LOGGING_AGG_02
 2025-09-14: Successfully aggregated follows from FRI+SAT. Today there were 19 runs, with a total of 687 follows.
 2025-09-15: Successfully aggregated follows from SUN. Today there were 12 runs, with a total of 235 follows.
 2025-09-16: Successfully aggregated follows from MON. Today there were 12 runs, with a total of 261 follows.
+2025-09-17: Successfully aggregated follows from TUE. Today there were 12 runs, with a total of 251 follows.
