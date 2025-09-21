@@ -13279,3 +13279,7 @@ Feed 'Siamese Cats':
 time diff: 0:00:45.641087 | completed run at: 2025-09-21 14:01:27.527764-04:00
 cur followers: 35835 | now following: 29937
 ____________________
+
+2025-09-21 16:00:41.983476-04:00
+ERROR - failed to log in to the bluesky client: Response(success=False, status_code=401, content=XrpcError(error='AuthenticationRequired', message='Invalid identifier or password'), headers={'date': 'Sun, 21 Sep 2025 20:00:42 GMT', 'content-type': 'application/json; charset=utf-8', 'content-length': '77', 'connection': 'keep-alive', 'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'ratelimit-limit': '10', 'ratelimit-remaining': '9', 'ratelimit-reset': '1758571242', 'ratelimit-policy': '10;w=86400', 'etag': 'W/"4d-98r3hvgolnybv7tgksQiZbSE7Zg"', 'vary': 'Accept-Encoding'})
+____________________
