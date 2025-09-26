@@ -1222,3 +1222,5 @@ LOGGING_DEL_04
 2025-09-26 03:00:48.685990-04:00: WARNING - failed to get updated follow count
 2025-09-26 03:00:48.685990-04:00: Processed 1125 users from the list of 1331. 1 failures were encountered and need to be retried. From this batch of deletions 156 users followed back, 968 did not follow back and were deleted, and 14 accounts no longer exist. 934 of the unfollowed users were successfully muted, with 6 errors.
   Follows count - now: 0 | prev: 28570. Successfully reuploaded remaining 206 users to s3.
+2025-09-26 04:00:49.705632-04:00: Processed 206 users from the list of 206. From this batch of deletions 32 users followed back, 174 did not follow back and were deleted, and 4 accounts no longer exist. 167 of the unfollowed users were successfully muted, with 5 errors.
+  Follows count - now: 27474 | prev: 27643| mutes: 50
