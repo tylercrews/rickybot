@@ -1224,3 +1224,9 @@ LOGGING_DEL_04
   Follows count - now: 0 | prev: 28570. Successfully reuploaded remaining 206 users to s3.
 2025-09-26 04:00:49.705632-04:00: Processed 206 users from the list of 206. From this batch of deletions 32 users followed back, 174 did not follow back and were deleted, and 4 accounts no longer exist. 167 of the unfollowed users were successfully muted, with 5 errors.
   Follows count - now: 27474 | prev: 27643| mutes: 50
+2025-09-26 04:00:49.705632-04:00: Finished FRI+SAT. Last week's follows have been pruned. Object was successfully deleted from s3 bucket. TODAY'S STATS: 
+  1331 total follows processed. 
+  188 users followed back. 
+  1142 did not follow back and were deleted. 
+  18 accounts no longer exist. 
+  14.14% Conversion Rate.
