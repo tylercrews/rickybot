@@ -15107,3 +15107,22 @@ Feed 'Siamese Cats':
 time diff: 0:00:58.032236 | completed run at: 2025-10-01 16:01:52.159124-04:00
 cur followers: 36224 | now following: 28170
 ____________________
+
+2025-10-01 18:00:54.270595-04:00
+prior followers: 36229 | previously following: 28170
+Feed 'Siamese Cats':
+  Followed 0 new users.
+    Of those follows, 0 were posters and 0 were from likes.
+  0 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (0) - 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+RequestException(Response(success=False, status_code=503, content=XrpcError(error='NotEnoughResources', message='NotEnoughResources'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '3000', 'ratelimit-reset': '1759356355', 'ratelimit-remaining': '2996', 'ratelimit-policy': '3000;w=300', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-iFUrD476PuG78isNWp34IrB+FN8"', 'date': 'Wed, 01 Oct 2025 22:00:59 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})): Response(success=False, status_code=503, content=XrpcError(error='NotEnoughResources', message='NotEnoughResources'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '3000', 'ratelimit-reset': '1759356355', 'ratelimit-remaining': '2996', 'ratelimit-policy': '3000;w=300', 'content-type': 'application/json; charset=utf-8', 'content-length': '61', 'etag': 'W/"3d-iFUrD476PuG78isNWp34IrB+FN8"', 'date': 'Wed, 01 Oct 2025 22:00:59 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+WARNING - failed to store followed users in dynamodb.
+An error occurred (ValidationException) when calling the UpdateItem operation: ExpressionAttributeValues contains invalid value: One or more parameter values were invalid: An number set  may not be empty for key :val
+time diff: 0:00:05.154835 | completed run at: 2025-10-01 18:00:59.425430-04:00
+cur followers: 36229 | now following: 28170
+____________________
