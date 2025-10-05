@@ -15789,3 +15789,19 @@ Feed 'Caturday':
 time diff: 0:01:19.247641 | completed run at: 2025-10-04 21:02:01.231630-04:00
 cur followers: 36336 | now following: 28289
 ____________________
+
+2025-10-04 22:00:42.135140-04:00
+prior followers: 36338 | previously following: 28289
+Feed 'Caturday':
+  Followed 17 new users!
+    Of those follows, 17 were posters and 0 were from likes.
+  117 posts in total were viewed during this run.
+  Skipped Posts: (25) - 17 posts were previously seen, 8 were from users already followed, 0 were your posts.
+  Mutuals: 28 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (12) - 4 posts had no media attached, and 8 posts had videos attached.
+  Processed: 52 posts had pics attached: 17 were identified as cat pics and 34 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #41. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
+time diff: 0:00:53.615373 | completed run at: 2025-10-04 22:01:35.750513-04:00
+cur followers: 36339 | now following: 28306
+____________________
