@@ -16888,3 +16888,19 @@ Feed 'Caturday':
 time diff: 0:00:38.685273 | completed run at: 2025-10-11 06:01:08.417378-04:00
 cur followers: 36542 | now following: 28271
 ____________________
+
+2025-10-11 07:00:29.693593-04:00
+prior followers: 36545 | previously following: 28271
+Feed 'Caturday':
+  Followed 22 new users!
+    Of those follows, 13 were posters and 9 were from likes.
+  160 posts in total were viewed during this run.
+  Skipped Posts: (86) - 77 posts were previously seen, 9 were from users already followed, 0 were your posts.
+  Mutuals: 24 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (5) - 2 posts had no media attached, and 3 posts had videos attached.
+  Processed: 45 posts had pics attached: 13 were identified as cat pics and 31 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #6. ValueError('mean must have 1 elements if it is an iterable, got 3'): mean must have 1 elements if it is an iterable, got 3
+time diff: 0:00:43.821224 | completed run at: 2025-10-11 07:01:13.514817-04:00
+cur followers: 36545 | now following: 28293
+____________________
