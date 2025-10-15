@@ -17674,3 +17674,20 @@ Feed 'Siamese Cats':
 time diff: 0:01:12.825267 | completed run at: 2025-10-15 02:01:58.321612-04:00
 cur followers: 36687 | now following: 28668
 ____________________
+
+2025-10-15 04:00:45.774467-04:00
+prior followers: 36688 | previously following: 28668
+Feed 'Siamese Cats':
+  Followed 7 new users!
+    Of those follows, 7 were posters and 0 were from likes.
+  150 posts in total were viewed during this run.
+  Skipped Posts: (19) - 15 posts were previously seen, 4 were from users already followed, 0 were your posts.
+  Mutuals: 43 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (7) - 2 posts had no media attached, and 5 posts had videos attached.
+  Processed: 81 posts had pics attached: 7 were identified as cat pics and 72 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #11. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
+pg2 #15. ValueError('mean must have 1 elements if it is an iterable, got 3'): mean must have 1 elements if it is an iterable, got 3
+time diff: 0:01:14.031451 | completed run at: 2025-10-15 04:01:59.805918-04:00
+cur followers: 36688 | now following: 28675
+____________________
