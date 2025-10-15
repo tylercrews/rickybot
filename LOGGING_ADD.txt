@@ -17613,3 +17613,19 @@ Feed 'Siamese Cats':
 time diff: 0:01:16.947375 | completed run at: 2025-10-14 18:02:02.762558-04:00
 cur followers: 36673 | now following: 28592
 ____________________
+
+2025-10-14 20:00:46.215348-04:00
+prior followers: 36675 | previously following: 28592
+Feed 'Siamese Cats':
+  Followed 23 new users!
+    Of those follows, 15 were posters and 8 were from likes.
+  143 posts in total were viewed during this run.
+  Skipped Posts: (12) - 0 posts were previously seen, 12 were from users already followed, 0 were your posts.
+  Mutuals: 26 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (16) - 2 posts had no media attached, and 14 posts had videos attached.
+  Processed: 89 posts had pics attached: 15 were identified as cat pics and 73 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #50. ValueError('mean must have 1 elements if it is an iterable, got 3'): mean must have 1 elements if it is an iterable, got 3
+time diff: 0:01:25.482626 | completed run at: 2025-10-14 20:02:11.697974-04:00
+cur followers: 36675 | now following: 28615
+____________________
