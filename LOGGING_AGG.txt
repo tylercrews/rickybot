@@ -284,3 +284,4 @@ LOGGING_AGG_02
 2025-10-17: Successfully aggregated follows from THU. Today there were 12 runs, with a total of 226 follows.
 2025-10-18: WARNING - Object existed in s3 bucket when there should have been nothing found. Aggregating with current results.
 2025-10-18: Successfully aggregated follows from FRI+SAT. Today there were 16 runs, with a total of 926 follows.
+2025-10-19: Items were found in the FRI+SAT s3 bucket from Friday's runs. Aggregating Saturday's results to that existing data.
