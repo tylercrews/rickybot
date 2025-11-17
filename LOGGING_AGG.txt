@@ -318,3 +318,4 @@ LOGGING_AGG_02
 2025-11-15: Successfully aggregated follows from FRI+SAT. Today there were 10 runs, with a total of 144 follows.
 2025-11-16: Items were found in the FRI+SAT s3 bucket from Friday's runs. Aggregating Saturday's results to that existing data.
 2025-11-16: Successfully aggregated follows from FRI+SAT. Today there were 20 runs, with a total of 469 follows.
+2025-11-17: Successfully aggregated follows from SUN. Today there were 12 runs, with a total of 233 follows.
