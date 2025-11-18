@@ -4820,3 +4820,22 @@ An error occurred (ValidationException) when calling the UpdateItem operation: E
 time diff: 0:00:01.041736 | completed run at: 2025-11-18 07:00:44.499625-05:00
 cur followers: 37896 | now following: 29402
 ____________________
+
+2025-11-18 09:00:46.015043-05:00
+prior followers: 37898 | previously following: 29402
+Feed 'Siamese Cats':
+  Followed 0 new users.
+    Of those follows, 0 were posters and 0 were from likes.
+  0 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (0) - 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+NetworkError(Response(success=False, status_code=502, content=XrpcError(error='InternalServerError', message='Internal Server Error'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '3000', 'ratelimit-reset': '1763474746', 'ratelimit-remaining': '2996', 'ratelimit-policy': '3000;w=300', 'content-type': 'application/json; charset=utf-8', 'content-length': '65', 'etag': 'W/"41-PDrLQG9BpCN547AVB5jtYl3RBt8"', 'date': 'Tue, 18 Nov 2025 14:00:47 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})): Response(success=False, status_code=502, content=XrpcError(error='InternalServerError', message='Internal Server Error'), headers={'x-powered-by': 'Express', 'access-control-allow-origin': '*', 'cache-control': 'private', 'vary': 'Authorization, Accept-Encoding', 'ratelimit-limit': '3000', 'ratelimit-reset': '1763474746', 'ratelimit-remaining': '2996', 'ratelimit-policy': '3000;w=300', 'content-type': 'application/json; charset=utf-8', 'content-length': '65', 'etag': 'W/"41-PDrLQG9BpCN547AVB5jtYl3RBt8"', 'date': 'Tue, 18 Nov 2025 14:00:47 GMT', 'keep-alive': 'timeout=90', 'strict-transport-security': 'max-age=63072000'})
+WARNING - failed to store followed users in dynamodb.
+An error occurred (ValidationException) when calling the UpdateItem operation: ExpressionAttributeValues contains invalid value: One or more parameter values were invalid: An number set  may not be empty for key :val
+time diff: 0:00:01.116687 | completed run at: 2025-11-18 09:00:47.131730-05:00
+cur followers: 37898 | now following: 29402
+____________________
