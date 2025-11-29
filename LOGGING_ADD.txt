@@ -6928,3 +6928,19 @@ pg3 #9. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
 time diff: 0:00:40.371912 | completed run at: 2025-11-29 12:01:07.763648-05:00
 cur followers: 38345 | now following: 29800
 ____________________
+
+2025-11-29 13:00:27.618987-05:00
+prior followers: 38347 | previously following: 29800
+Feed 'Caturday':
+  Followed 18 new users!
+    Of those follows, 12 were posters and 6 were from likes.
+  118 posts in total were viewed during this run.
+  Skipped Posts: (1) - 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 57 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (11) - 6 posts had no media attached, and 5 posts had videos attached.
+  Processed: 49 posts had pics attached: 12 were identified as cat pics and 36 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #25. URLError(OSError(97, 'Address family not supported by protocol')): <urlopen error [Errno 97] Address family not supported by protocol>
+time diff: 0:00:49.188793 | completed run at: 2025-11-29 13:01:16.807780-05:00
+cur followers: 38347 | now following: 29818
+____________________
