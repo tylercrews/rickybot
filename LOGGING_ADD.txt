@@ -14405,3 +14405,18 @@ pg3 #23. <HTTPError 422: 'Unprocessable Entity'>: HTTP Error 422: Unprocessable 
 time diff: 0:00:47.854377 | completed run at: 2026-01-08 07:01:31.454386-05:00
 cur followers: 39919 | now following: 31835
 ____________________
+
+2026-01-08 09:00:43.441167-05:00
+prior followers: 39920 | previously following: 31835
+Feed 'Siamese Cats':
+  Followed 24 new users!
+    Of those follows, 14 were posters and 10 were from likes.
+  136 posts in total were viewed during this run.
+  Skipped Posts: (5) - 0 posts were previously seen, 5 were from users already followed, 0 were your posts.
+  Mutuals: 47 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (8) - 2 posts had no media attached, and 6 posts had videos attached.
+  Processed: 76 posts had pics attached: 14 were identified as cat pics and 62 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:00:51.093690 | completed run at: 2026-01-08 09:01:34.534857-05:00
+cur followers: 39920 | now following: 31859
+____________________
