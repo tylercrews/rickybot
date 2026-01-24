@@ -17425,3 +17425,20 @@ Feed 'Caturday':
 time diff: 0:00:27.650012 | completed run at: 2026-01-24 07:00:55.235848-05:00
 cur followers: 40573 | now following: 32366
 ____________________
+
+2026-01-24 08:00:30.020733-05:00
+prior followers: 40575 | previously following: 32366
+Feed 'Caturday':
+  Followed 7 new users!
+    Of those follows, 7 were posters and 0 were from likes.
+  98 posts in total were viewed during this run.
+  Skipped Posts: (5) - 0 posts were previously seen, 5 were from users already followed, 0 were your posts.
+  Mutuals: 35 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (7) - 1 posts had no media attached, and 6 posts had videos attached.
+  Processed: 50 posts had pics attached: 7 were identified as cat pics and 43 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+IndexError('list index out of range'): list index out of range
+time diff: 0:00:48.834388 | completed run at: 2026-01-24 08:01:18.855121-05:00
+cur followers: 40575 | now following: 32373
+____________________
