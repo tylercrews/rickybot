@@ -19273,3 +19273,18 @@ An error occurred (ValidationException) when calling the UpdateItem operation: E
 time diff: 0:00:06.097214 | completed run at: 2026-02-02 15:00:49.757899-05:00
 cur followers: 40995 | now following: 32884
 ____________________
+
+2026-02-02 17:00:46.272001-05:00
+prior followers: 40996 | previously following: 32884
+Feed 'Siamese Cats':
+  Followed 17 new users!
+    Of those follows, 12 were posters and 5 were from likes.
+  123 posts in total were viewed during this run.
+  Skipped Posts: (11) - 0 posts were previously seen, 11 were from users already followed, 0 were your posts.
+  Mutuals: 30 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (13) - 5 posts had no media attached, and 8 posts had videos attached.
+  Processed: 69 posts had pics attached: 12 were identified as cat pics and 57 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:01:09.130869 | completed run at: 2026-02-02 17:01:55.402870-05:00
+cur followers: 40996 | now following: 32901
+____________________
