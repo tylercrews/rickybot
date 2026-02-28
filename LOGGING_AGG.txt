@@ -433,3 +433,4 @@ LOGGING_AGG_02
 2026-02-25: Successfully aggregated follows from TUE. Today there were 12 runs, with a total of 217 follows.
 2026-02-26: Successfully aggregated follows from WED. Today there were 12 runs, with a total of 224 follows.
 2026-02-27: Successfully aggregated follows from THU. Today there were 11 runs, with a total of 183 follows.
+2026-02-28: Successfully aggregated follows from FRI+SAT. Today there were 9 runs, with a total of 122 follows.
