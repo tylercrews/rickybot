@@ -11879,3 +11879,7 @@ Feed 'Siamese Cats':
 time diff: 0:00:48.062687 | completed run at: 2026-04-05 18:01:28.305422-04:00
 cur followers: 42916 | now following: 26127
 ____________________
+
+2026-04-05 20:00:54.260022-04:00
+ERROR - failed to log in to the bluesky client: 
+____________________
