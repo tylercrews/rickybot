@@ -11996,3 +11996,20 @@ ____________________
 2026-04-06 14:00:54.123766-04:00
 ERROR - failed to log in to the bluesky client: 
 ____________________
+
+2026-04-06 16:00:44.668025-04:00
+prior followers: 42930 | previously following: 25508
+Feed 'Siamese Cats':
+  Followed 25 new users!
+    Of those follows, 7 were posters and 18 were from likes.
+  85 posts in total were viewed during this run.
+  Skipped Posts: (4) - 1 posts were previously seen, 3 were from users already followed, 0 were your posts.
+  Mutuals: 17 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (9) - 0 posts had no media attached, and 9 posts had videos attached.
+  Processed: 55 posts had pics attached: 7 were identified as cat pics and 46 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #11. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+pg1 #42. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:34.254832 | completed run at: 2026-04-06 16:01:18.922857-04:00
+cur followers: 42930 | now following: 25533
+____________________
