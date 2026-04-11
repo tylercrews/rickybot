@@ -12990,3 +12990,19 @@ pg3 #4. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
 time diff: 0:00:32.899427 | completed run at: 2026-04-11 18:01:00.482635-04:00
 cur followers: 43033 | now following: 24409
 ____________________
+
+2026-04-11 19:00:28.525999-04:00
+prior followers: 43035 | previously following: 24409
+Feed 'Caturday':
+  Followed 24 new users!
+    Of those follows, 23 were posters and 1 were from likes.
+  127 posts in total were viewed during this run.
+  Skipped Posts: (3) - 2 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 29 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (16) - 1 posts had no media attached, and 15 posts had videos attached.
+  Processed: 79 posts had pics attached: 23 were identified as cat pics and 55 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg3 #6. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:55.494727 | completed run at: 2026-04-11 19:01:24.020726-04:00
+cur followers: 43035 | now following: 24433
+____________________
