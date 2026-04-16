@@ -13790,3 +13790,22 @@ ____________________
 2026-04-16 04:00:43.952439-04:00
 ERROR - failed to log in to the bluesky client: 
 ____________________
+
+2026-04-16 08:00:44.116094-04:00
+WARNING - failed to get previous following and followers count: 
+Feed 'Siamese Cats':
+  Followed 0 new users.
+    Of those follows, 0 were posters and 0 were from likes.
+  0 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (0) - 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+InvokeTimeoutError(): 
+WARNING - failed to store followed users in dynamodb.
+An error occurred (ValidationException) when calling the UpdateItem operation: ExpressionAttributeValues contains invalid value: One or more parameter values were invalid: An number set  may not be empty for key :val
+time diff: 0:00:14.553128 | completed run at: 2026-04-16 08:00:58.669222-04:00
+cur followers: 43142 | now following: 22901
+____________________
