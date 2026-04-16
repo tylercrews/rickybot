@@ -2532,3 +2532,5 @@ LOGGING_DEL_04
 2026-04-16 06:00:18.786759-04:00: Processed 6 users from the list of 212. 3 failures were encountered and need to be retried. From this batch of deletions 0 users followed back, 5 did not follow back and were deleted, and 0 accounts no longer exist. 2 of the unfollowed users were successfully muted, with 3 errors.
   Follows count - now: 0 | prev: 0| mutes: 50. Successfully reuploaded remaining 206 users to s3.
 2026-04-16 07:00:18.673042-04:00: WARNING - failed to get previous follow count: 
+2026-04-16 07:00:18.673042-04:00: Processed 28 users from the list of 209. 3 failures were encountered and need to be retried. From this batch of deletions 0 users followed back, 27 did not follow back and were deleted, and 1 accounts no longer exist. 25 of the unfollowed users were successfully muted, with 1 errors.
+  Follows count - now: 22901 | prev: 0| mutes: 49. Successfully reuploaded remaining 181 users to s3.
