@@ -13866,3 +13866,7 @@ pg1 #43. InvokeTimeoutError():
 time diff: 0:01:03.404678 | completed run at: 2026-04-16 14:01:47.846948-04:00
 WARNING - failed to get updated following and followers count: {e}
 ____________________
+
+2026-04-16 16:00:43.708615-04:00
+ERROR - failed to log in to the bluesky client: 
+____________________
