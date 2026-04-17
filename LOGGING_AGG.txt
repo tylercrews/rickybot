@@ -489,3 +489,4 @@ LOGGING_AGG_02
 2026-04-15: Successfully aggregated follows from TUE. Today there were 12 runs, with a total of 192 follows.
 2026-04-16: Successfully aggregated follows from WED. Today there were 12 runs, with a total of 165 follows.
 2026-04-17: WARNING - Object existed in s3 bucket when there should have been nothing found. Aggregating with current results.
+2026-04-17: Successfully aggregated follows from THU. Today there were 9 runs, with a total of 295 follows.
