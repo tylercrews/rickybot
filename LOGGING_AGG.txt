@@ -491,3 +491,4 @@ LOGGING_AGG_02
 2026-04-17: WARNING - Object existed in s3 bucket when there should have been nothing found. Aggregating with current results.
 2026-04-17: Successfully aggregated follows from THU. Today there were 9 runs, with a total of 295 follows.
 2026-04-18: Successfully aggregated follows from FRI+SAT. Today there were 16 runs, with a total of 187 follows.
+2026-04-19: Items were found in the FRI+SAT s3 bucket from Friday's runs. Aggregating Saturday's results to that existing data.
