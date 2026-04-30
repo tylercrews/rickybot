@@ -16461,3 +16461,19 @@ pg3 #5. <HTTPError 422: 'Unprocessable Entity'>: HTTP Error 422: Unprocessable E
 time diff: 0:00:45.779834 | completed run at: 2026-04-29 20:01:29.724479-04:00
 cur followers: 43443 | now following: 20337
 ____________________
+
+2026-04-29 22:00:44.120211-04:00
+prior followers: 43443 | previously following: 20337
+Feed 'Siamese Cats':
+  Followed 15 new users!
+    Of those follows, 12 were posters and 3 were from likes.
+  108 posts in total were viewed during this run.
+  Skipped Posts: (7) - 2 posts were previously seen, 5 were from users already followed, 0 were your posts.
+  Mutuals: 21 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (11) - 3 posts had no media attached, and 8 posts had videos attached.
+  Processed: 69 posts had pics attached: 12 were identified as cat pics and 56 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #16. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:42.110878 | completed run at: 2026-04-29 22:01:26.231089-04:00
+cur followers: 43443 | now following: 20352
+____________________
