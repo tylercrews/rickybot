@@ -16445,3 +16445,19 @@ pg3 #3. ValueError('Unable to infer channel dimension format'): Unable to infer 
 time diff: 0:00:43.044749 | completed run at: 2026-04-29 18:01:27.211777-04:00
 cur followers: 43440 | now following: 20323
 ____________________
+
+2026-04-29 20:00:43.944645-04:00
+prior followers: 43443 | previously following: 20323
+Feed 'Siamese Cats':
+  Followed 14 new users!
+    Of those follows, 12 were posters and 2 were from likes.
+  104 posts in total were viewed during this run.
+  Skipped Posts: (4) - 0 posts were previously seen, 4 were from users already followed, 0 were your posts.
+  Mutuals: 26 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (7) - 3 posts had no media attached, and 4 posts had videos attached.
+  Processed: 67 posts had pics attached: 12 were identified as cat pics and 54 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg3 #5. <HTTPError 422: 'Unprocessable Entity'>: HTTP Error 422: Unprocessable Entity
+time diff: 0:00:45.779834 | completed run at: 2026-04-29 20:01:29.724479-04:00
+cur followers: 43443 | now following: 20337
+____________________
