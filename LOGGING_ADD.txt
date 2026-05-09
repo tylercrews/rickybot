@@ -18400,3 +18400,20 @@ AttributeError("'NoneType' object has no attribute 'py_type'"): 'NoneType' objec
 time diff: 0:00:24.215969 | completed run at: 2026-05-09 16:00:54.385453-04:00
 cur followers: 43661 | now following: 16780
 ____________________
+
+2026-05-09 17:00:28.329735-04:00
+prior followers: 43661 | previously following: 16780
+Feed 'Caturday':
+  Followed 25 new users!
+    Of those follows, 8 were posters and 17 were from likes.
+  45 posts in total were viewed during this run.
+  Skipped Posts: (2) - 0 posts were previously seen, 2 were from users already followed, 0 were your posts.
+  Mutuals: 6 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (5) - 1 posts had no media attached, and 4 posts had videos attached.
+  Processed: 32 posts had pics attached: 8 were identified as cat pics and 22 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #6. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+pg2 #0. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:21.250434 | completed run at: 2026-05-09 17:00:49.580169-04:00
+cur followers: 43661 | now following: 16802
+____________________
