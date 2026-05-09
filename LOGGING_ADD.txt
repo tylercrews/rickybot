@@ -18155,3 +18155,19 @@ Feed 'Caturday':
 time diff: 0:00:52.751945 | completed run at: 2026-05-09 00:01:20.359172-04:00
 cur followers: 43637 | now following: 16584
 ____________________
+
+2026-05-09 01:00:27.953238-04:00
+prior followers: 43642 | previously following: 16584
+Feed 'Caturday':
+  Followed 8 new users!
+    Of those follows, 8 were posters and 0 were from likes.
+  94 posts in total were viewed during this run.
+  Skipped Posts: (42) - 40 posts were previously seen, 2 were from users already followed, 0 were your posts.
+  Mutuals: 9 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (6) - 2 posts had no media attached, and 4 posts had videos attached.
+  Processed: 37 posts had pics attached: 8 were identified as cat pics and 28 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #8. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:23.034294 | completed run at: 2026-05-09 01:00:50.987532-04:00
+cur followers: 43642 | now following: 16592
+____________________
