@@ -1024,3 +1024,7 @@ Feed 'Siamese Cats':
 time diff: 0:00:22.946917 | completed run at: 2026-05-18 18:01:06.456383-04:00
 cur followers: 43926 | now following: 16798
 ____________________
+
+2026-05-18 20:00:54.201367-04:00
+ERROR - failed to log in to the bluesky client: Response(success=False, status_code=502, content=b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n', headers={'server': 'awselb/2.0', 'date': 'Tue, 19 May 2026 00:00:54 GMT', 'content-type': 'text/html', 'content-length': '122', 'connection': 'keep-alive'})
+____________________
