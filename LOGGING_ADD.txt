@@ -1938,3 +1938,7 @@ Feed 'Caturday':
 time diff: 0:00:39.387665 | completed run at: 2026-05-23 16:01:07.550971-04:00
 cur followers: 44073 | now following: 16077
 ____________________
+
+2026-05-23 17:00:28.442753-04:00
+ERROR - failed to log in to the bluesky client: 
+____________________
