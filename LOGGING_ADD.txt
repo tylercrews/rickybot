@@ -2923,3 +2923,19 @@ Feed 'Siamese Cats':
 time diff: 0:00:49.520470 | completed run at: 2026-05-29 10:01:33.024178-04:00
 cur followers: 44177 | now following: 16013
 ____________________
+
+2026-05-29 12:00:45.614244-04:00
+prior followers: 44178 | previously following: 15906
+Feed 'Siamese Cats':
+  Followed 19 new users!
+    Of those follows, 11 were posters and 8 were from likes.
+  118 posts in total were viewed during this run.
+  Skipped Posts: (7) - 0 posts were previously seen, 7 were from users already followed, 0 were your posts.
+  Mutuals: 18 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (12) - 4 posts had no media attached, and 8 posts had videos attached.
+  Processed: 81 posts had pics attached: 11 were identified as cat pics and 69 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #3. URLError(OSError(97, 'Address family not supported by protocol')): <urlopen error [Errno 97] Address family not supported by protocol>
+time diff: 0:01:34.355212 | completed run at: 2026-05-29 12:02:19.969456-04:00
+cur followers: 44178 | now following: 15925
+____________________
