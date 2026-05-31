@@ -3484,3 +3484,19 @@ Feed 'Siamese Cats':
 time diff: 0:01:09.989233 | completed run at: 2026-05-31 14:01:52.141694-04:00
 cur followers: 44255 | now following: 16226
 ____________________
+
+2026-05-31 16:00:39.782490-04:00
+prior followers: 44259 | previously following: 16226
+Feed 'Siamese Cats':
+  Followed 11 new users!
+    Of those follows, 10 were posters and 1 were from likes.
+  120 posts in total were viewed during this run.
+  Skipped Posts: (6) - 0 posts were previously seen, 6 were from users already followed, 0 were your posts.
+  Mutuals: 25 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (13) - 5 posts had no media attached, and 8 posts had videos attached.
+  Processed: 76 posts had pics attached: 10 were identified as cat pics and 65 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #24. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:54.443450 | completed run at: 2026-05-31 16:01:34.225940-04:00
+cur followers: 44259 | now following: 16237
+____________________
