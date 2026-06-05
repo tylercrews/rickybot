@@ -4237,3 +4237,18 @@ pg2 #0. ValueError('Unable to infer channel dimension format'): Unable to infer 
 time diff: 0:01:14.464422 | completed run at: 2026-06-05 00:02:00.718452-04:00
 cur followers: 44375 | now following: 16490
 ____________________
+
+2026-06-05 02:00:43.558668-04:00
+prior followers: 44380 | previously following: 16492
+Feed 'Siamese Cats':
+  Followed 13 new users!
+    Of those follows, 9 were posters and 4 were from likes.
+  105 posts in total were viewed during this run.
+  Skipped Posts: (25) - 24 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 12 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (12) - 4 posts had no media attached, and 8 posts had videos attached.
+  Processed: 56 posts had pics attached: 9 were identified as cat pics and 47 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:00:36.258331 | completed run at: 2026-06-05 02:01:19.816999-04:00
+cur followers: 44380 | now following: 16505
+____________________
