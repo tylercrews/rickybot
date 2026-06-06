@@ -4499,3 +4499,19 @@ pg2 #39. <HTTPError 500: 'Internal Server Error'>: HTTP Error 500: Internal Serv
 time diff: 0:00:38.731890 | completed run at: 2026-06-06 08:01:08.572514-04:00
 cur followers: 44411 | now following: 16395
 ____________________
+
+2026-06-06 09:00:27.647346-04:00
+prior followers: 44411 | previously following: 16395
+Feed 'Caturday':
+  Followed 8 new users!
+    Of those follows, 7 were posters and 1 were from likes.
+  98 posts in total were viewed during this run.
+  Skipped Posts: (18) - 17 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 25 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (7) - 3 posts had no media attached, and 4 posts had videos attached.
+  Processed: 48 posts had pics attached: 7 were identified as cat pics and 40 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #25. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:31.609744 | completed run at: 2026-06-06 09:00:59.257090-04:00
+cur followers: 44411 | now following: 16403
+____________________
