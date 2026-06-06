@@ -4330,3 +4330,19 @@ pg2 #25. ValueError('Unable to infer channel dimension format'): Unable to infer
 time diff: 0:00:44.902458 | completed run at: 2026-06-05 18:01:28.262034-04:00
 cur followers: 44396 | now following: 16270
 ____________________
+
+2026-06-05 20:00:29.854470-04:00
+prior followers: 44401 | previously following: 16270
+Feed 'Siamese Cats':
+  Followed 20 new users!
+    Of those follows, 12 were posters and 8 were from likes.
+  119 posts in total were viewed during this run.
+  Skipped Posts: (3) - 0 posts were previously seen, 3 were from users already followed, 0 were your posts.
+  Mutuals: 21 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (9) - 3 posts had no media attached, and 6 posts had videos attached.
+  Processed: 86 posts had pics attached: 12 were identified as cat pics and 73 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg3 #14. <HTTPError 404: 'Not Found'>: HTTP Error 404: Not Found
+time diff: 0:01:30.224363 | completed run at: 2026-06-05 20:02:00.078833-04:00
+cur followers: 44401 | now following: 16290
+____________________
