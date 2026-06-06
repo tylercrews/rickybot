@@ -4483,3 +4483,19 @@ Feed 'Caturday':
 time diff: 0:00:25.109342 | completed run at: 2026-06-06 07:00:52.697708-04:00
 cur followers: 44412 | now following: 16390
 ____________________
+
+2026-06-06 08:00:29.840624-04:00
+prior followers: 44411 | previously following: 16390
+Feed 'Caturday':
+  Followed 5 new users!
+    Of those follows, 4 were posters and 1 were from likes.
+  103 posts in total were viewed during this run.
+  Skipped Posts: (18) - 13 posts were previously seen, 5 were from users already followed, 0 were your posts.
+  Mutuals: 40 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (10) - 0 posts had no media attached, and 10 posts had videos attached.
+  Processed: 35 posts had pics attached: 4 were identified as cat pics and 30 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #39. <HTTPError 500: 'Internal Server Error'>: HTTP Error 500: Internal Server Error
+time diff: 0:00:38.731890 | completed run at: 2026-06-06 08:01:08.572514-04:00
+cur followers: 44411 | now following: 16395
+____________________
