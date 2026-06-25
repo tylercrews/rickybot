@@ -2958,3 +2958,5 @@ LOGGING_DEL_04
   Follows count - now: 16375 | prev: 16612| mutes: 49
 2026-06-24 05:00:17.575139-04:00: Processed 130 users from the list of 130. From this batch of deletions 26 users followed back, 104 did not follow back and were deleted, and 4 accounts no longer exist. 101 of the unfollowed users were successfully muted, with 1 errors.
   Follows count - now: 16463 | prev: 16562| mutes: 50
+2026-06-25 05:00:18.875561-04:00: Processed 132 users from the list of 132. From this batch of deletions 20 users followed back, 112 did not follow back and were deleted, and 4 accounts no longer exist. 107 of the unfollowed users were successfully muted, with 3 errors.
+  Follows count - now: 16498 | prev: 16605| mutes: 50
