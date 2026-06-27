@@ -8473,3 +8473,23 @@ Feed 'Siamese Cats':
 time diff: 0:00:46.443045 | completed run at: 2026-06-26 20:01:13.861451-04:00
 cur followers: 44868 | now following: 16379
 ____________________
+
+2026-06-26 22:00:27.578993-04:00
+prior followers: 44872 | previously following: 16379
+Feed 'Siamese Cats':
+  Followed 2 new users!
+    Of those follows, 2 were posters and 0 were from likes.
+  36 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 8 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (5) - 3 posts had no media attached, and 2 posts had videos attached.
+  Processed: 23 posts had pics attached: 2 were identified as cat pics and 21 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("1 validation error for Response\nfeed.14.post.embed.`app.bsky.embed.recordWithMedia#view`.media\n  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid"): 1 validation error for Response
+feed.14.post.embed.`app.bsky.embed.recordWithMedia#view`.media
+  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid
+time diff: 0:00:14.791367 | completed run at: 2026-06-26 22:00:42.370360-04:00
+cur followers: 44872 | now following: 16381
+____________________
