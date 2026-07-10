@@ -11192,3 +11192,24 @@ Feed 'Siamese Cats':
 time diff: 0:00:59.287994 | completed run at: 2026-07-10 16:01:43.703064-04:00
 cur followers: 45131 | now following: 16910
 ____________________
+
+2026-07-10 18:00:43.495461-04:00
+prior followers: 45131 | previously following: 16914
+Feed 'Siamese Cats':
+  Followed 10 new users!
+    Of those follows, 8 were posters and 2 were from likes.
+  86 posts in total were viewed during this run.
+  Skipped Posts: (2) - 0 posts were previously seen, 2 were from users already followed, 0 were your posts.
+  Mutuals: 15 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (10) - 4 posts had no media attached, and 6 posts had videos attached.
+  Processed: 59 posts had pics attached: 8 were identified as cat pics and 50 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #33. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("1 validation error for Response\nfeed.18.post.embed.`app.bsky.embed.recordWithMedia#view`.media\n  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid"): 1 validation error for Response
+feed.18.post.embed.`app.bsky.embed.recordWithMedia#view`.media
+  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid
+time diff: 0:00:40.340457 | completed run at: 2026-07-10 18:01:23.835918-04:00
+cur followers: 45131 | now following: 16924
+____________________
