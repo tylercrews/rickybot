@@ -12766,3 +12766,27 @@ An error occurred (ValidationException) when calling the UpdateItem operation: E
 time diff: 0:00:01.341773 | completed run at: 2026-07-18 04:00:31.325387-04:00
 cur followers: 45243 | now following: 16979
 ____________________
+
+2026-07-18 05:00:29.634897-04:00
+prior followers: 45243 | previously following: 16979
+Feed 'Caturday':
+  Followed 1 new user!
+    Of those follows, 1 were posters and 0 were from likes.
+  43 posts in total were viewed during this run.
+  Skipped Posts: (1) - 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 9 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (4) - 3 posts had no media attached, and 1 posts had videos attached.
+  Processed: 29 posts had pics attached: 1 were identified as cat pics and 27 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #10. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("2 validation errors for Response\nfeed.6.post.embed.`app.bsky.embed.recordWithMedia#view`.media\n  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid\nfeed.6.post.embed.`app.bsky.embed.recordWithMedia#view`.record.record.`app.bsky.embed.record#viewRecord`.embeds.0.`app.bsky.embed.recordWithMedia#view`.media\n  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid"): 2 validation errors for Response
+feed.6.post.embed.`app.bsky.embed.recordWithMedia#view`.media
+  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid
+feed.6.post.embed.`app.bsky.embed.recordWithMedia#view`.record.record.`app.bsky.embed.record#viewRecord`.embeds.0.`app.bsky.embed.recordWithMedia#view`.media
+  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid
+time diff: 0:00:27.764316 | completed run at: 2026-07-18 05:00:57.399213-04:00
+cur followers: 45243 | now following: 16980
+____________________
