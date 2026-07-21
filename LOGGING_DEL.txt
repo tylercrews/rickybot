@@ -3096,3 +3096,5 @@ LOGGING_DEL_04
   153 did not follow back and were deleted. 
   6 accounts no longer exist. 
   9.47% Conversion Rate.
+2026-07-21 05:00:18.344498-04:00: Processed 194 users from the list of 194. From this batch of deletions 28 users followed back, 166 did not follow back and were deleted, and 7 accounts no longer exist. 160 of the unfollowed users were successfully muted, with 2 errors.
+  Follows count - now: 17160 | prev: 17316| mutes: 50
