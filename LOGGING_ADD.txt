@@ -13749,3 +13749,20 @@ pg2 #7. ValueError('Unable to infer channel dimension format'): Unable to infer 
 time diff: 0:01:02.857349 | completed run at: 2026-07-22 20:01:49.065583-04:00
 cur followers: 45337 | now following: 17287
 ____________________
+
+2026-07-22 22:00:46.109416-04:00
+prior followers: 45340 | previously following: 17288
+Feed 'Siamese Cats':
+  Followed 10 new users!
+    Of those follows, 7 were posters and 3 were from likes.
+  98 posts in total were viewed during this run.
+  Skipped Posts: (5) - 0 posts were previously seen, 5 were from users already followed, 0 were your posts.
+  Mutuals: 12 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (10) - 5 posts had no media attached, and 5 posts had videos attached.
+  Processed: 71 posts had pics attached: 7 were identified as cat pics and 62 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #22. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+pg2 #24. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:01:09.429971 | completed run at: 2026-07-22 22:01:55.539387-04:00
+cur followers: 45340 | now following: 17298
+____________________
