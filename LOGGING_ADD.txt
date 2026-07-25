@@ -14190,3 +14190,7 @@ pg1 #15. ValueError('Unable to infer channel dimension format'): Unable to infer
 time diff: 0:00:28.408245 | completed run at: 2026-07-25 06:00:58.353594-04:00
 cur followers: 45382 | now following: 17306
 ____________________
+
+2026-07-25 07:00:27.814702-04:00
+ERROR - failed to log in to the bluesky client: 
+____________________
