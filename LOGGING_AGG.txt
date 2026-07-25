@@ -601,3 +601,4 @@ LOGGING_AGG_02
 2026-07-22: Successfully aggregated follows from TUE. Today there were 12 runs, with a total of 172 follows.
 2026-07-23: Successfully aggregated follows from WED. Today there were 12 runs, with a total of 161 follows.
 2026-07-24: Successfully aggregated follows from THU. Today there were 12 runs, with a total of 163 follows.
+2026-07-25: Successfully aggregated follows from FRI+SAT. Today there were 16 runs, with a total of 208 follows.
