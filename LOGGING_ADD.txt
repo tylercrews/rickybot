@@ -184,3 +184,19 @@ An error occurred (ValidationException) when calling the UpdateItem operation: E
 time diff: 0:00:01.163921 | completed run at: 2026-08-13 16:00:47.515654-04:00
 cur followers: 45816 | now following: 18148
 ____________________
+
+2026-08-13 18:00:43.602767-04:00
+prior followers: 45815 | previously following: 18148
+Feed 'Siamese Cats':
+  Followed 20 new users!
+    Of those follows, 16 were posters and 4 were from likes.
+  125 posts in total were viewed during this run.
+  Skipped Posts: (1) - 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 28 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (14) - 7 posts had no media attached, and 7 posts had videos attached.
+  Processed: 82 posts had pics attached: 16 were identified as cat pics and 65 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg3 #8. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:56.970723 | completed run at: 2026-08-13 18:01:40.573490-04:00
+cur followers: 45815 | now following: 18168
+____________________
