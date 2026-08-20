@@ -1562,3 +1562,20 @@ feed.6.post.embed.`app.bsky.embed.recordWithMedia#view`.media
 time diff: 0:00:17.720902 | completed run at: 2026-08-20 14:01:01.569459-04:00
 cur followers: 45928 | now following: 18156
 ____________________
+
+2026-08-20 16:00:44.197989-04:00
+prior followers: 45930 | previously following: 18156
+Feed 'Siamese Cats':
+  Followed 16 new users!
+    Of those follows, 9 were posters and 7 were from likes.
+  117 posts in total were viewed during this run.
+  Skipped Posts: (7) - 0 posts were previously seen, 7 were from users already followed, 0 were your posts.
+  Mutuals: 25 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (17) - 8 posts had no media attached, and 9 posts had videos attached.
+  Processed: 68 posts had pics attached: 9 were identified as cat pics and 57 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #22. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+pg3 #12. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:44.838005 | completed run at: 2026-08-20 16:01:29.035994-04:00
+cur followers: 45930 | now following: 18172
+____________________
