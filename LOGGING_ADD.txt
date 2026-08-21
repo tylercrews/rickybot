@@ -1630,3 +1630,19 @@ IndexError('list index out of range'): list index out of range
 time diff: 0:00:20.745126 | completed run at: 2026-08-20 22:01:04.137713-04:00
 cur followers: 45924 | now following: 18211
 ____________________
+
+2026-08-21 00:00:43.998881-04:00
+prior followers: 45926 | previously following: 18211
+Feed 'Siamese Cats':
+  Followed 4 new users!
+    Of those follows, 4 were posters and 0 were from likes.
+  99 posts in total were viewed during this run.
+  Skipped Posts: (1) - 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 17 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (13) - 4 posts had no media attached, and 9 posts had videos attached.
+  Processed: 68 posts had pics attached: 4 were identified as cat pics and 63 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #2. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:50.409567 | completed run at: 2026-08-21 00:01:34.408448-04:00
+cur followers: 45926 | now following: 18215
+____________________
