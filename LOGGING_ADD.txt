@@ -3836,3 +3836,23 @@ Feed 'Siamese Cats':
 time diff: 0:00:49.937644 | completed run at: 2026-08-31 14:01:33.533592-04:00
 cur followers: 46128 | now following: 18667
 ____________________
+
+2026-08-31 16:00:43.286136-04:00
+prior followers: 46129 | previously following: 18667
+Feed 'Siamese Cats':
+  Followed 7 new users!
+    Of those follows, 6 were posters and 1 were from likes.
+  49 posts in total were viewed during this run.
+  Skipped Posts: (2) - 0 posts were previously seen, 2 were from users already followed, 0 were your posts.
+  Mutuals: 7 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (6) - 4 posts had no media attached, and 2 posts had videos attached.
+  Processed: 34 posts had pics attached: 6 were identified as cat pics and 28 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("1 validation error for Response\nfeed.50.post.embed.`app.bsky.embed.recordWithMedia#view`.record.record.`app.bsky.embed.record#viewRecord`.embeds.0.`app.bsky.embed.recordWithMedia#view`.media\n  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid"): 1 validation error for Response
+feed.50.post.embed.`app.bsky.embed.recordWithMedia#view`.record.record.`app.bsky.embed.record#viewRecord`.embeds.0.`app.bsky.embed.recordWithMedia#view`.media
+  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid
+time diff: 0:00:36.548456 | completed run at: 2026-08-31 16:01:19.834592-04:00
+cur followers: 46129 | now following: 18674
+____________________
