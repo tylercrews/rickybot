@@ -7598,3 +7598,24 @@ pg3 #6. ValueError('Unable to infer channel dimension format'): Unable to infer 
 time diff: 0:00:44.399582 | completed run at: 2026-09-19 14:01:10.604925-04:00
 cur followers: 46455 | now following: 18777
 ____________________
+
+2026-09-19 15:00:26.360111-04:00
+prior followers: 46455 | previously following: 18777
+Feed 'Caturday':
+  Followed 1 new user!
+    Of those follows, 1 were posters and 0 were from likes.
+  16 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 4 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (1) - 0 posts had no media attached, and 1 posts had videos attached.
+  Processed: 11 posts had pics attached: 1 were identified as cat pics and 9 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #5. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("1 validation error for Response\nfeed.22.post.embed.`app.bsky.embed.recordWithMedia#view`.media\n  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid"): 1 validation error for Response
+feed.22.post.embed.`app.bsky.embed.recordWithMedia#view`.media
+  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid
+time diff: 0:00:07.895283 | completed run at: 2026-09-19 15:00:34.255394-04:00
+cur followers: 46455 | now following: 18778
+____________________
