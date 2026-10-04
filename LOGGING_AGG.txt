@@ -682,3 +682,4 @@ LOGGING_AGG_02
 2026-10-01: Successfully aggregated follows from WED. Today there were 12 runs, with a total of 157 follows.
 2026-10-02: Successfully aggregated follows from THU. Today there were 11 runs, with a total of 118 follows.
 2026-10-03: Successfully aggregated follows from FRI+SAT. Today there were 15 runs, with a total of 153 follows.
+2026-10-04: Items were found in the FRI+SAT s3 bucket from Friday's runs. Aggregating Saturday's results to that existing data.
