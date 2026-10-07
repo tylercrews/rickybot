@@ -11129,3 +11129,20 @@ ____________________
 2026-10-07 08:00:43.930193-04:00
 ERROR - failed to log in to the bluesky client: Response(success=False, status_code=502, content=b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n', headers={'server': 'awselb/2.0', 'date': 'Wed, 07 Oct 2026 12:00:44 GMT', 'content-type': 'text/html', 'content-length': '122', 'connection': 'keep-alive'})
 ____________________
+
+2026-10-07 10:00:41.816374-04:00
+prior followers: 46715 | previously following: 19059
+Feed 'Siamese Cats':
+  Followed 8 new users!
+    Of those follows, 7 were posters and 1 were from likes.
+  116 posts in total were viewed during this run.
+  Skipped Posts: (1) - 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 22 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (17) - 4 posts had no media attached, and 13 posts had videos attached.
+  Processed: 76 posts had pics attached: 7 were identified as cat pics and 67 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #4. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+pg2 #0. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+time diff: 0:00:45.281088 | completed run at: 2026-10-07 10:01:27.097462-04:00
+cur followers: 46715 | now following: 19067
+____________________
