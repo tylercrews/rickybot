@@ -11125,3 +11125,7 @@ pg3 #18. ValueError('Unable to infer channel dimension format'): Unable to infer
 time diff: 0:01:00.206837 | completed run at: 2026-10-07 04:01:43.696979-04:00
 cur followers: 46715 | now following: 19190
 ____________________
+
+2026-10-07 08:00:43.930193-04:00
+ERROR - failed to log in to the bluesky client: Response(success=False, status_code=502, content=b'<html>\r\n<head><title>502 Bad Gateway</title></head>\r\n<body>\r\n<center><h1>502 Bad Gateway</h1></center>\r\n</body>\r\n</html>\r\n', headers={'server': 'awselb/2.0', 'date': 'Wed, 07 Oct 2026 12:00:44 GMT', 'content-type': 'text/html', 'content-length': '122', 'connection': 'keep-alive'})
+____________________
