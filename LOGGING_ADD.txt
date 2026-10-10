@@ -11752,3 +11752,23 @@ Feed 'Caturday':
 time diff: 0:00:35.393409 | completed run at: 2026-10-10 12:01:01.654797-04:00
 cur followers: 46745 | now following: 19167
 ____________________
+
+2026-10-10 13:00:25.704890-04:00
+prior followers: 46746 | previously following: 19167
+Feed 'Caturday':
+  Followed 4 new users!
+    Of those follows, 4 were posters and 0 were from likes.
+  37 posts in total were viewed during this run.
+  Skipped Posts: (1) - 0 posts were previously seen, 1 were from users already followed, 0 were your posts.
+  Mutuals: 14 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (3) - 0 posts had no media attached, and 3 posts had videos attached.
+  Processed: 19 posts had pics attached: 4 were identified as cat pics and 15 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("1 validation error for Response\nfeed.35.post.embed.`app.bsky.embed.recordWithMedia#view`.media\n  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid"): 1 validation error for Response
+feed.35.post.embed.`app.bsky.embed.recordWithMedia#view`.media
+  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid
+time diff: 0:00:13.201900 | completed run at: 2026-10-10 13:00:38.906790-04:00
+cur followers: 46746 | now following: 19171
+____________________
