@@ -12856,3 +12856,24 @@ An error occurred (ValidationException) when calling the UpdateItem operation: E
 time diff: 0:00:05.885571 | completed run at: 2026-10-16 12:00:50.272123-04:00
 cur followers: 46839 | now following: 19080
 ____________________
+
+2026-10-16 14:00:44.220991-04:00
+prior followers: 46839 | previously following: 19080
+Feed 'Siamese Cats':
+  Followed 10 new users!
+    Of those follows, 9 were posters and 1 were from likes.
+  92 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 15 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (11) - 2 posts had no media attached, and 9 posts had videos attached.
+  Processed: 65 posts had pics attached: 9 were identified as cat pics and 52 were not cats.
+  5 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg1 #37. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+pg2 #27. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+pg2 #31. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+pg2 #46. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+AttributeError("'NoneType' object has no attribute 'py_type'"): 'NoneType' object has no attribute 'py_type'
+time diff: 0:00:43.134345 | completed run at: 2026-10-16 14:01:27.355336-04:00
+cur followers: 46839 | now following: 19090
+____________________
