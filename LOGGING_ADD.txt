@@ -13387,3 +13387,20 @@ Feed 'Siamese Cats':
 time diff: 0:00:44.395764 | completed run at: 2026-10-18 02:01:22.313813-04:00
 cur followers: 46883 | now following: 19353
 ____________________
+
+2026-10-18 04:00:38.059208-04:00
+prior followers: 46887 | previously following: 19354
+Feed 'Siamese Cats':
+  Followed 0 new users.
+    Of those follows, 0 were posters and 0 were from likes.
+  1 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (0) - 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+AttributeError("'NoneType' object has no attribute 'py_type'"): 'NoneType' object has no attribute 'py_type'
+time diff: 0:00:01.168918 | completed run at: 2026-10-18 04:00:39.228126-04:00
+cur followers: 46887 | now following: 19354
+____________________
