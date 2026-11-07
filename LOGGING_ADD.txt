@@ -281,3 +281,21 @@ Feed 'Caturday':
 time diff: 0:00:20.006209 | completed run at: 2026-11-07 05:00:45.868237-05:00
 cur followers: 47253 | now following: 19827
 ____________________
+
+2026-11-07 06:00:26.105076-05:00
+prior followers: 47254 | previously following: 19827
+Feed 'Caturday':
+  Followed 5 new users!
+    Of those follows, 5 were posters and 0 were from likes.
+  98 posts in total were viewed during this run.
+  Skipped Posts: (41) - 41 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 13 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (12) - 3 posts had no media attached, and 9 posts had videos attached.
+  Processed: 31 posts had pics attached: 5 were identified as cat pics and 25 were not cats.
+  2 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+pg2 #3. ValueError('Unable to infer channel dimension format'): Unable to infer channel dimension format
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+AttributeError("'NoneType' object has no attribute 'py_type'"): 'NoneType' object has no attribute 'py_type'
+time diff: 0:00:19.769520 | completed run at: 2026-11-07 06:00:45.874596-05:00
+cur followers: 47254 | now following: 19832
+____________________
