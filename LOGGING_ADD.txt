@@ -576,3 +576,20 @@ pg3 #0. ValueError('Unable to infer channel dimension format'): Unable to infer 
 time diff: 0:00:35.661912 | completed run at: 2026-11-08 01:01:13.470777-05:00
 cur followers: 47271 | now following: 19977
 ____________________
+
+2026-11-08 03:00:38.033115-05:00
+prior followers: 47273 | previously following: 19979
+Feed 'Siamese Cats':
+  Followed 3 new users!
+    Of those follows, 3 were posters and 0 were from likes.
+  61 posts in total were viewed during this run.
+  Skipped Posts: (4) - 0 posts were previously seen, 4 were from users already followed, 0 were your posts.
+  Mutuals: 10 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (9) - 3 posts had no media attached, and 6 posts had videos attached.
+  Processed: 37 posts had pics attached: 3 were identified as cat pics and 34 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+AttributeError("'NoneType' object has no attribute 'py_type'"): 'NoneType' object has no attribute 'py_type'
+time diff: 0:00:23.257372 | completed run at: 2026-11-08 03:01:01.290487-05:00
+cur followers: 47273 | now following: 19982
+____________________
