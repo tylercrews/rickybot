@@ -1494,3 +1494,20 @@ feed.5.post.embed.`app.bsky.embed.recordWithMedia#view`.media
 time diff: 0:00:13.766755 | completed run at: 2026-11-13 01:00:55.631386-05:00
 cur followers: 47399 | now following: 20055
 ____________________
+
+2026-11-13 09:00:42.017715-05:00
+prior followers: 47423 | previously following: 19847
+Feed 'Siamese Cats':
+  Followed 0 new users.
+    Of those follows, 0 were posters and 0 were from likes.
+  1 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 0 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (0) - 0 posts had no media attached, and 0 posts had videos attached.
+  Processed: 0 posts had pics attached: 0 were identified as cat pics and 0 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+AttributeError("'NoneType' object has no attribute 'py_type'"): 'NoneType' object has no attribute 'py_type'
+time diff: 0:00:01.167670 | completed run at: 2026-11-13 09:00:43.185385-05:00
+cur followers: 47423 | now following: 19847
+____________________
