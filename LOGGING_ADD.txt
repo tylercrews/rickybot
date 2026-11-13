@@ -1561,3 +1561,18 @@ feed.4.post.embed.`app.bsky.embed.recordWithMedia#view`.media
 time diff: 0:00:34.950506 | completed run at: 2026-11-13 15:01:16.978520-05:00
 cur followers: 47445 | now following: 19871
 ____________________
+
+2026-11-13 17:00:41.601969-05:00
+prior followers: 47454 | previously following: 19871
+Feed 'Siamese Cats':
+  Followed 24 new users!
+    Of those follows, 14 were posters and 10 were from likes.
+  108 posts in total were viewed during this run.
+  Skipped Posts: (5) - 0 posts were previously seen, 5 were from users already followed, 0 were your posts.
+  Mutuals: 15 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (19) - 3 posts had no media attached, and 16 posts had videos attached.
+  Processed: 69 posts had pics attached: 14 were identified as cat pics and 55 were not cats.
+  No errors were encountered while processing pics. 
+time diff: 0:00:43.787610 | completed run at: 2026-11-13 17:01:25.389579-05:00
+cur followers: 47454 | now following: 19895
+____________________
