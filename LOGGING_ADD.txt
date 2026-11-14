@@ -1827,3 +1827,23 @@ pg3 #12. ValueError('Unable to infer channel dimension format'): Unable to infer
 time diff: 0:00:32.739322 | completed run at: 2026-11-14 12:00:58.903803-05:00
 cur followers: 47497 | now following: 20018
 ____________________
+
+2026-11-14 13:00:25.726307-05:00
+prior followers: 47500 | previously following: 20018
+Feed 'Caturday':
+  Followed 4 new users!
+    Of those follows, 4 were posters and 0 were from likes.
+  67 posts in total were viewed during this run.
+  Skipped Posts: (0) - 0 posts were previously seen, 0 were from users already followed, 0 were your posts.
+  Mutuals: 18 posts were from users that follow you, and these posts were liked.
+  Unprocessed: (11) - 3 posts had no media attached, and 8 posts had videos attached.
+  Processed: 38 posts had pics attached: 4 were identified as cat pics and 34 were not cats.
+  1 ERROR(S) ENCOUNTERED PROCESSING PICS FROM THIS FEED 
+CRITICAL ERROR ENCOUNTERED WHILE GETTING FEED:
+ModelError("1 validation error for Response\nfeed.0.post.embed.`app.bsky.embed.recordWithMedia#view`.media\n  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid"): 1 validation error for Response
+feed.0.post.embed.`app.bsky.embed.recordWithMedia#view`.media
+  Input tag 'app.bsky.embed.gallery#view' found using 'py_type' | '$type' does not match any of the expected tags: 'app.bsky.embed.images#view', 'app.bsky.embed.video#view', 'app.bsky.embed.external#view' [type=union_tag_invalid, input_value={'items': [{'thumbnail': ...sky.embed.gallery#view'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.10/v/union_tag_invalid
+time diff: 0:00:24.782249 | completed run at: 2026-11-14 13:00:50.508556-05:00
+cur followers: 47500 | now following: 20022
+____________________
